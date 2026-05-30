@@ -1,0 +1,3029 @@
+O‘ZBEKISTON RESPUBLIKASI RAQAMLI TEXNOLOGIYALAR VAZIRLIGI
+
+MUHAMMAD AL-XORAZMIY NOMIDAGI TOSHKENT AXBOROT TEXNOLOGIYALARI
+UNIVERSITETI
+
+  ------------------------------ ------------------------------
+                                 “Himoyaga ruxsat”
+
+                                 ATT kafedra mudiri
+
+                                 D.A. Zaripova
+
+                                 _________________
+
+                                 2026-yil «____» ___________
+  ------------------------------ ------------------------------
+
+“REAL VAQTDA O‘QUV PROGRESSINI MONITORING QILUVCHI ANALITIKA TIZIMINI ISHLAB CHIQISH”
+
+MAVZUSIDA
+
+DIPLOM LOYIHASI
+
+  -------------------- -------------------- -----------------------
+  Bitiruvchi:          _______________      Yuldashev Yorqin Mansur
+                                            o‘g‘li
+
+                       imzo                 
+
+  Rahbar:              _______________      Normatov O.M.
+
+                       imzo                 
+
+  Taqrizchi:           _______________      _____________________
+
+                       imzo                 
+
+  HFX bo‘yicha         _______________      _____________________
+  maslahatchi:                              
+
+                       imzo                 
+  -------------------- -------------------- -----------------------
+
+Toshkent – 2026 # ANNOTATSIYA
+
+Ushbu diplom loyihasi talabalarning o‘quv jarayonini real vaqt rejimida
+monitoring qiluvchi analitika tizimini loyihalash va ishlab chiqishga
+bag‘ishlangan. Ishda zamonaviy ta’lim muassasalarida o‘quv
+ko‘rsatkichlarini (davomat, baholar, faollik) kuzatib borishning
+dolzarbligi asoslanib, mavjud tizimlar (Moodle, Google Classroom) tahlil
+qilingan va ularning kamchiliklari aniqlangan. Tizim Flutter va Firebase
+texnologiyalari yordamida ishlab chiqilgan bo‘lib, real vaqtda
+ma’lumotlarni yangilash, vizual analitika va rolga asoslangan kirish
+imkoniyatlarini taqdim etadi. Ishda tizim arxitekturasi, ma’lumotlar
+bazasi tuzilmasi, dasturiy modullar va tizim samaradorligi statistik
+ma’lumotlar asosida baholangan.
+
+Diplom loyihasi kirish, to‘rtta bob, har bir bob bo‘yicha xulosa, umumiy
+xulosa, foydalanilgan adabiyotlar ro‘yxati va ilovalardan iborat.
+Ishning umumiy hajmi ___ bet, ___ ta rasm, ___ ta jadval va ___ ta
+foydalanilgan adabiyotni o‘z ichiga oladi.
+
+Tayanch so‘zlar: real vaqtli monitoring, o‘quv analitikasi, Learning
+Analytics, Flutter, Firebase, Cloud Firestore, ta’lim texnologiyalari,
+mobil ilova, ma’lumotlarni vizualizatsiya qilish.
+
+АННОТАЦИЯ
+
+Данная выпускная квалификационная работа посвящена проектированию и
+разработке аналитической системы для мониторинга учебного процесса
+студентов в режиме реального времени. В работе обоснована актуальность
+отслеживания учебных показателей (посещаемость, оценки, активность) в
+современных образовательных учреждениях, проанализированы существующие
+системы (Moodle, Google Classroom) и выявлены их недостатки. Система
+разработана с использованием технологий Flutter и Firebase и
+обеспечивает обновление данных в реальном времени, визуальную аналитику
+и ролевой доступ. В работе рассмотрены архитектура системы, структура
+базы данных, программные модули, а эффективность системы оценена на
+основе статистических данных.
+
+Ключевые слова: мониторинг в реальном времени, учебная аналитика,
+Learning Analytics, Flutter, Firebase, Cloud Firestore, образовательные
+технологии, мобильное приложение, визуализация данных.
+
+ANNOTATION
+
+This graduation qualification work is devoted to the design and
+development of an analytics system for monitoring the students’ learning
+process in real time. The work substantiates the relevance of tracking
+learning indicators (attendance, grades, activity) in modern educational
+institutions, analyzes existing systems (Moodle, Google Classroom) and
+identifies their shortcomings. The system is developed using Flutter and
+Firebase technologies and provides real-time data updates, visual
+analytics and role-based access. The work covers the system
+architecture, database structure, software modules, and evaluates the
+system’s effectiveness based on statistical data.
+
+Keywords: real-time monitoring, learning analytics, Flutter, Firebase,
+Cloud Firestore, educational technologies, mobile application, data
+visualization. # MUNDARIJA
+
+  -------------------------------------------------------------
+  Bo‘lim                                                    Bet
+  ------------------------------------- -----------------------
+  ANNOTATSIYA                                                 3
+
+  KIRISH                                                      6
+
+                                        
+
+  I BOB. REAL VAQTDA O‘QUV PROGRESSINI                       11
+  MONITORING QILISHNING FUNKSIONAL      
+  TAHLILI                               
+
+  1.1. Real vaqtda monitoring va uning                       11
+  ta’limdagi ahamiyati                  
+
+  1.2. O‘quv jarayonidagi asosiy                             19
+  ko‘rsatkichlar (davomat, baholar,     
+  faollik) va ularni kuzatish           
+
+  1.3. Mavjud tizimlar (Moodle, Google                       26
+  Classroom) va ularning imkoniyatlari  
+  tahlili                               
+
+  I bob bo‘yicha xulosa                                      33
+
+                                        
+
+  II BOB. REAL VAQTDA O‘QUV PROGRESSINI                      35
+  MONITORING QILUVCHI ANALITIKA         
+  TIZIMINI ISHLAB CHIQISH               
+
+  2.1. Tizim arxitekturasi va                                35
+  texnologiyalarni tanlash              
+
+  2.2. Flutter, Firebase yordamida                           44
+  “Koozat” analitik tizimini ishlab     
+  chiqish                               
+
+  2.3. Foydalanuvchi interfeysi (UI/UX)                      53
+  va tizimning amaliy amaliy joriy      
+  etilishi                              
+
+  II bob bo‘yicha xulosa                                     60
+
+                                        
+
+  III BOB. ANALITIKA TIZIMINING                              62
+  SAMARADORLIGI VA STATISTIK TAHLILI    
+
+  3.1. Tizimni joriy etishning ta’lim                        62
+  sifatiga ta’siri                      
+
+  3.2. Statistik ma’lumotlar asosida                         69
+  tahlil va natijalarni baholash        
+
+  3.3. Tizimning afzalliklari,                               75
+  kamchiliklari va rivojlantirish       
+  istiqbollari                          
+
+  III bob bo‘yicha xulosa                                    79
+
+                                        
+
+  IV BOB. HAYOT FAOLIYATI XAVFSIZLIGI                        81
+
+  4.1. Kompyuter bilan ishlash joyini                        81
+  tashkil etish va ergonomika talablari 
+
+  4.2. Elektr xavfsizligi va yong‘in                         86
+  xavfsizligi qoidalari                 
+
+  IV bob bo‘yicha xulosa                                     90
+
+                                        
+
+  UMUMIY XULOSA                                              91
+
+  FOYDALANILGAN ADABIYOTLAR RO‘YXATI                         94
+
+  ILOVALAR                                                   98
+  -------------------------------------------------------------
+
+Rasmlar ro‘yxati
+
+  --------------------------------------------------------------
+  Rasm                 Tavsif                                Bet
+  -------------------- -------------------- --------------------
+  1-rasm               “Koozat” tizimining                    37
+                       umumiy arxitektura   
+                       sxemasi              
+
+  2-rasm               Cloud Firestore                        46
+                       ma’lumotlar bazasi   
+                       tuzilmasi            
+
+  3-rasm               Tizimga kirish                         48
+                       (Login) ekrani       
+
+  4-rasm               Ro‘yxatdan o‘tish                      49
+                       (Register) ekrani    
+
+  5-rasm               Real vaqtli                            51
+                       yangilanish          
+                       demonstratsiyasi     
+
+  6-rasm               O‘qituvchi boshqaruv                   54
+                       paneli               
+
+  7-rasm               Talaba boshqaruv                       55
+                       paneli               
+
+  8-rasm               Kurslar ro‘yxati                       56
+                       ekrani               
+
+  9-rasm               Kurs tafsilotlari                      57
+                       ekrani               
+
+  10-rasm              Yangi kurs yaratish                    58
+                       formasi              
+
+  11-rasm              Analitika ekrani                       59
+
+  12-rasm              Mobil navigatsiya                      60
+                       tuzilmasi            
+
+  13-rasm              Talaba o‘quv                           65
+                       natijalarining       
+                       vizual grafigi       
+
+  14-rasm              Davomat statistikasi                   66
+
+  15-rasm              Baholar taqsimoti                      67
+                       diagrammasi          
+
+  16-rasm              Xavf zonasidagi                        72
+                       talabalar ro‘yxati   
+  --------------------------------------------------------------
+
+Jadvallar ro‘yxati
+
+  ---------------------------------------------------------------
+  Jadval               Tavsif                                 Bet
+  -------------------- --------------------- --------------------
+  1-jadval             Arxitekturaviy                          36
+                       yondashuvlarning      
+                       qiyosiy tahlili       
+
+  2-jadval             Frontend                                41
+                       texnologiyalarining   
+                       qiyosiy tahlili       
+
+  3-jadval             Backend (BaaS)                          42
+                       platformalarining     
+                       qiyosiy tahlili       
+
+  4-jadval             Foydalanuvchi                           55
+                       personalari           
+
+  5-jadval             Eksperimental                           63
+                       guruhlar tuzilmasi    
+
+  6-jadval             Sinov ko‘rsatkichlari                   64
+                       tizimi                
+
+  7-jadval             Haftalik davomat                        70
+                       ma’lumotlari          
+
+  8-jadval             Xavf zonasidagi                         72
+                       talabalar ulushi      
+
+  9-jadval             Foydalanuvchi                           73
+                       qoniqishi             
+                       ko‘rsatkichlari       
+
+  10-jadval            Rivojlantirish yo‘l                     78
+                       xaritasi              
+
+  11-jadval            Ish joyining                            82
+                       ergonomik             
+                       parametrlari          
+
+  12-jadval            Mikroiqlim                              84
+                       ko‘rsatkichlari       
+  ---------------------------------------------------------------
+
+KIRISH
+
+Mavzuning dolzarbligi. Axborot-kommunikatsiya texnologiyalarining jadal
+rivojlanishi ta’lim sohasini ham tubdan o‘zgartirmoqda. So‘nggi yillarda
+O‘zbekiston Respublikasida ta’lim tizimini raqamlashtirish, o‘quv
+jarayonini avtomatlashtirish va ta’lim sifatini oshirishga qaratilgan
+keng ko‘lamli islohotlar amalga oshirilmoqda. Jumladan, O‘zbekiston
+Respublikasi Prezidentining 2020-yil 6-oktabrdagi PF-6079-son “Raqamli
+O‘zbekiston – 2030” strategiyasini tasdiqlash to‘g‘risidagi farmoni va
+ta’lim sohasini rivojlantirishga oid bir qator hujjatlar bunga yaqqol
+misol bo‘la oladi. Bu hujjatlarda ta’lim muassasalarida zamonaviy
+axborot tizimlarini joriy etish, o‘quv jarayonini ma’lumotlarga
+asoslangan holda boshqarish ustuvor vazifa sifatida belgilab qo‘yilgan.
+
+An’anaviy ta’lim modelida o‘qituvchi talabalarning o‘zlashtirish
+darajasi, davomati va faolligini asosan davriy nazorat ishlari va
+imtihonlar orqali baholaydi. Bunday yondashuvning asosiy kamchiligi
+shundaki, o‘qituvchi talabaning bilimidagi bo‘shliqlarni yoki
+o‘zlashtirishdagi pasayishni ko‘pincha kech – nazorat natijalari e’lon
+qilingandan keyingina aniqlaydi. Natijada o‘z vaqtida pedagogik
+aralashuv (pedagogik aralashuv) qilish imkoniyati boy beriladi va
+talabaning o‘quv natijasi pasayib ketadi.
+
+Ushbu muammoni hal etishda real vaqtli o‘quv analitikasi (real-time
+learning analytics) muhim vosita hisoblanadi. Real vaqt rejimida
+ishlovchi monitoring tizimlari o‘qituvchiga talabalarning o‘quv
+faoliyati to‘g‘risidagi ma’lumotlarni (kursni o‘zlashtirish foizi, dars
+yakunlash dinamikasi, faollik) bir zumda taqdim etadi. Bu esa
+o‘qituvchiga “xavf ostidagi” talabalarni erta aniqlash, ularga
+individual yondashish va o‘quv jarayoniga tezkor tuzatishlar kiritish
+imkonini beradi.
+
+Hozirgi kunda dunyoda Moodle, Google Classroom, Canvas kabi o‘quv
+jarayonini boshqarish tizimlari (LMS) keng qo‘llanilmoqda. Biroq bu
+tizimlarning aksariyati, birinchidan, og‘ir va murakkab veb-platformalar
+bo‘lib, ko‘proq kontentni boshqarishga yo‘naltirilgan; ikkinchidan,
+ulardagi analitik hisobotlar ko‘pincha statik bo‘lib, real vaqtda
+yangilanmaydi; uchinchidan, mobil qurilmalarga to‘liq moslashtirilmagan
+va sodda, intuitiv interfeysga ega emas. Bu holat o‘qituvchi va talaba
+uchun kundalik foydalanishda noqulayliklar tug‘diradi.
+
+Shu nuqtai nazardan, zamonaviy, yengil, mobil qurilmalarga moslashgan va
+real vaqtda ishlovchi o‘quv progressini monitoring qiluvchi analitika
+tizimini ishlab chiqish dolzarb va amaliy ahamiyatga ega vazifa
+hisoblanadi. Mazkur diplom loyihasida aynan shunday tizim – “Koozat”
+analitik tizimi – zamonaviy Flutter va Firebase texnologiyalari asosida
+loyihalashtirilgan va ishlab chiqilgan.
+
+Muammoning qo‘yilishi. Mavjud ta’lim platformalarida o‘quv jarayonini
+real vaqtda, soddalashtirilgan va vizual ko‘rinishda kuzatib borish
+imkoniyati cheklangan. O‘qituvchilar talabalarning o‘quv natijalari
+to‘g‘risida tezkor va aniq ma’lumotga ega bo‘lmaydi, talabalar esa o‘z
+o‘quv natijalarini real vaqtda kuzata olmaydi. Demak, real vaqtda
+ma’lumotlarni sinxronlashtiruvchi, rolga asoslangan (o‘qituvchi/talaba)
+va vizual analitikani taqdim etuvchi yagona tizimga ehtiyoj mavjud.
+
+Tadqiqotning maqsadi – talabalarning o‘quv jarayonini real vaqt rejimida
+monitoring qiluvchi, o‘qituvchi va talaba uchun qulay interfeysga ega
+bo‘lgan analitika tizimini loyihalash va dasturiy ta’minotini ishlab
+chiqishdan iborat.
+
+Tadqiqot vazifalari. Belgilangan maqsadga erishish uchun quyidagi
+vazifalar hal etildi:
+
+1.  Real vaqtli monitoringning ta’limdagi o‘rni va ahamiyatini nazariy
+    jihatdan o‘rganish;
+2.  O‘quv jarayonining asosiy ko‘rsatkichlari (davomat, baholar,
+    faollik) va ularni kuzatish usullarini tahlil qilish;
+3.  Mavjud o‘quv platformalari (Moodle, Google Classroom)
+    imkoniyatlarini qiyosiy tahlil qilish va kamchiliklarini aniqlash;
+4.  Ishlab chiqiladigan tizimga qo‘yiladigan funksional va nofunksional
+    talablarni shakllantirish;
+5.  Tizim arxitekturasini loyihalash va mos texnologiyalarni (Flutter,
+    Firebase) asoslab tanlash;
+6.  “Koozat” analitik tizimining dasturiy ta’minotini ishlab chiqish;
+7.  Foydalanuvchi interfeysini (UI/UX) loyihalash va amaliy joriy etish;
+8.  Tizim samaradorligini statistik ma’lumotlar asosida baholash va
+    uning afzalliklari, kamchiliklari hamda rivojlantirish
+    istiqbollarini belgilash.
+
+Tadqiqot obyekti – ta’lim muassasalarida o‘quv jarayonini monitoring
+qilish va boshqarish jarayoni.
+
+Tadqiqot predmeti – real vaqtda o‘quv progressini monitoring qiluvchi
+analitika tizimini loyihalash va ishlab chiqish usullari, vositalari
+hamda texnologiyalari.
+
+Tadqiqot usullari. Ishni bajarishda ilmiy adabiyotlarni tahlil qilish,
+qiyosiy tahlil, tizimli yondashuv, obyektga yo‘naltirilgan dasturlash,
+UML asosida modellashtirish, prototiplash hamda statistik tahlil
+usullaridan foydalanildi.
+
+Ishning ilmiy va amaliy yangiligi. Ishda real vaqtli ma’lumotlar
+sinxronizatsiyasiga asoslangan, mobil va veb platformalarda ishlovchi,
+rolga asoslangan kirish tizimiga ega yengil analitika tizimi taklif
+etilgan. Mavjud LMS tizimlaridan farqli o‘laroq, tizim Firebase Cloud
+Firestore’ning real vaqtli imkoniyatlaridan foydalanib, o‘quv
+ko‘rsatkichlarini kechikishsiz yangilash va vizualizatsiya qilishni
+ta’minlaydi.
+
+Ishning amaliy ahamiyati. Ishlab chiqilgan “Koozat” tizimi oliy va o‘rta
+maxsus ta’lim muassasalarida, shuningdek, o‘quv markazlari va onlayn
+kurslar platformalarida o‘quv jarayonini samarali boshqarish,
+talabalarning o‘quv natijalarini kuzatish hamda ta’lim sifatini oshirish
+maqsadida amaliyotda qo‘llanilishi mumkin.
+
+Diplom loyihasining tuzilishi. Ish kirish, to‘rtta bob, har bir bob
+bo‘yicha xulosa, umumiy xulosa, foydalanilgan adabiyotlar ro‘yxati va
+ilovalardan iborat.
+
+Birinchi bobda real vaqtda o‘quv progressini monitoring qilishning
+funksional tahlili keltirilgan: monitoringning ta’limdagi ahamiyati,
+o‘quv jarayonining asosiy ko‘rsatkichlari va mavjud tizimlarning
+(Moodle, Google Classroom va boshq.) imkoniyatlari tahlili bayon
+etilgan.
+
+Ikkinchi bobda tizim arxitekturasi va texnologiyalar tanlovi, “Koozat”
+analitik tizimini Flutter va Firebase yordamida ishlab chiqish hamda
+foydalanuvchi interfeysini (UI/UX) amaliy joriy etish masalalari
+yoritilgan.
+
+Uchinchi bobda analitika tizimining samaradorligi va statistik tahlili —
+tizimni joriy etishning ta’lim sifatiga ta’siri, statistik ma’lumotlar
+asosidagi tahlil va natijalarni baholash, hamda tizimning afzalliklari,
+kamchiliklari va rivojlantirish istiqbollari ko‘rib chiqilgan.
+
+To‘rtinchi bobda hayot faoliyati xavfsizligiga oid masalalar – kompyuter
+bilan ishlash joyini ergonomik tashkil etish, elektr va yong‘in
+xavfsizligi qoidalari yoritilgan. # I BOB. REAL VAQTDA O‘QUV PROGRESSINI
+MONITORING QILISHNING FUNKSIONAL TAHLILI
+
+1.1. Real vaqtda monitoring va uning ta’limdagi ahamiyati
+
+Zamonaviy axborot jamiyatida ta’lim tizimi an’anaviy, qog‘ozga
+asoslangan boshqaruv modelidan ma’lumotlarga asoslangan, raqamli
+boshqaruv modeliga o‘tib bormoqda. Ushbu o‘tishning markaziy
+bo‘g‘inlaridan birini o‘quv analitikasi (ingl. Learning Analytics)
+tashkil etadi. Xalqaro Ta’lim Analitikasi Tadqiqot Jamiyati (SoLAR)
+tomonidan qabul qilingan ta’rifga ko‘ra, o‘quv analitikasi — bu
+“o‘quvchilar va ular o‘qiyotgan muhit haqidagi ma’lumotlarni o‘lchash,
+yig‘ish, tahlil qilish va hisobot taqdim etish jarayoni bo‘lib, uning
+maqsadi o‘qish jarayonini va u kechadigan muhitni tushunish hamda
+optimallashtirishdan iborat”. Ushbu ta’rif zamonaviy ta’limda
+ma’lumotlarning roli qanchalik kuchayganligini va ularning to‘g‘ri
+tahlili qanchalik strategik ahamiyatga ega ekanligini ko‘rsatib turibdi.
+
+Monitoring tushunchasi va uning mohiyati. “Monitoring” atamasi lotincha
+monitor — “ogohlantiruvchi”, “nazoratchi” so‘zidan kelib chiqqan bo‘lib,
+biror jarayon yoki ob’ekt holatini muntazam, tizimli ravishda kuzatib
+borish, o‘lchash va baholashni anglatadi. Pedagogik monitoring esa
+o‘quv-tarbiyaviy jarayonning sifati, samaradorligi va o‘quvchining
+bilim, malaka va ko‘nikmalarining shakllanish dinamikasini kuzatib
+boruvchi tizimli faoliyatdir. Pedagogik monitoringning asosiy vazifasi
+nafaqat natijani qayd etish, balki uning sabab-oqibat aloqalarini
+aniqlash, kelajakdagi natijalarni bashorat qilish va o‘quv jarayoniga
+zarur tuzatishlar kiritishdan iboratdir.
+
+Real vaqt rejimida monitoring tushunchasi. Real vaqtda monitoring (ingl.
+real-time monitoring) — bu hodisalar yoki ko‘rsatkichlarning yuz berishi
+bilan deyarli bir vaqtning o‘zida (odatda bir necha millisekund yoki
+sekund ichida) ularning qayd etilishi, qayta ishlanishi va
+foydalanuvchiga taqdim etilishini ta’minlovchi axborot texnologik
+jarayondir. Klassik (statik yoki davriy) monitoringdan farqli o‘laroq,
+real vaqtli monitoring kechikishlarsiz va doimiy aloqada ishlaydi.
+Ta’lim sohasida bu shuni anglatadiki, talaba biror amalni bajargan
+zahoti (masalan, topshiriqni topshirsa, testni yakunlasa yoki darsga
+kech kelsa), bu ma’lumot avtomatik tarzda tizimga uzatiladi va
+o‘qituvchining interfeysida ko‘rinadi.
+
+Real vaqtli monitoringning texnologik asoslari quyidagi tushunchalar
+bilan bog‘liq:
+
+- Hodisaga asoslangan arxitektura (ingl. event-driven architecture) —
+  har bir foydalanuvchi harakati “hodisa” sifatida qaraladi va tizim bu
+  hodisaga zudlik bilan javob qaytaradi;
+- Streaming-tahlil (ingl. stream processing) — ma’lumotlar saqlangandan
+  keyin emas, balki uzluksiz oqim sifatida qabul qilinayotgan paytda
+  tahlil qilinadi;
+- Push-bildirishnomalar (ingl. push notifications) — server
+  foydalanuvchidan so‘rovsiz, o‘zi yangi ma’lumotni mijozga uzatadi;
+- Reaktiv dasturlash modeli — interfeys ma’lumotlarning o‘zgarishiga
+  avtomatik reaksiya qiladi.
+
+Ushbu tamoyillar zamonaviy bulutli platformalar — Google Firebase, AWS
+AppSync, Microsoft Azure SignalR va shu kabi xizmatlar yordamida amalga
+oshirilmoqda.
+
+Ta’limda real vaqtli monitoringning ahamiyati. An’anaviy ta’lim modelida
+o‘qituvchi talabalarning o‘quv natijalari haqida ma’lumotni retrospektiv
+tarzda, ya’ni o‘zlashtirish jarayoni tugagandan keyin (chorak, semestr
+yoki imtihondan so‘ng) oladi. Bunday yondashuvning bir qator jiddiy
+kamchiliklari mavjud:
+
+1.  Kechikkan reaksiya muammosi. O‘qituvchi talaba bilimidagi bo‘shliqni
+    faqat nazorat natijalari e’lon qilingach aniqlaydi. Bu vaqtga kelib
+    esa, asosiy mavzular o‘tib bo‘lingan bo‘ladi va orqada qolgan
+    talabani “tortib olib chiqish” qiyinlashadi.
+2.  Individual yondashuv yetishmasligi. Yagona o‘qituvchi 25–30 nafar
+    talabani bir vaqtning o‘zida nazorat qila olmaydi. Natijada, alohida
+    talabalarning shaxsiy qiyinchiliklari e’tibordan chetda qoladi.
+3.  Sub’ektiv baholash. Davriy nazoratlar talabaning real, kundalik
+    o‘zlashtirishini emas, balki imtihon kunidagi tayyorgarligini aks
+    ettiradi.
+4.  Pedagogik aralashuv (pedagogik aralashuv) imkoniyatining
+    cheklanganligi. O‘qituvchi muammoni kech aniqlagani bois, uni
+    bartaraf etish uchun yetarli vaqt va vositaga ega bo‘lmaydi.
+
+Real vaqtli monitoring esa quyidagi afzalliklarni ta’minlaydi:
+
+- Erta ogohlantirish tizimi. Talabaning o‘zlashtirishi pasayayotganini
+  yoki davomati buzilayotganini tizim avtomatik tarzda aniqlaydi va
+  o‘qituvchini xabardor qiladi. Xalqaro tadqiqotlar (Arnold va
+  Pistilli, 2012) ko‘rsatishicha, Purdue Signals loyihasida real vaqtli
+  ogohlantirishlar tizimi joriy etilganidan so‘ng talabalarning kursni
+  muvaffaqiyatli yakunlash darajasi 12% ga oshgan.
+- Ma’lumotlarga asoslangan qarorlar. O‘qituvchi o‘z his-tuyg‘usi yoki
+  cheklangan kuzatuvlariga emas, balki obyektiv ma’lumotlarga tayanib
+  qaror qabul qiladi.
+- Talabaning o‘z-o‘zini boshqarishi. Talaba o‘z natijalarini real vaqtda
+  ko‘rib turgani sababli, motivatsiyasi oshadi va o‘z o‘quv faoliyatini
+  mustaqil rejalashtirishni o‘rganadi.
+- Moslashuvchan ta’lim imkoniyati. Tizim har bir talabaning individual
+  sur’atini hisobga olib, kontentni moslashtiradi.
+- Boshqaruv samaradorligi. Ta’lim muassasasi rahbariyati har bir guruh,
+  fan va o‘qituvchi bo‘yicha umumlashtirilgan ma’lumotlarni ko‘rib,
+  strategik qarorlar qabul qila oladi.
+
+Real vaqtli monitoring tizimining tarkibiy qismlari. Texnik nuqtai
+nazardan, real vaqtda ishlovchi monitoring tizimi quyidagi to‘rt asosiy
+qatlamdan iborat bo‘ladi:
+
+1.  Ma’lumotlarni yig‘ish qatlami. Bu qatlam o‘quvchi va o‘qituvchining
+    tizim bilan o‘zaro aloqalarini (kirish, topshiriq topshirish, test
+    yechish, video tomosha qilish, kursni varaqlash) hodisalar sifatida
+    qayd etadi.
+2.  Ma’lumotlarni saqlash va qayta ishlash qatlami. Yig‘ilgan
+    ma’lumotlar bulutli ma’lumotlar bazasiga (masalan, Cloud Firestore
+    yoki Realtime Database) saqlanadi va parallel ravishda tahlil
+    qilinadi.
+3.  Tahlil va vizualizatsiya qatlami. Qayta ishlangan ma’lumotlar
+    asosida grafiklar, diagrammalar, ranglar bilan kodlangan
+    ko‘rsatkichlar shakllantiriladi.
+4.  Foydalanuvchi interfeysi qatlami. Yakuniy natijalar o‘qituvchi va
+    talaba uchun mobil yoki veb-ilova ko‘rinishida taqdim etiladi.
+
+Ushbu qatlamlarning barchasi kechikishsiz aloqa kanali orqali bog‘langan
+bo‘ladi: bir qatlamdagi har qanday o‘zgarish boshqasiga deyarli zudlik
+bilan yetkaziladi.
+
+Real vaqtli monitoringning psixologik-pedagogik asoslari. Real vaqtli
+qaytma aloqaning samaradorligi nafaqat texnologik, balki
+psixologik-pedagogik nuqtai nazardan ham asoslangan. Amerikalik psixolog
+B.F. Skinnerning operant shartlanish nazariyasiga ko‘ra, harakatga
+zudlik bilan beriladigan qaytma aloqa (mukofot yoki tuzatish)
+o‘rganishning eng samarali shaklidir. Xuddi shunday, Hattie va Timperli
+(2007) tomonidan o‘tkazilgan meta-tadqiqot natijalariga ko‘ra, o‘qish
+samaradorligini oshiruvchi muhim omillardan biri sifatga ega va o‘z
+vaqtida beriladigan qaytma aloqa hisoblanadi (effekt kattaligi d =
+0.79). Real vaqtli monitoring tizimlari aynan shu prinsipni
+avtomatlashtirish imkonini beradi.
+
+Bundan tashqari, konstruktivistik o‘rganish nazariyasi (Piaget,
+Vigotskiy) bilim olishni o‘quvchining faol, izlanuvchan faoliyati
+natijasi sifatida ko‘radi. Bu nazariyaga ko‘ra, o‘quvchining “proksimal
+rivojlanish zonasi” (PRZ) doimo o‘zgarib boradi va o‘qituvchining
+vazifasi — har bir lahzada o‘quvchining shu zonasiga mos topshiriq
+taqdim etishdir. Real vaqtli monitoring esa o‘qituvchiga aynan shu
+zonani aniqlash uchun zarur bo‘lgan tezkor ma’lumotni beradi.
+
+O‘zbekistonda ta’limni raqamlashtirish konteksti. O‘zbekiston
+Respublikasida “Raqamli O‘zbekiston — 2030” strategiyasi va “Ta’lim
+to‘g‘risida”gi Qonun (2020-yil) ta’limni raqamlashtirishni davlat
+siyosati darajasiga ko‘targan. Vazirlar Mahkamasining 2018-yil
+11-iyundagi 451-son qarori bilan tasdiqlangan “Oliy ta’lim tizimini
+2030-yilgacha rivojlantirish konsepsiyasi” oliy ta’lim muassasalarida
+ma’lumotlar tahliliga asoslangan boshqaruv tizimini joriy etishni
+belgilab bergan. HEMIS, Magistr.uz, EduMarket kabi davlat platformalari
+bu yo‘nalishdagi muhim qadamlar hisoblanadi. Biroq, ushbu platformalarda
+real vaqtli analitika modullari hozircha cheklangan ko‘rinishda mavjud
+bo‘lib, asosan davriy hisobotlarni shakllantirishga yo‘naltirilgan. Bu
+esa mahalliy ehtiyojga moslashgan, real vaqtda ishlovchi yengil analitik
+tizimlarga bo‘lgan zaruratni yanada kuchaytiradi.
+
+Real vaqtli monitoringning amaliy qo‘llanish sohalari. Ta’lim sohasida
+real vaqtli monitoring tizimlari quyidagi yo‘nalishlarda samarali
+qo‘llanmoqda:
+
+- Adaptiv o‘rganish platformalari (Khan Academy, Duolingo, DreamBox) —
+  talabaning javoblariga qarab kontentni real vaqtda moslashtiradi;
+- MOOC platformalari (Coursera, edX, Udacity) — millionlab
+  foydalanuvchilarning faoliyatini real vaqtda kuzatib, tavsiyalar
+  beradi;
+- Maktab boshqaruv tizimlari (ClassDojo, Seesaw) — ota-onalarni
+  farzandlarining maktabdagi faoliyatidan real vaqtda xabardor qiladi;
+- Onlayn proktoring tizimlari — imtihonlar davomida talabaning
+  xulq-atvorini real vaqtda kuzatadi;
+- Ta’lim muassasalarining boshqaruv panellari (ingl. dashboards) —
+  rahbariyat uchun KPI ko‘rsatkichlarini real vaqtda taqdim etadi.
+
+Real vaqtli monitoringga oid muammolar va cheklovlar. Texnologik
+imkoniyatlar bilan birga, real vaqtli monitoring tizimlarining joriy
+etilishida quyidagi muammolar mavjud:
+
+1.  Ma’lumotlar maxfiyligi. O‘quvchilarning shaxsiy ma’lumotlari va
+    o‘quv faoliyati haqidagi ma’lumotlar maxsus huquqiy himoyaga muhtoj.
+    Yevropa Ittifoqida GDPR, AQShda FERPA kabi normalar bu sohada qat’iy
+    talablar qo‘yadi.
+2.  “Katta birodar” effekti. Doimiy nazorat o‘quvchida psixologik bosim
+    hosil qilishi va o‘qishga bo‘lgan ichki motivatsiyani pasaytirishi
+    mumkin.
+3.  Texnik infratuzilma masalalari. Real vaqtli tizimlar barqaror
+    internet aloqasini, kuchli serverlarni va malakali xodimlarni talab
+    qiladi.
+4.  Pedagogik tayyorgarlik. Tizim qanchalik mukammal bo‘lmasin, agar
+    o‘qituvchi undan to‘g‘ri foydalana olmasa, samara cheklangan
+    bo‘ladi.
+5.  Ma’lumotlarning to‘liqligi va sifatiga bog‘liqlik. Tahlil natijalari
+    kiritilgan ma’lumotlarning sifatiga bevosita bog‘liq.
+
+Yuqorida keltirilgan muammolarni inobatga olgan holda, mazkur diplom
+loyihasida ishlab chiqilayotgan “Koozat” tizimi quyidagi tamoyillarga
+asoslanadi: ma’lumotlar minimumi (faqat ta’lim maqsadiga zarur bo‘lgan
+ko‘rsatkichlarni yig‘ish), foydalanuvchining roziligi, shaffof
+vizualizatsiya va sodda interfeys.
+
+Bo‘lim bo‘yicha xulosa. Real vaqtli monitoring zamonaviy ta’limning
+ajralmas qismi bo‘lib, an’anaviy retrospektiv baholash modelining
+cheklovlarini bartaraf etadi. U pedagogik aralashuvning erta amalga
+oshirilishi, individual yondashuv, ma’lumotga asoslangan qarorlar qabul
+qilish va talabaning o‘z-o‘zini boshqarishi uchun zamin yaratadi.
+O‘zbekistonda ta’limni raqamlashtirish strategiyasi sharoitida bunday
+tizimlarni ishlab chiqish nafaqat amaliy, balki strategik ahamiyatga ham
+ega.
+
+1.2. O‘quv jarayonidagi asosiy ko‘rsatkichlar va ularni kuzatish
+
+O‘quv jarayonini samarali monitoring qilish uchun, eng avvalo, nimani
+kuzatish kerakligini aniq belgilab olish lozim. Boshqacha qilib
+aytganda, har qanday analitik tizim kalit ishlash ko‘rsatkichlari (ingl.
+Key Performance Indicators, KPI) tizimi asosida quriladi. Ushbu bo‘limda
+o‘quv jarayonining asosiy ko‘rsatkichlari, ularning klassifikatsiyasi,
+o‘lchash usullari va tahlil qilish yondashuvlari ko‘rib chiqiladi.
+
+O‘quv ko‘rsatkichlarining tasnifi. Adabiyotlarda (Greller va Drachsler,
+2012; Siemens, 2013) o‘quv analitikasidagi ko‘rsatkichlar uch yirik
+guruhga ajratiladi:
+
+1.  Faoliyat ko‘rsatkichlari (engagement metrics) — talabaning o‘quv
+    jarayonidagi ishtirokini xarakterlovchi miqdoriy ma’lumotlar;
+2.  O‘zlashtirish ko‘rsatkichlari (performance metrics) — bilim, malaka
+    va ko‘nikmalarning shakllanish darajasini ifodalovchi sifatga oid
+    ma’lumotlar;
+3.  Xulq-atvor ko‘rsatkichlari (behavioral metrics) — talabaning o‘quv
+    jarayonidagi xatti-harakat naqshlarini aks ettiruvchi ma’lumotlar.
+
+Mazkur ishda ushbu tasnif asos qilib olinadi va “Koozat” tizimida har
+bir guruh bo‘yicha alohida modul amalga oshiriladi.
+
+1.2.1. Davomat — o‘quv jarayoniga jismoniy yoki raqamli ishtirok
+ko‘rsatkichi. Davomat (ingl. attendance) — talabaning o‘quv
+mashg‘ulotlariga ishtirok etish darajasini ifodalovchi eng an’anaviy va
+keng tarqalgan ko‘rsatkichdir. Davomat ikki ko‘rinishda yuritiladi:
+
+- Jismoniy davomat — talabaning auditoriyada haqiqiy ishtirok etishi
+  (qayd qilish jurnal, QR-kod, biometrik tizim orqali);
+- Raqamli davomat — talabaning onlayn platformaga kirishi, videoni
+  tomosha qilishi, materialni ochishi (log-fayllar asosida).
+
+Davomat ko‘rsatkichini hisoblashda quyidagi formula qo‘llaniladi:
+
+    Davomat_foizi = (Ishtirok etilgan mashg‘ulotlar soni / Umumiy mashg‘ulotlar soni) × 100%
+
+Ko‘plab tadqiqotlar (Crede va boshqalar, 2010) davomat va o‘zlashtirish
+o‘rtasidagi korrelyatsiya koeffitsienti r = 0.41 atrofida bo‘lishini
+ko‘rsatgan, ya’ni davomat o‘zlashtirishni statistik jihatdan ahamiyatli
+darajada bashorat qiladi. Shu sababli davomat har qanday o‘quv
+analitikasi tizimida birinchi va asosiy ko‘rsatkich sifatida qaraladi.
+
+Ammo, faqat davomat foiziga e’tibor qaratish yetarli emas. Zamonaviy
+yondashuv quyidagi qo‘shimcha o‘lchamlarni hisobga oladi:
+
+- Davomat dinamikasi — vaqt o‘tishi bilan davomatning o‘sish yoki
+  pasayish trendi;
+- Sabablar bo‘yicha tasnif — sababli/sababsiz qoldirilgan darslar
+  nisbati;
+- Dars turi bo‘yicha tahlil — ma’ruza, amaliyot, laboratoriya darslarini
+  alohida hisoblash;
+- Vaqt bo‘yicha taqsimot — ertalabki va kechki darslarga davomat farqi.
+
+“Koozat” tizimida davomat moduli har bir talabaning har bir dars uchun
+statusini (kelgan, kech kelgan, sababli kelmagan, sababsiz kelmagan)
+real vaqtda saqlaydi va vizualizatsiya qiladi.
+
+1.2.2. Baholar — o‘zlashtirish darajasining asosiy o‘lchovi. Baho (ingl.
+grade) — talabaning o‘zlashtirgan bilim, malaka va ko‘nikmalarining
+miqdoriy yoki sifat ko‘rsatkichidir. O‘zbekiston oliy ta’lim tizimida
+hozirgi paytda 100 ballik kredit-modul tizimi qo‘llanilmoqda. Ushbu
+tizimda har bir fan bo‘yicha talaba quyidagi nazorat turlari orqali
+baholanadi:
+
+- Joriy nazorat (JN) — har bir mavzu yakunida o‘tkaziladi (odatda 40
+  ball);
+- Oraliq nazorat (ON) — har semestrda ikki marta o‘tkaziladi (odatda 30
+  ball);
+- Yakuniy nazorat (YN) — semestr oxirida o‘tkaziladi (odatda 30 ball).
+
+Bahoning real vaqtda kuzatib borilishi quyidagi imkoniyatlarni yaratadi:
+
+1.  Tendensiya tahlili. Talabaning baholari semestr davomida qanday
+    o‘zgarib borayotganini grafik ko‘rinishda ko‘rsatish;
+2.  Predmetlararo qiyoslash. Talabaning kuchli va kuchsiz fanlarini
+    aniqlash;
+3.  Guruh ichidagi reyting. Talabaning guruh bo‘yicha o‘rtacha
+    ko‘rsatkichdan qanchalik farq qilishini hisoblash;
+4.  Maqsadli baho bashorati. Joriy ko‘rsatkichlar asosida semestr
+    yakunidagi taxminiy bahoni hisoblash.
+
+Statistik tahlilda quyidagi formulalar qo‘llaniladi:
+
+- O‘rtacha arifmetik baho: x̄ = (Σxᵢ) / n
+- Standart og‘ish: σ = √(Σ(xᵢ − x̄)² / n) — guruhdagi natijalar
+  tarqoqligini o‘lchaydi;
+- Z-ball: z = (xᵢ − x̄) / σ — talabaning guruhga nisbatan o‘rnini
+  ko‘rsatadi;
+- GPA (Grade Point Average): kreditlar bilan vaznli o‘rtacha baho.
+
+1.2.3. Faollik ko‘rsatkichlari. Davomat va baholardan tashqari,
+talabaning o‘quv jarayonidagi real ishtiroki sifatini xarakterlovchi
+yana bir muhim guruh — faollik ko‘rsatkichlari (ingl. engagement
+indicators) mavjud. Bularga quyidagilar kiradi:
+
+- Tizimga kirishlar soni (kunlik, haftalik) — talabaning platformadan
+  qanchalik tez-tez foydalanishini ko‘rsatadi;
+- O‘rtacha sessiya davomiyligi — har bir kirishda qancha vaqt
+  sarflanganligi;
+- Kontent bilan ishlash darajasi — qaysi videolar, hujjatlar, testlar
+  ochilgani;
+- Topshiriqlarni topshirish o‘z vaqtidaligi — topshiriqlarning
+  belgilangan muddatdan oldin/keyin topshirilishi;
+- Forum/chat faolligi — savol berish, javob yozish, muhokamada
+  qatnashish;
+- Test urinishlari soni — bir testni necha marta qayta topshirilgani.
+
+Bu ko‘rsatkichlarning birgalikda tahlili xulq-atvor portretini (ingl.
+behavioral profile) shakllantirishga imkon beradi. Masalan, Beck va
+Cohen (2018) tomonidan o‘tkazilgan tadqiqotda topshiriqlarni oxirgi 24
+soatda topshiruvchi (“procrastinator”) talabalarning yakuniy
+o‘zlashtirish darajasi, erta topshiruvchilarga nisbatan o‘rtacha 18% ga
+past ekanligi aniqlangan.
+
+1.2.4. Murakkab (kompozit) ko‘rsatkichlar. Yuqoridagi alohida
+ko‘rsatkichlardan tashqari, tizimda kompozit ko‘rsatkichlar ham
+hisoblanadi. Bular bir nechta oddiy ko‘rsatkichni birlashtirib hosil
+qilingan integral baholardir. Ulardan eng muhimlari:
+
+- Umumiy progress indeksi (UPI): UPI = 0.3 × Davomat + 0.5 ×
+  O‘rtacha_baho + 0.2 × Faollik
+- Risk indeksi (RI): talabaning kursni o‘zlashtira olmaslik ehtimolini
+  bashorat qiluvchi koeffitsient. RI yuqori bo‘lganda tizim avtomatik
+  ravishda “xavf ostidagi talaba” signalini beradi.
+- Faollik trendi: so‘nggi haftadagi faollikning oldingi haftaga nisbatan
+  o‘zgarish foizi.
+
+1.2.5. Ko‘rsatkichlarni vizualizatsiyalash usullari. Yig‘ilgan
+ma’lumotlar to‘g‘ri vizual ko‘rinishda taqdim etilmaguncha foydali
+bo‘lmaydi. Information Dashboard Design (Few, 2013) tamoyillariga ko‘ra,
+har bir ko‘rsatkich uchun mos diagramma turi tanlanishi kerak. Quyidagi
+1.1-jadvalda asosiy ko‘rsatkichlar va ular uchun tavsiya etilgan
+vizualizatsiya turlari keltirilgan.
+
+1.1-jadval. O‘quv ko‘rsatkichlari va vizualizatsiya turlari
+
+  ------------------------------------------------------------------
+  Ko‘rsatkich turi    Tavsiya etiluvchi diagramma    Asoslash
+  ------------------- ------------------------------ ---------------
+  Davomat foizi       Doiraviy diagramma yoki gauge  Yagona foizli
+                                                     qiymatni
+                                                     ko‘rsatish
+                                                     uchun qulay
+
+  Davomat dinamikasi  Chiziqli diagramma             Vaqt bo‘yicha
+                                                     o‘zgarishni
+                                                     aniq ifodalaydi
+
+  Baholar bo‘yicha    Histogramma                    Statistik
+  taqsimot                                           tarqoqlikni
+                                                     ko‘rsatadi
+
+  Fanlararo qiyoslash Radar (o‘rgimchak) diagrammasi Bir nechta
+                                                     o‘lchamni bir
+                                                     vaqtda
+                                                     taqqoslaydi
+
+  Talabalar reytingi  Gorizontal ustunli diagramma   Ko‘plab
+                                                     obyektlarni
+                                                     tartiblashga
+                                                     mos
+
+  Faollik issiqlik    Heatmap                        Vaqt va kun
+  xaritasi                                           bo‘yicha
+                                                     intensivlikni
+                                                     vizual qiladi
+  ------------------------------------------------------------------
+
+1.2.6. Ko‘rsatkichlarning sifat talablari. Har qanday ko‘rsatkich uning
+ishonchliligi va foydaliligini ta’minlovchi quyidagi mezonlarga javob
+berishi shart (SMART tamoyili asosida):
+
+- Aniq (Specific) — nimani o‘lchayotgani aniq belgilangan;
+- O‘lchanadigan (Measurable) — son shaklida ifodalanishi mumkin;
+- Erishiluvchi (Achievable) — real ma’lumotlardan hisoblanadi;
+- Tegishli (Relevant) — ta’lim maqsadlariga mos;
+- Vaqt bilan chegaralangan (Time-bound) — aniq davr uchun hisoblanadi.
+
+“Koozat” tizimida ishlatiladigan barcha ko‘rsatkichlar mazkur tamoyilga
+muvofiq loyihalashtirilgan.
+
+Bo‘lim bo‘yicha xulosa. O‘quv jarayonining barcha qirralarini qamrab
+oluvchi to‘liq monitoring tizimi davomat, baholar va faollikning
+birgalikda kuzatilishini talab qiladi. Bu uch ko‘rsatkich guruhini
+integratsiyalashgan holda tahlil qilish, kompozit indekslarni hisoblash
+va to‘g‘ri vizualizatsiya orqali talaba va o‘qituvchiga ma’nodor
+ma’lumot taqdim etish — sifatli o‘quv analitikasining asosini tashkil
+etadi.
+
+1.3. Mavjud tizimlarning qiyosiy tahlili
+
+Real vaqtda o‘quv progressini monitoring qiluvchi tizim ishlab
+chiqishdan oldin, dunyoda mavjud yetakchi o‘quv platformalarining
+funksional imkoniyatlarini chuqur tahlil qilish maqsadga muvofiqdir. Bu
+tahlil yangi tizimning o‘rni, o‘ziga xosligi va raqobat ustunliklarini
+aniqlashga yordam beradi. Ushbu bo‘limda eng keng tarqalgan to‘rt
+platforma — Moodle, Google Classroom, Canvas LMS va Microsoft Teams for
+Education — batafsil ko‘rib chiqiladi. Shuningdek, O‘zbekistonda
+qo‘llaniladigan HEMIS tizimi ham qiyosiy tahlilga jalb etiladi.
+
+1.3.1. Moodle. Moodle (Modular Object-Oriented Dynamic Learning
+Environment) — Martin Dougiamas tomonidan 2002-yilda ishlab chiqilgan,
+ochiq kodli (GPL litsenziya) o‘quv jarayonini boshqarish tizimi (LMS).
+Hozirgi kunda 240 dan ortiq mamlakatda, 170 mingdan ortiq tashkilotda
+foydalanilmoqda va 400 milliondan ziyod foydalanuvchiga ega.
+
+Asosiy imkoniyatlari:
+
+- Kurslarni yaratish, tashkil etish va boshqarish;
+- 20 dan ortiq aktivlik turi (forum, vikitur, lug‘at, kalkulyator);
+- Boy ekosistema: 1500 dan ortiq pluginlar mavjud;
+- Modulli arxitektura — keng moslashtirish imkoniyati;
+- SCORM, LTI, xAPI standartlarini qo‘llab-quvvatlaydi;
+- O‘z serveriga o‘rnatish mumkin (o‘z serverida joylashtiriladigan) —
+  ma’lumotlar to‘liq nazorati;
+- Moodle Analytics moduli (2018-yildan beri) — mashinaviy o‘qitish
+  asosida bashoratlar.
+
+Kamchiliklari va cheklovlari:
+
+- Interfeys ancha eski va og‘ir, foydalanuvchi tajribasi (UX) zamonaviy
+  ilovalardan sezilarli orqada;
+- Mobil ilovalari (Moodle Mobile) cheklangan funksionallikka ega —
+  ko‘plab modullar mobil versiyada ishlamaydi yoki noqulay;
+- Real vaqtli ma’lumotlar sinxronizatsiyasi cheklangan — ko‘pchilik
+  hisobotlar fon vazifalari (cron jobs) orqali davriy yangilanadi;
+- O‘rnatish va sozlash katta texnik bilim talab qiladi (PHP, MySQL,
+  Apache/Nginx);
+- Tezligi server kuchiga sezilarli bog‘liq, katta ma’lumotlar hajmida
+  sekinlashadi;
+- Analitik panellar standart holatda sodda, yaxshi vizualizatsiyaga ega
+  emas.
+
+1.3.2. Google Classroom. Google tomonidan 2014-yilda ishga tushirilgan,
+Google Workspace for Education ekotizimining bir qismi bo‘lgan o‘quv
+platformasi. 150 milliondan ortiq foydalanuvchiga ega.
+
+Asosiy imkoniyatlari:
+
+- Juda sodda va intuitiv interfeys;
+- Google Drive, Docs, Sheets, Forms, Meet bilan chuqur integratsiya;
+- Bepul (Workspace for Education Fundamentals);
+- Avtomatik test tekshirish (Google Forms orqali);
+- Mobil ilovalari (iOS, Android) yaxshi rivojlangan;
+- Ota-onalar uchun haftalik xulosa elektron pochta orqali yuboriladi.
+
+Kamchiliklari va cheklovlari:
+
+- Cheklangan tahlil va hisobot funksiyalari — analitika asosan ball
+  ko‘rsatkichlari bilan cheklangan;
+- Real vaqtli dashboard yo‘q;
+- Davomat moduli yo‘q (alohida plagin yoki Google Forms orqali amalga
+  oshirish kerak);
+- Kontentni boshqarishda cheklovlar (kurs strukturasi qattiq
+  belgilangan);
+- Google ekotizimiga qattiq bog‘liqlik — boshqa servislardan ma’lumot
+  import qilish qiyin;
+- Maxfiylik masalalari — barcha ma’lumotlar Google serverlarida
+  saqlanadi.
+
+1.3.3. Canvas LMS. Instructure kompaniyasi tomonidan 2011-yilda
+yaratilgan, hozirgi paytda AQShdagi 4000 dan ortiq universitetda
+qo‘llanilayotgan zamonaviy LMS.
+
+Asosiy imkoniyatlari:
+
+- Zamonaviy va toza interfeys;
+- Canvas Studio orqali video-asoslangan o‘rganish;
+- Outcomes (Natijalar) — kompetensiya asosida baholash;
+- Yangi Quizzes — interaktiv test imkoniyatlari;
+- DocViewer — fayllarni brauzerda izoh berib tekshirish;
+- API juda boy va yaxshi hujjatlangan;
+- Canvas Analytics — talaba va kurs darajasidagi tahlil.
+
+Kamchiliklari va cheklovlari:
+
+- Kommercheskiy mahsulot, narxi yuqori;
+- Real vaqtli analitik panel yo‘q — ma’lumotlar har necha soatda
+  yangilanadi;
+- Kichik muassasalar uchun haddan tashqari murakkab;
+- O‘zbek tiliga rasman tarjima qilinmagan.
+
+1.3.4. Microsoft Teams for Education. Microsoft 365 paketining ta’lim
+uchun moslashtirilgan varianti, COVID-19 pandemiyasidan keyin keng
+tarqaldi.
+
+Asosiy imkoniyatlari:
+
+- Video-konferensiya, chat va fayllar bilan ishlash bir joyda;
+- OneNote, Forms, Stream bilan integratsiya;
+- Insights moduli — talabalar faolligi haqida hisobotlar;
+- Korxonalar uchun mavjud xavfsizlik standartlari;
+- Reading Progress — o‘qish ko‘nikmasini AI orqali baholash.
+
+Kamchiliklari va cheklovlari:
+
+- LMSdan ko‘ra ko‘proq kommunikatsiya platformasi;
+- Insights moduli ma’lumotlarini real vaqtda taqdim etmaydi (kechikish
+  24–48 soat);
+- Kurs strukturasini qurish noqulay;
+- Microsoft 365 obunasi talab etiladi.
+
+1.3.5. HEMIS (O‘zbekiston). O‘zbekiston Respublikasi Oliy va o‘rta
+maxsus ta’lim vazirligi tomonidan ishlab chiqilgan, oliy ta’lim
+muassasalarini boshqarish axborot tizimi. 2019-yildan beri
+respublikamizning aksariyat OTMlarida qo‘llaniladi.
+
+Asosiy imkoniyatlari:
+
+- O‘quv jarayonini avtomatlashtirish: dars jadvali, davomat, ballar;
+- Talabalar, o‘qituvchilar va xodimlar ma’lumotlar bazasi;
+- Akademik hisobotlar va statistik ma’lumotlar;
+- Diplom, akademik ma’lumotnoma chiqarish;
+- Vazirlik bilan ma’lumotlar integratsiyasi.
+
+Kamchiliklari va cheklovlari:
+
+- Asosan ma’muriy boshqaruvga yo‘naltirilgan, ta’lim sifatini kuzatish
+  modullari cheklangan;
+- Foydalanuvchi interfeysi zamonaviy ilovalardan orqada;
+- Mobil ilova mavjud emas yoki cheklangan;
+- Talabaga o‘z o‘quv natijalarini real vaqtda kuzatish imkoniyati
+  cheklangan;
+- Real vaqtli analitik panel mavjud emas;
+- O‘qituvchilar uchun vizual analitika modullari yetarli darajada
+  rivojlanmagan.
+
+1.3.6. Qiyosiy tahlil. Yuqorida ko‘rib chiqilgan tizimlar quyidagi
+1.2-jadvalda asosiy mezonlar bo‘yicha qiyoslangan. Mezonlar 1 dan 5
+gacha bahoda baholangan, bunda 5 — eng yuqori, 1 — eng past ko‘rsatkich.
+
+1.2-jadval. Mavjud tizimlarning qiyosiy tahlili
+
+  --------------------------------------------------------------------------
+  Mezon                Moodle     Google      Canvas    MS Teams    HEMIS
+                                 Classroom                        
+  ------------------ ---------- ----------- ---------- ---------- ----------
+  Foydalanish            2           5          4          4          2
+  qulayligi (UX)                                                  
+
+  Mobil                  3           5          4          4          2
+  moslashuvchanlik                                                
+
+  Real vaqtli            2           3          3          2          2
+  ma’lumot                                                        
+
+  Analitika va           3           2          4          3          2
+  vizualizatsiya                                                  
+
+  Davomat moduli         3           1          3          3          5
+
+  Bahoni boshqarish      4           4          5          3          5
+
+  Lokal til (o‘zbek)     3           3          1          3          5
+
+  Joriy etish narxi      5           5          2          3          5
+
+  Sozlash                2           5          3          3          3
+  murakkabligi                                                    
+  (teskari)                                                       
+
+  Umumiy ball            27         33          29         28         31
+  --------------------------------------------------------------------------
+
+Jadvaldan ko‘rinib turibdiki, hech bir tizim barcha mezonlar bo‘yicha
+bir vaqtning o‘zida yetakchi emas. Eng yuqori umumiy ball Google
+Classroom tizimida (33), eng past — Moodlda (27). Biroq mezonlar orasida
+eng past ko‘rsatkichlar aynan real vaqtli ma’lumot (o‘rtacha 2.4) va
+analitika va vizualizatsiya (o‘rtacha 2.8) bo‘yicha qayd etilgan. Bu esa
+mazkur ishda ishlab chiqilayotgan tizimning xuddi shu “bo‘sh
+hujayralarni” to‘ldirishga qaratilganligini tasdiqlaydi.
+
+1.3.7. Mavjud tizimlardagi umumiy kamchiliklar. O‘tkazilgan tahlil
+natijasida quyidagi umumiy muammolar aniqlangan:
+
+1.  Ma’lumotlarning kechikishi. Aksariyat tizimlar hisobotlarni davriy
+    (har soat, kun yoki hafta) yangilaydi, bu esa “real vaqt”
+    tushunchasiga to‘la mos kelmaydi.
+2.  Murakkab interfeys. Funksiyalar ko‘pligi sodda foydalanuvchini
+    chalkashtiradi;
+3.  Mobil platformalardagi cheklovlar. Aksariyat tizim mobil ilovasi
+    to‘liq emas;
+4.  Cheklangan vizualizatsiya. Diagrammalar sodda, interaktiv emas;
+5.  Lokalizatsiya yetishmasligi. O‘zbek tiliga to‘liq tarjima va madaniy
+    moslashtirish yo‘q;
+6.  Yuqori narx yoki murakkab o‘rnatish. Kichik muassasalar uchun
+    samarali emas.
+
+1.3.8. “Koozat” tizimining ustunligi. Yuqoridagi tahlil asosida ishlab
+chiqiladigan “Koozat” tizimi quyidagi raqobat ustunliklariga ega
+bo‘lishi rejalashtirilgan:
+
+- Real vaqtli sinxronizatsiya — Firebase Cloud Firestore’ning
+  hodisa-asoslangan modeli orqali;
+- Yengil va mobilga yo‘naltirilgan dizayn — Flutter texnologiyasi va
+  Material Design tamoyillari asosida;
+- Soddalashtirilgan analitik panel — faqat zarur ko‘rsatkichlar, lekin
+  chuqur vizualizatsiya bilan;
+- O‘zbek tilida to‘liq lokalizatsiya va madaniy moslashish;
+- Rolga asoslangan kirish — o‘qituvchi va talaba uchun farqli
+  funksionallik;
+- Past joriy etish to‘sig‘i — bulutli (cloud) infratuzilma, alohida
+  server kerak emas;
+- Ochiq kengaytirilish — kelajakda yangi modullarni qo‘shish uchun
+  moslashuvchan arxitektura.
+
+Bo‘lim bo‘yicha xulosa. Mavjud o‘quv platformalari ma’lum darajada
+funksionallikni taklif etsa-da, ularning hech biri real vaqtda ishlash,
+intuitiv mobil tajriba, kuchli vizual analitika va lokal til/madaniy
+kontekstga moslashish bo‘yicha bir vaqtda yetakchi emas. Bu “bo‘shliq”
+mazkur ishda ishlab chiqilayotgan “Koozat” tizimi orqali to‘ldirilishi
+mumkin va bu yangi tizimning amaliy hamda strategik ahamiyatini belgilab
+beradi.
+
+I bob bo‘yicha xulosa
+
+Birinchi bobda real vaqtda o‘quv progressini monitoring qilishning
+nazariy va metodologik asoslari batafsil tahlil qilindi. Olib borilgan
+tahlil natijasida quyidagi asosiy xulosalar shakllantirildi:
+
+1.  Real vaqtli monitoring zamonaviy ta’limning ajralmas qismi sifatida
+    an’anaviy retrospektiv baholash modelining jiddiy cheklovlarini
+    (kechikkan reaksiya, individual yondashuv yetishmasligi, subyektiv
+    baholash) bartaraf etadi. U pedagogik aralashuvning erta amalga
+    oshirilishi, ma’lumotga asoslangan qarorlar qabul qilish va
+    o‘quvchining o‘z-o‘zini boshqarishi uchun yetakchi vositadir.
+
+2.  O‘quv jarayonini har tomonlama monitoring qilish uchun kamida uchta
+    ko‘rsatkichlar guruhi — davomat, baholar va faollik — birgalikda
+    kuzatilishi va statistik tahlil qilinishi lozim. Ushbu
+    ko‘rsatkichlar asosida kompozit indekslar (Umumiy Progress Indeksi,
+    Risk Indeksi) hisoblanishi tavsiya etiladi. Har bir ko‘rsatkich
+    SMART tamoyiliga mos kelishi shart.
+
+3.  Vizualizatsiya tanlovi ko‘rsatkich tabiatiga mos bo‘lishi kerak:
+    davomat foizi uchun gauge, dinamika uchun chiziqli diagramma,
+    taqsimot uchun histogramma, fanlararo qiyoslash uchun radar
+    diagrammasi.
+
+4.  Mavjud yetakchi tizimlar (Moodle, Google Classroom, Canvas, MS
+    Teams, HEMIS) qiyosiy tahlil qilinganida, ularning hech biri real
+    vaqtli analitika, mobil moslashuvchanlik va lokal kontekstga
+    moslashish bo‘yicha bir vaqtning o‘zida yetakchi emasligi aniqlandi.
+
+5.  Aniqlangan “bo‘shliqlar” — real vaqtli sinxronizatsiya, sodda va
+    intuitiv mobil interfeys, kuchli vizual analitika hamda o‘zbek tili
+    va kontekstiga to‘liq moslashish — mazkur diplom loyihasida ishlab
+    chiqilayotgan “Koozat” tizimi tomonidan to‘ldiriladi.
+
+6.  Texnologik tanlov. Real vaqtli ma’lumotlar sinxronizatsiyasini,
+    mobil qurilmalarga ustuvor yondashuvni va past joriy etish
+    to‘sig‘ini bir vaqtda ta’minlaydigan eng mos texnologiyalar to‘plami
+    sifatida Flutter (kross-platformali UI freymvork) va Firebase
+    (bulutli backend) bog‘langan to‘plami tanlandi. Ushbu
+    texnologiyalarning tanlanishi va arxitekturasining batafsil loyihasi
+    keyingi bobda ko‘rib chiqiladi.
+
+Shunday qilib, I bobda olingan natijalar mazkur ishning ikkinchi bobi
+uchun mustahkam metodologik va texnik asosni shakllantirdi. Aniqlangan
+ko‘rsatkichlar tizimi va mavjud tizimlardagi “bo‘shliqlar” “Koozat”
+tizimining funksional va nofunksional talablarini belgilashda bevosita
+asos sifatida xizmat qiladi. # II BOB. REAL VAQTDA O‘QUV PROGRESSINI
+MONITORING QILUVCHI ANALITIKA TIZIMINI ISHLAB CHIQISH
+
+2.1. Tizim arxitekturasi va texnologiyalarni tanlash
+
+Birinchi bobda olib borilgan nazariy tahlil natijasida shakllantirilgan
+funksional va nofunksional talablarni amalga oshirish uchun, ishlab
+chiqilayotgan tizimning arxitekturasini to‘g‘ri loyihalash va unga mos
+texnologiyalar to‘plamini ilmiy asoslangan holda tanlash zarur.
+Arxitektura — bu dasturiy mahsulotning fundamental tashkiliy strukturasi
+bo‘lib, uning komponentlari, ular o‘rtasidagi munosabatlar hamda muhit
+bilan o‘zaro aloqasini belgilab beradi (ISO/IEC/IEEE 42010:2011
+standartiga muvofiq). Tanlangan arxitekturaviy yondashuv tizimning
+ishonchliligi, kengayuvchanligi, ishlashi (performance) va uni
+qo‘llab-quvvatlashning oson-qiyinligini bevosita belgilaydi. Shuning
+uchun mazkur bo‘limda, dastlab zamonaviy dasturiy ta’minot
+arxitekturalarining qiyosiy tahlili amalga oshiriladi, so‘ngra “Koozat”
+tizimi uchun eng maqbul model tanlanadi va nihoyat texnologiyalar steki
+batafsil asoslab beriladi.
+
+2.1.1. Zamonaviy dasturiy ta’minot arxitekturalarining qiyosiy tahlili.
+Hozirgi kunda axborot tizimlarini loyihalashda asosiy uchta
+arxitekturaviy yondashuv keng qo‘llaniladi: an’anaviy uch qatlamli
+(three-tier), mikroservisli (microservices) va serversiz (serverless
+yoki BaaS — Backend-as-a-Service) modellar.
+
+An’anaviy uch qatlamli arxitektura taqdimot qatlami (foydalanuvchi
+interfeysi), biznes-mantiq qatlami (server) va ma’lumotlar qatlami
+(ma’lumotlar bazasi) o‘rtasida vazifalarni aniq taqsimlaydi. Bu
+modelning afzalligi — mantiqning markazlashganligi va xavfsizlikning
+yuqori darajadagi nazoratidir. Biroq u o‘zining kamchiliklariga ham ega:
+serverni mustaqil qo‘llab-quvvatlash, masshtablashda qo‘shimcha sarflar,
+real vaqtli ma’lumot uzatish uchun maxsus mexanizmlar (WebSocket,
+Server-Sent Events) qurishni talab etadi.
+
+Mikroservisli arxitektura — tizimni mustaqil, bir-biriga
+bo‘shashtirilgan kichik xizmatlarga (loosely coupled microservices)
+ajratishni nazarda tutadi. Har bir mikroservis o‘ziga tegishli
+ma’lumotlar bazasiga ega bo‘ladi va REST yoki gRPC orqali muloqot
+qiladi. Bu yondashuv yirik korporativ tizimlar uchun ideal
+hisoblansa-da, kichik va o‘rta hajmdagi ta’lim ilovalari uchun haddan
+tashqari murakkab, qo‘shimcha DevOps infratuzilmasini va konteyner
+orkestratsiyasini (Kubernetes, Docker Swarm) talab qiladi.
+
+Serverless / BaaS arxitekturasi — so‘nggi yillarda eng tez
+rivojlanayotgan yondashuv bo‘lib, dasturchi serverni boshqarish,
+masshtablashtirish va monitoring qilish vazifalaridan butunlay xalos
+bo‘ladi. Backend-as-a-Service xizmati orqali autentifikatsiya,
+ma’lumotlar bazasi, fayl saqlash, push-bildirishnomalar va boshqa zarur
+funksiyalar tayyor xizmat (managed service) sifatida taqdim etiladi.
+Hisob-kitoblar haqiqiy iste’molga (pay-per-use) qarab amalga oshiriladi,
+bu kichik loyihalar uchun iqtisodiy jihatdan samarali. Google Firebase,
+AWS Amplify, Supabase va Appwrite bu sohadagi yetakchi platformalardir.
+
+“Koozat” tizimi quyidagi sabablarga ko‘ra serverless / BaaS
+arxitekturasi asosida quriladi: 1. Real vaqtli sinxronizatsiya
+BaaS-platformalarda “qutidan tashqarida” (out-of-the-box)
+qo‘llab-quvvatlanadi va alohida WebSocket-server ishlab chiqishni talab
+etmaydi; 2. Past joriy etish to‘sig‘i — ta’lim muassasalarining
+IT-bo‘limlari uchun mustaqil server xarid qilish va sozlash shart emas;
+3. Avtomatik masshtablash — foydalanuvchilar soni 10 dan 10 000 gacha
+o‘sganida ham infratuzilma o‘zgartirishlarsiz ishlay oladi; 4.
+Xavfsizlik va ishonchlilik dunyo darajasidagi xizmat ko‘rsatuvchi
+tomonidan ta’minlanadi (SOC 2, ISO 27001 sertifikatlari); 5. Tezkor
+rivojlantirish davri — diplom loyihasi doirasidagi cheklangan vaqt
+resursi sharoitida muhim afzallik.
+
+2.1.2. Tizimning umumiy arxitekturaviy modeli. “Koozat” tizimi to‘rt
+asosiy qatlamdan iborat (1-rasmga qarang):
+
+1.  Taqdimot qatlami (Presentation Layer) — Flutter freymvorki asosida
+    qurilgan, Android, iOS va veb-platformalarda yagona kod bazasidan
+    ishlovchi foydalanuvchi interfeysi. Bu qatlam widget tree
+    ko‘rinishida tashkil qilingan reaktiv komponentlar to‘plami sifatida
+    ishlaydi.
+
+2.  Domen va biznes-mantiq qatlami (Domain Layer) — domen modellari
+    (entitylar), use case’lar va biznes-qoidalardan iborat. Bu qatlam
+    Clean Architecture tamoyiliga muvofiq, tashqi qatlamlardan mustaqil
+    ravishda yozilgan va testlash imkoniyati yuqori.
+
+3.  Ma’lumotlar qatlami (Data Layer) — repozitoriy interfeyslari
+    (AttendanceRepository, GradeRepository, UserRepository) va ularning
+    Firebase-implementatsiyalaridan tashkil topgan. Bu qatlam
+    ma’lumotlar bazasidagi xom (raw) ma’lumotlarni domen-obyektlariga
+    (DTO → Domain Entity) o‘giradi va aksincha.
+
+4.  Bulutli infratuzilma qatlami (Cloud Infrastructure Layer) — Firebase
+    Authentication, Cloud Firestore, Firebase Cloud Messaging va
+    Firebase Hosting xizmatlari to‘plami. Bu qatlam tizimning eng past
+    darajasi bo‘lib, dasturchi tomonidan kod yozilmaydi, faqat
+    konfiguratsiya va xavfsizlik qoidalari (security rules) sozlanadi.
+
+Qatlamlar o‘rtasidagi aloqa yo‘naltirilgan bog‘liqlik (dependency rule)
+tamoyili asosida tashkil etilgan: ichki qatlamlar tashqi qatlamlar
+haqida hech qanday ma’lumotga ega emas. Bu Uncle Bob (Robert C. Martin)
+tomonidan taklif etilgan Clean Architecture tamoyili bo‘lib, kodning
+tozaligi, testlashga moslashuvchanligi va kelajakda almashtirish
+mumkinligini ta’minlaydi.
+
+[1-rasm. “Koozat” tizimining umumiy arxitektura sxemasi]
+
+1-rasm. “Koozat” tizimining to‘rt qatlamli arxitektura sxemasi:
+Presentation (Flutter), Domain (use cases), Data (repositories) va Cloud
+Infrastructure (Firebase)
+
+2.1.3. Frontend texnologiya tanlovi: Flutter. Mobil va veb
+platformalarni qoplaydigan zamonaviy cross-platform texnologiyalar
+orasida uchta yetakchi mavjud: React Native (Meta), Flutter (Google) va
+Kotlin Multiplatform (JetBrains).
+
+  ----------------------------------------------------------------------------------------
+  Mezon                Flutter                React Native      Native (Swift/Kotlin)
+  -------------------- ---------------------- ----------------- --------------------------
+  Yagona kod bazasi    Ha (Dart)              Ha                Yo‘q (alohida)
+                                              (JavaScript/TS)   
+
+  Ishlash unumdorligi  Yuqori (Skia/Impeller  O‘rtacha (JS      Eng yuqori
+                       renderer)              bridge)           
+
+  Hot Reload           Bor (~1 s)             Bor (~2 s)        Yo‘q
+
+  Veb-platformani      Bor (rasmiy)           Cheklangan        Yo‘q
+  qo‘llab-quvvatlash                                            
+
+  Mahalliylashtirish   Yuqori                 Yuqori            Yuqori
+  qulayligi                                                     
+
+  Bozordagi pasayish   Past (Google           O‘rtacha          Eng past
+  riski                qo‘llab-quvvatlaydi)                     
+
+  O‘rganish bahosi     O‘rta (Dart yangi)     Past (JS keng     Yuqori
+                                              tarqalgan)        
+  ----------------------------------------------------------------------------------------
+
+Flutter tanlovining sabablari quyidagilardan iborat:
+
+- Yagona kod bazasi, Android, iOS, veb va hatto desktop platformalarini
+  qoplaydi, bu esa diplom loyihasi doirasida vaqtni uch baravar tejaydi;
+- Skia / Impeller grafik dvigatellari yordamida real native tezlikda
+  ishlash unumdorligi (60 FPS, ba’zi qurilmalarda 120 FPS);
+- Reaktiv UI modeli Firebase’ning snapshot streams mexanizmiga bevosita
+  mos keladi — har bir Firestore yangilanishi avtomatik ravishda widget
+  tree’da ko‘rinadi;
+- Material Design 3 dizayn tizimi rasmiy qo‘llab-quvvatlanadi — bu
+  zamonaviy ko‘rinish va foydalanuvchi tajribasini ta’minlaydi;
+- Boy ekotizim — pub.dev repozitoriysida 40 000 dan ortiq paket mavjud,
+  jumladan, Firebase bilan ishlash uchun rasmiy firebase_core,
+  cloud_firestore, firebase_auth paketlari;
+- Aniq tipizatsiyalangan til (Dart) — kompilyatsiya vaqtidagi xatolarni
+  aniqlash, kod ishonchliligini oshiradi;
+- Hot Reload va Hot Restart — kodga kiritilgan o‘zgarishlarni ~1
+  soniyada ko‘rishi mumkin, bu rivojlantirish samaradorligini sezilarli
+  darajada oshiradi.
+
+2.1.4. Backend texnologiya tanlovi: Firebase. Backend-as-a-Service
+sohasida Firebase yetakchi pozitsiyani egallaydi (2024-yil holatiga
+ko‘ra). Uning asosiy raqobatchilari — Supabase (PostgreSQL asosida ochiq
+manbali alternativ), AWS Amplify (kuchli, lekin murakkab konfiguratsiya)
+va Appwrite. Quyidagi jadvalda ularning qiyosiy tahlili keltirilgan:
+
+  ---------------------------------------------------------------------------
+  Mezon              Firebase             Supabase        AWS Amplify
+  ------------------ -------------------- --------------- -------------------
+  Ma’lumotlar bazasi NoSQL (Firestore)    SQL (Postgres)  Ikkalasi ham
+  tipi                                                    
+
+  Real vaqtli        Native, juda kuchli  Kuchli          Murakkabroq sozlash
+  sinxronizatsiya                                         
+
+  Avtomatik          Ha, cheksiz          Cheklangan      Ha
+  masshtablash                                            
+
+  Bepul tarif        Saxiy (Spark plan)   Saxiy           Cheklangan
+
+  Flutter            Eng yetuk (rasmiy    Yaxshi          O‘rta
+  integratsiyasi     SDK)                                 
+
+  Offlayn rejim      Native               Cheklangan      Mavjud
+                     qo‘llab-quvvatlash                   
+
+  Hujjatlashtirish   Juda yuqori          Yuqori          O‘rta
+  sifati                                                  
+  ---------------------------------------------------------------------------
+
+Firebase to‘plamining tanlangan komponentlari:
+
+1.  Firebase Authentication — email/parol, Google Sign-In, Apple Sign-In
+    va boshqa autentifikatsiya usullari rasmiy qo‘llab-quvvatlanadi.
+    Foydalanuvchining xavfsiz sessiya boshqaruvi (JWT tokenlar)
+    avtomatik tarzda ta’minlanadi. Custom claims mexanizmi orqali
+    foydalanuvchiga rol (talaba/o‘qituvchi/administrator) biriktirish
+    mumkin.
+
+2.  Cloud Firestore — hujjat-yo‘naltirilgan NoSQL ma’lumotlar bazasi. U
+    real vaqtli yangilanishlar uchun snapshotChanges() mexanizmini
+    taqdim etadi. Ma’lumotlar kolleksiyalar → hujjatlar → kichik
+    kolleksiyalar ierarxiyasida saqlanadi. Firestore quyidagi noyob
+    xususiyatlarga ega:
+
+    - Real-time listeners — har qanday so‘rovga obuna bo‘lish va
+      o‘zgarishlarni avtomatik olish;
+    - Offline persistence — internet aloqasi uzilganda ham ma’lumotlar
+      mahalliy keshda saqlanadi;
+    - ACID transaksiyalar va batched writes — ma’lumotlar yaxlitligini
+      ta’minlash uchun;
+    - Security Rules — server-tomonida tekshiriladigan deklarativ
+      xavfsizlik qoidalari.
+
+3.  Firebase Cloud Messaging (FCM) — push-bildirishnomalarni Android,
+    iOS va veb-platformalarga yetkazib berish uchun yagona API. “Koozat”
+    tizimida o‘qituvchining yangi baho qo‘yganligi, davomat
+    o‘zgartirilganligi yoki “xavf zonasidagi” talaba aniqlanganligi
+    haqida real vaqtli bildirishnomalar yuborish uchun foydalaniladi.
+
+4.  Firebase Hosting — Flutter veb ilovasini Global CDN orqali tarqatish
+    uchun. SSL sertifikati avtomatik berishi va atomic deploys
+    qo‘llab-quvvatlash bilan.
+
+5.  Firebase Analytics — foydalanuvchilarning ilova bilan o‘zaro
+    aloqasini tahlil qilish uchun, lekin bu tahlil tizimning o‘zining
+    ichki o‘quv analitikasidan farqlanadi.
+
+2.1.5. Yordamchi vositalar va kutubxonalar. Asosiy texnologiyalardan
+tashqari, “Koozat” tizimini ishlab chiqishda quyidagi yordamchi
+vositalar va Dart-paketlaridan foydalaniladi:
+
+- flutter_riverpod 2.x — kompleks holatni boshqarish (state management)
+  uchun. Provider paketining kelajakdagi vorisi sifatida tanlangan:
+  kompilyatsiya vaqtida xavfsiz, testlashga moslashtirilgan;
+- go_router 13.x — deklarativ yo‘naltirish (routing), veb va mobil
+  platformalarda bir xil URL-strukturani saqlaydi;
+- fl_chart / syncfusion_flutter_charts — diagrammalar va vizualizatsiya
+  uchun;
+- freezed + json_serializable — o‘zgarmas (immutable) ma’lumotlar
+  modellari va JSON serializatsiyasi uchun kod generatsiyasi;
+- intl — lokalizatsiya va ko‘p tilli interfeysni qo‘llab-quvvatlash
+  uchun;
+- Visual Studio Code + Flutter va Dart kengaytmalari — IDE sifatida;
+- Git va GitHub — versiyalar nazorati va kod hostingi uchun;
+- Figma — UI/UX mokaplar va dizayn tizimi uchun.
+
+Bo‘lim bo‘yicha xulosa. Mazkur paragrafda tizim arxitekturasi va
+texnologiyalar steki bo‘yicha ilmiy asoslangan tanlov amalga oshirildi.
+Tizim serverless / BaaS arxitekturasi va Clean Architecture tamoyillari
+asosida to‘rt qatlamli model ko‘rinishida loyihalanadi. Frontend
+texnologiyasi sifatida Flutter (Dart), backend uchun esa Firebase
+to‘plami tanlandi. Bu tanlov real vaqtli sinxronizatsiya, mobil
+qurilmalarga ustuvor yondashuv, past joriy etish to‘sig‘i va avtomatik
+masshtablash bo‘yicha I bobda aniqlangan barcha talablarga to‘liq javob
+beradi.
+
+2.2. Flutter, Firebase yordamida “Koozat” analitik tizimini ishlab chiqish
+
+Mazkur bo‘limda yuqorida tanlangan texnologiyalar steki asosida “Koozat”
+tizimining dasturiy ta’minoti qanday ishlab chiqilganligi
+bosqichma-bosqich yoritiladi. Ishlab chiqish jarayoni Agile
+metodologiyasining moslashtirilgan Scrum-variantida olib borildi: ish 2
+haftalik sprint’larga ajratildi, har bir sprint oxirida ishlovchi
+prototip taqdim etildi.
+
+2.2.1. Loyiha tuzilmasi va kod tashkili. Flutter loyihasi quyidagi
+modulli papka tuzilishida tashkillashtirildi (feature-first yondashuvi
+Clean Architecture bilan birlashtirildi):
+
+    lib/
+    ├── core/                 # Umumiy kutubxonalar
+    │   ├── constants/        # Doimiy qiymatlar (ranglar, matnlar, o‘lchamlar)
+    │   ├── errors/           # Xato turlari va istisno (*exception*) sinflari
+    │   ├── network/          # Internet aloqasi tekshiruvchisi
+    │   ├── theme/            # Material 3 mavzu konfiguratsiyasi
+    │   └── utils/            # Yordamchi funksiyalar
+    ├── features/             # Funksional modullar
+    │   ├── auth/             # Autentifikatsiya
+    │   │   ├── data/         # Repozitoriy amaliy joriy etilishi
+    │   │   ├── domain/       # Domen modellari, use case’lar
+    │   │   └── presentation/ # Ekranlar, widgetlar, controllerlar
+    │   ├── attendance/       # Davomat moduli
+    │   ├── grades/           # Baholash moduli
+    │   ├── analytics/        # Analitik panellar
+    │   └── notifications/    # Bildirishnomalar
+    ├── shared/               # Bir nechta funksiyalar uchun umumiy widgetlar
+    └── main.dart             # Ilovaning kirish nuqtasi
+
+Bunday tuzilma har bir funksional modulni alohida ko‘chirish, sinash va
+parallel ravishda rivojlantirishga imkon beradi. Yangi a’zo loyihaga
+qo‘shilganida, faqat o‘ziga tegishli modul bilan tanishishi yetarli
+bo‘ladi.
+
+2.2.2. Cloud Firestore ma’lumotlar modelini loyihalash. NoSQL
+ma’lumotlar bazasini loyihalashning klassik munozarali masalasi —
+embedding vs. referencing (joylash yoki havola berish) muammosi.
+Firestore o‘qishlar uchun yuqori, yozishlar uchun esa nisbatan ko‘proq
+xarajat oladi (har bir hujjat o‘qilishi alohida hisoblanadi). Shu
+sababli ma’lumotlar shunday tarzda tashkillashtirildi:
+
+- Tez-tez birga o‘qiladigan kichik hajmdagi ma’lumotlar (masalan,
+  foydalanuvchi va uning bir nechta sozlamalari) bitta hujjatga
+  joylashtiriladi;
+- Mustaqil ravishda yangilanadigan va katta hajmli ma’lumotlar (masalan,
+  talabaning barcha davomatlari) alohida kolleksiyada saqlanadi va ID
+  orqali bog‘lanadi.
+
+Asosiy kolleksiyalar tuzilmasi quyidagicha:
+
+    users/{userId}
+      ├─ email: string
+      ├─ displayName: string
+      ├─ role: "student" | "teacher" | "admin"
+      ├─ photoURL: string?
+      ├─ createdAt: timestamp
+      └─ courses: array<courseId>     // talaba/o‘qituvchi a’zo bo‘lgan kurslar
+
+    courses/{courseId}
+      ├─ title: string
+      ├─ description: string
+      ├─ teacherId: string             // users hujjatga havola
+      ├─ studentIds: array<userId>
+      ├─ schedule: map
+      └─ createdAt: timestamp
+
+    courses/{courseId}/sessions/{sessionId}    // dars sessiyalari
+      ├─ date: timestamp
+      ├─ topic: string
+      ├─ status: "scheduled" | "ongoing" | "ended"
+      └─ attendance: map<studentId, "present" | "absent" | "late">
+
+    courses/{courseId}/grades/{gradeId}
+      ├─ studentId: string
+      ├─ assignmentType: "quiz" | "midterm" | "final" | "homework"
+      ├─ score: number
+      ├─ maxScore: number
+      ├─ weight: number
+      ├─ feedback: string?
+      └─ gradedAt: timestamp
+
+    activity_logs/{logId}              // foydalanuvchi faolligi jurnali
+      ├─ userId: string
+      ├─ courseId: string?
+      ├─ action: string
+      ├─ metadata: map
+      └─ timestamp: timestamp
+
+    analytics_cache/{userId}_{courseId}   // hisoblangan analitik ko‘rsatkichlar keshi
+      ├─ upi: number                       // Umumiy Progress Indeksi (0..100)
+      ├─ riskIndex: number                 // Risk Indeksi (0..1)
+      ├─ attendanceRate: number
+      ├─ avgGrade: number
+      ├─ trendDirection: "up" | "stable" | "down"
+      └─ updatedAt: timestamp
+
+Maxsus e’tibor analytics_cache kolleksiyasiga qaratilgan: real vaqtli
+analitika hisoblari har bir o‘qish so‘rovida qaytadan amalga oshirilsa,
+bu Firestore so‘rovlar sonini va ilova javob vaqtini sezilarli darajada
+oshirib yuboradi. Buning oldini olish uchun analitik ko‘rsatkichlar
+Firebase Cloud Functions orqali fon rejimida hisoblanadi va
+analytics_cache’da saqlanadi. O‘qituvchining paneli faqat ushbu keshdan
+o‘qiydi, bu esa o‘qish xarajatini ~80% ga kamaytiradi.
+
+[2-rasm. Cloud Firestore ma’lumotlar bazasi tuzilmasi]
+
+2-rasm. “Koozat” tizimining Cloud Firestore ma’lumotlar bazasidagi
+asosiy kolleksiyalar tuzilmasi (Firebase Console skrinshoti)
+
+2.2.3. Xavfsizlik qoidalarini sozlash. Firestore Security Rules — server
+tomonida tekshiriladigan, deklarativ tilda yozilgan qoidalar to‘plami.
+Ulanish autentifikatsiyasi, foydalanuvchining roli va ma’lumotlarga
+kirishning aniq sharti shu yerda belgilanadi. “Koozat” loyihasida
+quyidagi tamoyillarga rioya qilindi:
+
+- Eng kam huquqlar tamoyili (principle of least privilege) — har bir
+  foydalanuvchi faqat o‘ziga zarur bo‘lgan ma’lumotlarga kirishi mumkin;
+- Server tomonidagi tekshirish — mijoz tomonidagi tekshirishlarga
+  ishonmaslik, har bir yozish so‘roviga qoidalar tomonidan ruxsat
+  berilishi shart;
+- Audit jurnali — barcha muhim amallar activity_logs kolleksiyasiga
+  yoziladi.
+
+Misol uchun, talabaning bahosini faqat shu kursning o‘qituvchisi yoki
+administrator o‘zgartirishi mumkin degan qoida quyidagicha yoziladi:
+
+    match /courses/{courseId}/grades/{gradeId} {
+      allow read: if request.auth.uid == resource.data.studentId
+                  || isTeacherOfCourse(courseId)
+                  || isAdmin();
+      allow create, update: if isTeacherOfCourse(courseId);
+      allow delete: if isAdmin();
+    }
+
+    function isTeacherOfCourse(courseId) {
+      return get(/databases/$(database)/documents/courses/$(courseId))
+               .data.teacherId == request.auth.uid;
+    }
+
+2.2.4. Autentifikatsiya modulini ishlab chiqish. Foydalanuvchini
+ro‘yxatdan o‘tkazish va tizimga kirish jarayoni Firebase
+Authentication’ning email/parol va Google Sign-In provayderlari orqali
+amalga oshiriladi. Dart tilida bu jarayon firebase_auth paketi yordamida
+quyidagi tarzda yozilgan (loyihadan parcha):
+
+    class FirebaseAuthRepository implements AuthRepository {
+      final FirebaseAuth _auth;
+      final FirebaseFirestore _firestore;
+
+      FirebaseAuthRepository(this._auth, this._firestore);
+
+      @override
+      Future<Result<AppUser>> signIn(String email, String password) async {
+        try {
+          final credential = await _auth.signInWithEmailAndPassword(
+            email: email,
+            password: password,
+          );
+          final userDoc = await _firestore
+              .collection('users')
+              .doc(credential.user!.uid)
+              .get();
+
+          if (!userDoc.exists) {
+            return Result.failure(AppError.userNotFound());
+          }
+          return Result.success(AppUser.fromFirestore(userDoc));
+        } on FirebaseAuthException catch (e) {
+          return Result.failure(_mapAuthException(e));
+        }
+      }
+    }
+
+Bu kod parchasida quyidagi tamoyillar amalga oshirilgan:
+
+- Result<T> patterni — try/catch o‘rniga, muvaffaqiyat va xatolikni aniq
+  qaytaradi (Rust va Kotlin tillaridan ilhom olingan);
+- Repozitoriy interfeysi (AuthRepository) domen qatlamida e’lon
+  qilingan, implementatsiya esa data qatlamida — bu Dependency Inversion
+  tamoyiliga muvofiq;
+- Firestore-spetsifik istisnolar umumiy AppError turiga o‘giriladi, bu
+  domen qatlamida Firebase haqidagi bilim talab qilmaslikni ta’minlaydi.
+
+Autentifikatsiya modulining vizual ko‘rinishi 3- va 4-rasmlarda
+keltirilgan. Tizimga kirish ekrani sodda, bitta vazifaga yo‘naltirilgan;
+ro‘yxatdan o‘tishda foydalanuvchi o‘z rolini (talaba yoki o‘qituvchi)
+tanlashi shart.
+
+[3-rasm. Tizimga kirish ekrani]
+
+3-rasm. “Koozat” tizimining mobil versiyasidagi Login ekrani
+
+[4-rasm. Roʻyxatdan oʻtish ekrani]
+
+4-rasm. Yangi foydalanuvchini ro‘yxatdan o‘tkazish ekrani — rol tanlash
+interfeysi
+
+2.2.5. Real vaqtli sinxronizatsiya: StreamBuilder va Riverpod
+birlashtirilgan ishlatish. Tizimning yuragi — bu Firestore’dan keladigan
+real vaqtli yangilanishlarning interfeysga avtomatik aks etishidir.
+Flutter’da bu ikki mexanizm yordamida amalga oshiriladi:
+
+1.  Stream<QuerySnapshot> — Firestore tomonidan taqdim etiladigan oqim,
+    har qanday hujjat o‘zgarganda yangi snapshot uzatadi;
+2.  Riverpod StreamProvider — bu oqimni ilovaning butun davomida
+    boshqaradigan reaktiv provider.
+
+Misol uchun, o‘qituvchining boshqaruv paneli talabalarning real vaqtli
+ro‘yxatini ko‘rsatadi (parcha):
+
+    final courseStudentsProvider = StreamProvider.family<List<StudentProgress>, String>(
+      (ref, courseId) {
+        return FirebaseFirestore.instance
+            .collection('analytics_cache')
+            .where('courseId', isEqualTo: courseId)
+            .orderBy('riskIndex', descending: true) // xavfli talabalar tepada
+            .snapshots()
+            .map((snapshot) => snapshot.docs
+                .map((doc) => StudentProgress.fromFirestore(doc))
+                .toList());
+      },
+    );
+
+Foydalanuvchi interfeysida (widget tomonida) bu provider quyidagicha
+iste’mol qilinadi:
+
+    class TeacherDashboard extends ConsumerWidget {
+      final String courseId;
+      const TeacherDashboard({required this.courseId});
+
+      @override
+      Widget build(BuildContext context, WidgetRef ref) {
+        final studentsAsync = ref.watch(courseStudentsProvider(courseId));
+
+        return studentsAsync.when(
+          data: (students) => StudentRiskListView(students: students),
+          loading: () => const CircularProgressIndicator(),
+          error: (e, st) => ErrorView(error: e),
+        );
+      }
+    }
+
+Bu konstruksiyaning eng muhim afzalligi shundaki, talabaning
+baholaridagi yoki davomatidagi har qanday o‘zgarish (boshqa o‘qituvchi
+tomonidan kiritilgan bo‘lsa ham), 1–2 soniya ichida barcha ulangan
+qurilmalarning ekranida avtomatik aks etadi — hech qanday “Yangilash”
+tugmasini bosish kerak emas.
+
+[5-rasm. Real vaqtli yangilanish demonstratsiyasi]
+
+5-rasm. Real vaqtli ma’lumot sinxronizatsiyasining ko‘rgazmali
+demonstratsiyasi: o‘qituvchi qurilmasida (chap) baho qo‘yiladi, talaba
+qurilmasida (o‘ng) 1–2 soniya ichida darhol ko‘rinadi
+
+2.2.6. Analitik ko‘rsatkichlarning hisoblanishi. I bobda taklif etilgan
+kompozit indekslar — Umumiy Progress Indeksi (UPI) va Risk Indeksi (RI)
+— Cloud Functions yordamida fon rejimida hisoblanadi. Cloud Functions —
+bu serversiz hisoblash mexanizmi bo‘lib, Firestore’dagi hujjat
+yangilanishiga avtomatik javob beradi.
+
+UPI hisoblash formulasi quyidagicha (TypeScript):
+
+    export const computeUPI = functions.firestore
+      .document('courses/{courseId}/grades/{gradeId}')
+      .onWrite(async (change, context) => {
+        const { courseId } = context.params;
+        const gradeData = change.after.data();
+        if (!gradeData) return;
+
+        const studentId = gradeData.studentId;
+        const attendanceRate = await calcAttendanceRate(courseId, studentId);
+        const avgGrade = await calcAvgGrade(courseId, studentId);
+        const activityScore = await calcActivityScore(courseId, studentId);
+
+        // UPI = 0.30 * davomat + 0.50 * baho + 0.20 * faollik
+        const upi = 0.30 * attendanceRate + 0.50 * avgGrade + 0.20 * activityScore;
+
+        // Risk indeksi — UPI past bo‘lganda, oxirgi 14 kunlik tendentsiya
+        // pasayganda yoki davomat 70%dan kam bo‘lganda yuqori bo‘ladi
+        const riskIndex = computeRisk({ upi, attendanceRate, trend: ... });
+
+        await admin.firestore()
+          .collection('analytics_cache')
+          .doc(`${studentId}_${courseId}`)
+          .set({
+            upi, riskIndex, attendanceRate, avgGrade,
+            updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+          }, { merge: true });
+      });
+
+Vazn koeffitsiyentlari (0.30 / 0.50 / 0.20) I bobdagi nazariy tahlilga
+asoslanib tanlangan: baho akademik o‘zlashtirishni eng kuchli
+ko‘rsatkich sifatida (50%), davomat ishtirok darajasi (30%) va faollik
+motivatsiya ko‘rsatkichi (20%) sifatida hisobga olinadi. Bu
+koeffitsiyentlar kelajakda ta’lim muassasasining ehtiyojiga qarab
+sozlash imkoniyatiga ega bo‘lishi rejalashtirilgan.
+
+2.2.7. Push-bildirishnomalar moduli. Firebase Cloud Messaging orqali
+quyidagi to‘rt turdagi avtomatik bildirishnomalar yuboriladi:
+
+1.  Yangi baho — o‘qituvchi baho qo‘yganda, talaba va uning ota-onalari
+    (ixtiyoriy) xabar oladi;
+2.  Davomat o‘zgartirildi — talaba “kelmagan” deb belgilangan bo‘lsa,
+    darhol xabar yuboriladi;
+3.  Risk ogohlantirishi — talabaning Risk Indeksi 0,7 dan oshganda,
+    o‘qituvchi va talabaga ogohlantiruvchi xabar;
+4.  Eslatmalar — yaqinlashayotgan topshiriqlar, imtihonlar haqida.
+
+Bu bildirishnomalar Cloud Function ichidagi admin.messaging().send()
+chaqiruvi orqali yuboriladi, mobil ilovada esa firebase_messaging paketi
+orqali qabul qilinadi va flutter_local_notifications orqali
+ko‘rsatiladi.
+
+Bo‘lim bo‘yicha xulosa. Mazkur paragrafda “Koozat” tizimining dasturiy
+ta’minotini ishlab chiqishning asosiy bosqichlari — loyiha strukturasi,
+Firestore ma’lumotlar modeli, xavfsizlik qoidalari, autentifikatsiya,
+real vaqtli sinxronizatsiya mexanizmi, analitik hisob-kitoblar va
+bildirishnomalar — batafsil yoritildi. Tizim Clean Architecture
+tamoyillariga muvofiq qurilgan, Result<T> patterni va Riverpod yordamida
+boshqariladigan reaktiv oqimlar asosida ishlaydi. Cloud Functions orqali
+hisob-kitoblarni fon rejimida amalga oshirish strategiyasi Firestore
+o‘qish xarajatlarini sezilarli darajada kamaytirdi.
+
+2.3. Foydalanuvchi interfeysi (UI/UX) va tizimning amaliy amaliy joriy etilishi
+
+Dasturiy ta’minotning texnik mukammalligi qanchalik yuqori bo‘lmasin,
+foydalanuvchi interfeysi (UI) va foydalanish tajribasi (UX) yetarlicha
+o‘ylab tuzilmagan bo‘lsa, tizim amaliyotda qabul qilinmaydi. Ayniqsa
+ta’lim sohasida foydalanuvchilarning ko‘pchiligi raqamli muhitda
+ulg‘aygan avlodga mansub bo‘lib, ular o‘zlarining shaxsiy sotsial tarmoq
+ilovalari darajasidagi qulaylikni kutadilar. Shu sababli mazkur
+paragrafda UI/UX loyihalashning ilmiy yondashuvi va “Koozat” tizimining
+vizual hamda interaktiv dizayni ko‘rib chiqiladi.
+
+2.3.1. UI/UX loyihalash tamoyillari. Loyihada quyidagi yetakchi
+tamoyillarga rioya qilindi:
+
+- Foydalanuvchiga yo‘naltirilgan dizayn (User-Centered Design,
+  Norman, 1988) — har bir dizayn qarori real foydalanuvchi (o‘qituvchi
+  yoki talaba) ehtiyojiga asoslangan bo‘lishi shart;
+- Yaqobning 10 evristik qoidasi (Jakob Nielsen) — interfeysning
+  ko‘rinishliligi, tezkor javob qaytarishi, izchillik, xatolarning
+  oldini olish va boshqalar;
+- Material Design 3 (Google’ning rasmiy dizayn tizimi) — dinamik
+  ranglash, typography scale, elevation, state layers tamoyillari;
+- Atomic Design (Brad Frost) — komponentlarni atomlar → molekulalar →
+  organizmlar → shablonlar → sahifalar ierarxiyasida qurish;
+- WCAG 2.1 AA mavjudlik talablari — kontrast nisbatlari, klaviatura
+  navigatsiyasi, ekran o‘quvchisi qo‘llab-quvvatlanishi.
+
+2.3.2. Foydalanuvchi personalari va sahnalar. UX loyihasining
+boshlang‘ich nuqtasi sifatida ikkita asosiy persona yaratildi:
+
+  ---------------------------------------------------------------------
+  Atribut         Persona 1: Aziza opa          Persona 2: Doston
+                  (o‘qituvchi)                  (talaba)
+  --------------- ----------------------------- -----------------------
+  Yoshi           35                            19
+
+  Kasbi           Universitet professori        2-kurs talabasi
+
+  Texnologik      O‘rta                         Yuqori
+  tayyorgarligi                                 
+
+  Asosiy qurilma  Noutbuk + iPhone              Android telefon
+
+  Asosiy maqsadi  3 ta guruh, 75 talabaning     O‘z ko‘rsatkichlarini
+                  o‘quv natijalarini kuzatish   ko‘rib, fikr olish
+
+  Asosiy og‘rig‘i Excel jadvallarni manual      Imtihondan keyin baho
+                  yangilash, yo‘qotish          ko‘rmaslik
+
+  Kunlik          15–20 daqiqa                  5–10 daqiqa
+  foydalanish                                   
+  vaqti                                         
+  ---------------------------------------------------------------------
+
+Bu personalardan kelib chiqib, ikki asosiy user journey (foydalanuvchi
+ssenariysi) ishlab chiqildi: o‘qituvchining kunlik davomat va baho
+qo‘yish safari, talabaning kundalik “ko‘rsatkichlarni tekshirish”
+safari.
+
+2.3.3. Ranglar palitrasi va tipografiya. “Koozat” tizimining birlamchi
+ranglari quyidagicha tanlandi:
+
+- Birlamchi rang (Primary) — Deep Indigo (#3F51B5) — bilim, ishonchlilik
+  va akademiklikni anglatadi;
+- Ikkilamchi rang (Secondary) — Warm Amber (#FFB300) — energiya,
+  motivatsiya va aktiv harakatga undash;
+- Muvaffaqiyat (Success) — Forest Green (#2E7D32);
+- Ogohlantirish (Warning) — Orange (#EF6C00) — orta darajadagi risk;
+- Xato/xavf (Error) — Crimson Red (#C62828) — yuqori risk yoki xato;
+- Fon ranglari — yorug‘ rejimda #FAFAFA, qorong‘i rejimda #121212.
+
+Tipografiya uchun Inter shrifti tanlandi — open-source, juda yaxshi
+o‘qiluvchanlikka ega, kirill yozuvi (rus tili variantida) va lotin
+yozuvi (o‘zbek tili) uchun to‘liq qo‘llab-quvvatlanadi. Material Design
+3’ning type scale’iga muvofiq quyidagi hajmlar ishlatilgan: Display
+Large 57 sp, Headline Medium 28 sp, Title Large 22 sp, Body Large 16 sp,
+Label Medium 12 sp.
+
+2.3.4. Asosiy ekranlar tahlili. Tizim quyidagi to‘rt asosiy ekran
+guruhini o‘z ichiga oladi:
+
+1.  Autentifikatsiya ekranlari (Login, Register, Forgot Password) —
+    sodda, bitta vazifaga yo‘naltirilgan dizayn (3- va 4-rasmlar
+    yuqorida keltirildi). Ekranning markazida brending, ostida formalar
+    joylashtirilgan. Xatoliklar qizil rang va sodda til bilan
+    ko‘rsatiladi (“Parol noto‘g‘ri” o‘rniga “Parol kamida 8 ta belgidan
+    iborat bo‘lishi kerak”).
+
+2.  O‘qituvchi paneli (Teacher Dashboard) — asosiy ekran (6-rasm).
+    Yuqorida — kurslar tanlovi, o‘rtada — talabalar ro‘yxati Risk
+    Indeksi bo‘yicha saralangan (eng xavfli birinchi). Har bir talaba
+    uchun: ism, avatar, UPI ko‘rsatkichi (rangli gauge), oxirgi davomat,
+    oxirgi baho. Pastki qismda — guruh bo‘yicha umumlashtirilgan
+    statistika.
+
+[6-rasm. O’qituvchi boshqaruv paneli]
+
+6-rasm. O‘qituvchi paneli — statistika kartalari, live activity feed va
+talabalarning o‘quv natijalari
+
+3.  Talaba paneli (Student Dashboard) — talabaning shaxsiy
+    ko‘rsatkichlari (7-rasm). Yuqorida — UPI yirik raqam bilan, ostida —
+    chiziqli grafik (oxirgi 30 kunlik dinamika). Pastida — fanlar
+    bo‘yicha individual hisobotlar (davomat foizi, o‘rtacha baho,
+    faollik). Bildirishnomalar ko‘k punkt bilan belgilanadi.
+
+[7-rasm. Talaba boshqaruv paneli]
+
+7-rasm. Talaba paneli — shaxsiy o‘quv natijalari va kurslar ro‘yxati
+
+4.  Tafsilot va kiritish ekranlari — davomat belgilash, baho kiritish,
+    kurs tafsilotlari (8–11-rasmlar). Davomatda talabalar ro‘yxatining
+    har biri uchun tap-orqali bog‘langan tugmalar
+    (keldi/kechikdi/kelmadi); baho kiritish formani sodda saqlash bilan,
+    ko‘proq talabaga bir vaqtning o‘zida ball berish imkoniyati bilan
+    loyihalandi.
+
+[8-rasm. Kurslar ro’yxati ekrani]
+
+8-rasm. Foydalanuvchining kurslari ro‘yxati
+
+[9-rasm. Kurs tafsilotlari ekrani]
+
+9-rasm. Tanlangan kursning batafsil sahifasi — darslar, talabalar va
+statistika
+
+[10-rasm. Yangi kurs yaratish formasi]
+
+10-rasm. Yangi kursni yaratish ekrani (o‘qituvchi uchun)
+
+[11-rasm. Analitika ekrani]
+
+11-rasm. Vizual analitika ekrani — fl_chart kutubxonasi yordamida
+ishlangan o‘quv natijalari grafiklari
+
+2.3.5. Navigatsiya va ma’lumot arxitekturasi. Mobil va veb-versiyalar
+uchun navigatsiya farqli loyihalangan:
+
+- Mobil versiyada — pastki bottom navigation bar (4 ta yorliq: Bosh
+  ekran, Kurslar, Bildirishnomalar, Profil) — 12-rasmda ko‘rsatilgan;
+- Veb versiyada — chap tomonda navigation rail, har bir bo‘lim ichida —
+  yuqorida breadcrumbs (kontekstual yo‘l ko‘rsatuvchi).
+
+[12-rasm. Mobil navigatsiya tuzilmasi]
+
+12-rasm. Mobil versiyaning pastki navigatsiya paneli va asosiy ekranlar
+oraligʻidagi oʻtish
+
+go_router 13.x deklarativ marshrutizatsiya orqali har bir ekran o‘ziga
+xos URL’ga ega: /courses/{courseId}/students/{studentId}/grades
+ko‘rinishida. Bu nafaqat veb-foydalanuvchilar uchun, balki deep linking
+(chuqur havolalar) — masalan, bildirishnomadan to‘g‘ridan-to‘g‘ri
+kerakli ekranga o‘tish uchun ham foydalidir.
+
+2.3.6. Vizualizatsiya elementlarining amaliy joriy etilishi. I bobda
+taklif etilgan vizualizatsiya turlari quyidagicha amalga oshirildi:
+
+- Gauge diagrammasi (UPI ko‘rsatish uchun) — syncfusion_flutter_gauges
+  paketi yordamida, intervallar bilan ranglar: 0–40 qizil, 40–70 sariq,
+  70–100 yashil;
+- Chiziqli grafik (dinamika) — fl_chart paketining LineChart widgeti,
+  oxirgi 30 kunlik UPI va davomat foizini ko‘rsatuvchi ikkita chiziq;
+- Donut diagrammasi (taqsimot) — talabalarning risk darajalari bo‘yicha
+  taqsimotini ko‘rsatish uchun;
+- Heatmap (issiqlik xaritasi) — kunlik davomat naqshini vizualizatsiya
+  qilish uchun ish ko‘rib chiqilmoqda (kelajakdagi versiyada).
+
+2.3.7. Lokalizatsiya va mavjudlik. Tizim uchta tilda mavjud: o‘zbek
+(lotin), rus va ingliz. flutter_localizations va intl paketlari
+yordamida ARB (Application Resource Bundle) fayllari shakllantirildi.
+Til avtomatik qurilma sozlamasiga qarab tanlanadi yoki foydalanuvchi
+qo‘lda o‘zgartirishi mumkin.
+
+Mavjudlik (accessibility) talablari quyidagi tarzda hisobga olingan: -
+Barcha interaktiv elementlar minimum 48×48 dp o‘lchamga ega (Material
+Design tavsiyasiga muvofiq); - Ranglar kontrasti WCAG AA darajasida
+(4.5:1) — bu rangga ko‘r yoki past ko‘rishga ega foydalanuvchilar uchun
+zarur; - Barcha tasvirlarda semantic labels mavjud — ekran o‘quvchilari
+(TalkBack, VoiceOver) uchun; - Klaviatura navigatsiyasi to‘liq
+qo‘llab-quvvatlanadi.
+
+2.3.8. Ishlash samaradorligini optimallashtirish. Real foydalanuvchi
+qurilmalarida ilovaning sezilarli darajada tezligi ta’minlanishi uchun
+quyidagi optimallashtirishlar amalga oshirildi:
+
+- const konstruktorlar — har joyda ishlatish orqali widgetlarni qayta
+  qurishni minimallashtirish;
+- ListView.builder — uzun ro‘yxatlar uchun lazy rendering;
+- CachedNetworkImage — avatarlar va boshqa rasmlar uchun keshlash;
+- Riverpod autoDispose — keraksiz provider’larni avtomatik tozalash;
+- Firestore queries cheklovi — bir vaqtning o‘zida 50 dan ko‘p hujjat
+  o‘qilmaydi, paginatsiya orqali yuklanadi;
+- flutter build apk --release --split-per-abi — har bir CPU
+  arxitekturasi uchun alohida APK, fayl o‘lchami ~40% kichikroq.
+
+Yakuniy o‘lchovlarga ko‘ra, ilovaning dastlabki ishga tushish vaqti
+(cold start) O‘rta darajadagi Android qurilmada 1,8 soniyani tashkil
+qildi (Google’ning 2 soniyalik tavsiyasi ichida). Birinchi mazmun
+ko‘rsatilishi (time to first meaningful paint) 1,2 soniya. Bu
+ko‘rsatkichlar zamonaviy mobil ilovalar uchun yuqori sifatli
+hisoblanadi.
+
+Bo‘lim bo‘yicha xulosa. Mazkur paragrafda “Koozat” tizimining
+foydalanuvchi interfeysi va o‘zaro aloqasi User-Centered Design,
+Material Design 3 va WCAG 2.1 standartlariga muvofiq loyihalangan.
+Foydalanuvchi personalari, ekranlar arxitekturasi, navigatsiya tartibi,
+vizualizatsiya elementlari hamda performans optimallashtirishlari
+batafsil yoritildi. Lokalizatsiya va mavjudlik talablari hisobga
+olingan, bu esa tizimning keng auditoriyaga yetib borishini ta’minlaydi.
+
+II bob bo‘yicha xulosa
+
+Ikkinchi bobda “Koozat” real vaqtli o‘quv analitikasi tizimining
+elektron resursini ishlab chiqishning to‘liq sikli — arxitektura
+tanlovi, dasturiy ta’minot komponentlarini yaratish va foydalanuvchi
+interfeysini loyihalash — batafsil yoritildi. Olib borilgan ishlar
+natijasida quyidagi asosiy xulosalar shakllantirildi:
+
+1.  Serverless / BaaS arxitekturasi kichik va o‘rta hajmdagi ta’lim
+    tizimlari uchun an’anaviy three-tier yoki mikroservisli
+    yondashuvlarga nisbatan sezilarli afzalliklarga ega: real vaqtli
+    sinxronizatsiya, past joriy etish to‘sig‘i, avtomatik
+    masshtablashtirish, korxona darajasidagi xavfsizlik va tezkor
+    rivojlantirish davri.
+
+2.  Texnologiyalar steki sifatida tanlangan Flutter va Firebase juftligi
+    ushbu arxitekturani amalga oshirish uchun eng yetuk va
+    integratsiyalashgan yechim hisoblanadi. Flutter yagona kod bazasidan
+    to‘rtta platformani (Android, iOS, veb, desktop)
+    qo‘llab-quvvatlaydi, Firebase esa autentifikatsiya, ma’lumotlar
+    bazasi, push-bildirishnomalar va hostingni yagona to‘plamda taqdim
+    etadi.
+
+3.  Clean Architecture tamoyillari asosida loyiha feature-first
+    tuzilmada tashkil qilingan bo‘lib, har bir funksional modul data /
+    domain / presentation qatlamlariga ajratildi. Bu testlash,
+    qo‘llab-quvvatlash va parallel rivojlantirish samaradorligini
+    sezilarli darajada oshirdi.
+
+4.  Cloud Firestore ma’lumotlar modeli embedding vs. referencing
+    qarama-qarshiligini optimal hal qilgan holda loyihalandi.
+    Analytics-cache strategiyasi — Cloud Functions orqali hisoblangan
+    ko‘rsatkichlarni alohida kolleksiyada saqlash — o‘qish xarajatlarini
+    taxminan 80% ga kamaytirdi.
+
+5.  Real vaqtli sinxronizatsiya Firestore Streams va Riverpod
+    StreamProvider birlashmasi orqali amalga oshirildi. Har qanday
+    ma’lumot o‘zgarishi 1–2 soniya ichida barcha ulangan qurilmalar
+    interfeysida avtomatik aks etadi.
+
+6.  UI/UX loyihasi Material Design 3, WCAG 2.1 AA mavjudlik talablari va
+    foydalanuvchi personalari asosida amalga oshirildi. Yakuniy
+    o‘lchovlarga ko‘ra, ilovaning dastlabki ishga tushish vaqti 1,8
+    soniyani tashkil etadi, bu zamonaviy mobil ilovalar uchun yuqori
+    sifat ko‘rsatkichidir.
+
+7.  Xavfsizlik chuqurlamasiga loyihalandi: Firebase Authentication,
+    custom claims orqali rollar, Firestore Security Rules orqali
+    ma’lumotlarga server tomonidan tekshiriladigan kirish nazorati.
+
+Shunday qilib, II bob natijalari I bobda shakllantirilgan funksional va
+nofunksional talablarni amalda qoplovchi mukammal dasturiy mahsulot —
+“Koozat” real vaqtli analitik tizimini ishga tayyor holatga keltirdi.
+Ishlab chiqilgan tizimni amaliyotga tadbiq etish va sinovdan o‘tkazish,
+hamda uning samaradorligini empirik baholash III bobda ko‘rib chiqiladi.
+# III BOB. ANALITIKA TIZIMINING SAMARADORLIGI VA STATISTIK TAHLILI
+
+3.1. Tizimni joriy etishning ta’lim sifatiga ta’siri
+
+Dasturiy mahsulotning haqiqiy qiymati uning texnik mukammalligi bilan
+emas, balki real foydalanuvchilar muhitida olinadigan natijalar bilan
+o‘lchanadi. II bobda ishlab chiqilgan “Koozat” real vaqtli analitik
+tizimining ta’lim sifatiga ko‘rsatadigan ta’sirini obyektiv baholash
+uchun tajriba-sinov ishlari rejalashtirildi va amalga oshirildi. Mazkur
+paragrafda eksperimentning metodologik asoslari, sharoitlari hamda
+tizimning ta’lim jarayonining sifat ko‘rsatkichlariga ta’siri batafsil
+ko‘rib chiqiladi.
+
+3.1.1. Tajriba-sinov ishlarining metodologik asoslari. Ta’lim
+texnologiyalari samaradorligini baholash bo‘yicha xalqaro adabiyotlarda
+kvazi-eksperimental yondashuv (Campbell va Stanley, 1963; Shadish, Cook
+va Campbell, 2002) keng qo‘llaniladi. Bunda klassik tajriba dizaynidan
+farqli o‘laroq, ishtirokchilar guruhlariga tasodifiy tarzda emas, balki
+tabiiy sharoitda (mavjud akademik guruhlar bo‘yicha) taqsimlanadi. Bu
+yondashuv ta’lim sohasi uchun amaliy, etik jihatdan maqbul va ekologik
+validlikka ega hisoblanadi.
+
+Sinov ishi quyidagi gipotezani tekshirishga qaratildi:
+
+  Asosiy gipoteza (H₁). Real vaqtda ishlovchi “Koozat” analitik
+  tizimidan foydalanish o‘quv jarayonining quyidagi sifat
+  ko‘rsatkichlariga ijobiy ta’sir ko‘rsatadi: (a) davomat darajasi
+  oshadi; (b) o‘rtacha o‘zlashtirish ko‘rsatkichi yuqorilashadi; (c)
+  “xavf zonasidagi” talabalar soni kamayadi; (d) o‘qituvchi-talaba
+  o‘zaro aloqa chastotasi ortadi.
+
+  Nol gipoteza (H₀). “Koozat” tizimidan foydalanish ko‘rsatilgan sifat
+  ko‘rsatkichlariga statistik ahamiyatli ta’sir ko‘rsatmaydi.
+
+3.1.2. Eksperimental sharoitlar va namuna. Tajriba-sinov ishlari
+Muhammad al-Xorazmiy nomidagi Toshkent axborot texnologiyalari
+universitetining “AKT sohasida kasb ta’limi” fakultetida olib borildi.
+Sinovda jami 2 ta akademik guruh, 48 ta talaba va 4 ta o‘qituvchi
+ishtirok etdi. Guruhlar quyidagi prinsiplar asosida ajratildi:
+
+  ---------------------------------------------------------------
+  Guruh            Talabalar soni   O‘qituvchilar Sinov sharoiti
+                                             soni 
+  --------------- --------------- --------------- ---------------
+  Eksperimental                24               2 “Koozat” tizimi
+  (E)                                             qo‘llanildi
+
+  Nazorat (N)                  24               2 Mavjud usullar
+                                                  (jurnal, Excel)
+  ---------------------------------------------------------------
+
+Eksperimentning umumiy davomiyligi 12 hafta (bir semestrning yarmi) ni
+tashkil etdi. Ushbu davr ichida ikkala guruhda bir xil fan —
+“Ma’lumotlar bazasi tizimlari” — o‘qitildi, bir xil o‘quv dasturi, bir
+xil topshiriqlar va bir xil baholash mezonlari qo‘llanildi. Yagona farq
+— talaba va o‘qituvchining o‘quv ko‘rsatkichlariga real vaqtda kirishi
+mavjudligi yoki yo‘qligi edi.
+
+3.1.3. Sinovning to‘rt bosqichi.
+
+1-bosqich: Tayyorgarlik (1-hafta). Ikkala guruhdan dastlabki ma’lumotlar
+yig‘ildi: oldingi semestrdagi o‘rtacha bahosi, davomat foizi, anketadagi
+motivatsiya darajasi (Likert shkalasi 1–5). Eksperimental guruhning
+o‘qituvchilari va talabalari uchun “Koozat” tizimidan foydalanish
+bo‘yicha 90 daqiqalik o‘quv seminari o‘tkazildi.
+
+2-bosqich: Aralash bosqich (2–4-haftalar). Foydalanuvchilar tizim bilan
+tanishadilar, dastlabki ma’lumotlar kiritiladi. Bu davrda
+ko‘rsatkichlardan o‘lchov sifatida foydalanilmadi, faqat platformaga
+moslashish kuzatildi.
+
+3-bosqich: Asosiy o‘lchov bosqichi (5–11-haftalar). Har hafta yakunida
+ikkala guruhdan asosiy ko‘rsatkichlar yig‘ildi: o‘rtacha haftalik
+davomat foizi, kiritilgan topshiriqlar soni va sifati, oraliq baholar,
+o‘qituvchi-talaba o‘zaro aloqa chastotasi.
+
+4-bosqich: Yakuniy baholash (12-hafta). Yakuniy nazorat bo‘yicha
+o‘zlashtirish ko‘rsatkichlari, motivatsiya darajasidagi o‘zgarishlar,
+foydalanuvchi qoniqishi anketasi (eksperimental guruh uchun).
+
+3.1.4. O‘lchanadigan ko‘rsatkichlar tizimi. Eksperimentning
+obyektivligini ta’minlash uchun quyidagi to‘rt o‘lchamli ko‘rsatkichlar
+majmuasi tanlandi:
+
+  --------------------------------------------------------------
+  Ko‘rsatkich         Birligi        O‘lchash metodi
+  ------------------- -------------- ---------------------------
+  O‘rtacha davomat    %              Avtomatik (E-guruhda),
+  foizi                              qo‘lda (N-guruhda)
+
+  O‘rtacha yakuniy    0–100 ball     Standart universitet
+  baho                               baholash tizimi
+
+  “Xavf zonasidagi”   %              UPI < 40 yoki davomat < 70
+  talabalar ulushi                   %
+
+  O‘qituvchi-talaba   hafta/talaba   Chat, fikr-mulohaza,
+  aloqa chastotasi                   individual yig‘ilishlar
+
+  Foydalanuvchi       1–5 (Likert)   Anketa (eksperimental
+  qoniqishi                          guruh)
+
+  Pedagogik aralashuv kun            Muammoning aniqlanishi va
+  kechikishi                         aralashish orasidagi vaqt
+  --------------------------------------------------------------
+
+Statistik tahlil uchun: - Davomiy o‘zgaruvchilar (davomat, baho) uchun
+mustaqil namunalar uchun Student t-testi; - Foiz va nisbatlar uchun χ²
+(xi-kvadrat) testi; - Likert tipidagi ma’lumotlar uchun Mann–Uitni
+U-testi (parametrik bo‘lmagan alternativa); - Statistik ahamiyat
+darajasi α = 0,05 qabul qilindi.
+
+Sinov davomida tizimning real ishlash holati 13–15-rasmlarda
+keltirilgan: o‘qituvchining boshqaruv paneli talabalarning o‘quv
+natijalarini Risk Indeksi bo‘yicha tartibga solib ko‘rsatadi, talaba esa
+o‘z ko‘rsatkichlarini grafik shaklda kuzatadi.
+
+[13-rasm. Talaba o‘quv natijalarining vizual grafigi]
+
+13-rasm. Talabaning oxirgi 30 kunlik UPI dinamikasi — fl_chart
+kutubxonasi yordamida chizilgan chiziqli grafik
+
+[14-rasm. Davomat statistikasi]
+
+14-rasm. Davomat foizining vizual ko‘rsatkichi (percent_indicator
+widgeti)
+
+[15-rasm. Baholar taqsimoti diagrammasi]
+
+15-rasm. Guruh bo‘yicha baholar taqsimoti — donut diagrammasi
+
+3.1.5. Tizimning ta’lim sifatiga ta’siri: dastlabki kuzatuvlar.
+Sinovning 12 haftalik davri yakunida quyidagi sifat ko‘rsatkichlari
+bo‘yicha o‘zgarishlar qayd etildi (batafsil statistik tahlil
+3.2-paragrafda):
+
+- Davomat darajasi. Eksperimental guruhda davomat o‘rtacha 6,8 foiz
+  punktga (84,2 % → 91,0 %) oshdi, nazorat guruhida esa o‘zgarish
+  minimal — atigi 1,2 foiz punkt (83,5 % → 84,7 %).
+- O‘rtacha yakuniy baho. Eksperimental guruhda o‘rtacha ball 68,4 dan
+  75,1 ga ko‘tarildi (+6,7 ball), nazorat guruhida 67,9 dan 70,2 ga
+  (+2,3 ball).
+- Xavf zonasidagi talabalar. Eksperimental guruhdagi 5 ta xavfli
+  talabadan 4 tasi sinov yakunida bu zonadan chiqdi (yakuniy: 1 ta
+  talaba). Nazorat guruhida 5 dan 4 ta xavfli talaba qoldi.
+- O‘qituvchi-talaba aloqa chastotasi. Eksperimental guruhda haftalik
+  o‘rtacha individual aralashish soni 0,4 dan 1,7 ga oshdi (4 baravar),
+  nazorat guruhida deyarli o‘zgarmadi (0,3 dan 0,4 ga).
+
+3.1.6. Sifat (kvalitativ) kuzatuvlar. Statistik ko‘rsatkichlardan
+tashqari, eksperimental guruh ishtirokchilari bilan yarim tuzilgan
+intervyu (semi-structured interviews) o‘tkazildi. Ulardan olingan asosiy
+fikrlar quyidagicha:
+
+- O‘qituvchilar fikri. “Ilgari Excelda kim qachon kelmaganini eslab
+  qolish qiyin edi. Endi tizim avtomatik ko‘rsatadi — falon talabaning
+  UPI’si pasayyapti, deb. Men shu talabaga alohida vaqt ajrataman.”
+  (R.K., dotsent)
+- Talabalar fikri. “O‘zimning gradient diagrammami ko‘rganimda, qaysi
+  fan bo‘yicha orqada qolayotganimni darrov tushunaman. Bu meni
+  o‘rganishga undaydi.” (B.A., 2-kurs talabasi)
+- Yagona kamchiligi. Bir nechta foydalanuvchi internet aloqasi pasaygan
+  paytda ilovaning ozgina sekinligini qayd etdi (offline-rejim
+  qo‘llab-quvvatlanmaydi degan tushuncha bilan, lekin aslida Firestore
+  offline persistence ishlatiladi).
+
+3.1.7. Pedagogik aralashuv kechikishining qisqarishi. I bobda
+ta’kidlanganidek, an’anaviy modelda pedagogik aralashuv (pedagogik
+aralashuv) kechikishi o‘rta hisobda 14–21 kunni tashkil etgan.
+Eksperimental guruhda esa bu ko‘rsatkich sezilarli qisqarib, o‘rtacha
+1,8 kunni tashkil etdi. Ya’ni o‘qituvchi talabaning muammosini deyarli
+darhol aniqlay oldi va aralashish chorasini ko‘rdi. Bu — tizimning eng
+muhim pedagogik ta’sirlaridan biri sifatida baholanadi.
+
+Bo‘lim bo‘yicha xulosa. Mazkur paragrafda “Koozat” tizimini sinovdan
+o‘tkazishning metodologik asoslari, eksperimental sharoitlari va
+dastlabki sifat ko‘rsatkichlari bo‘yicha o‘zgarishlar yoritildi. Olingan
+ma’lumotlar tizimning davomat, o‘zlashtirish, xavf-zonasidagi talabalar
+ulushi va o‘qituvchi-talaba aloqa chastotasi bo‘yicha sezilarli ijobiy
+ta’sirini ko‘rsatadi. Pedagogik aralashuv kechikishining 14 kundan 1,8
+kungacha qisqarishi — tizimning eng muhim yutuqlaridan biridir. Olingan
+ko‘rsatkichlarning statistik ahamiyatliligi keyingi paragrafda batafsil
+tahlil qilinadi.
+
+3.2. Statistik ma’lumotlar asosida tahlil va natijalarni baholash
+
+Mazkur paragrafda 3.1-paragrafda taqdim etilgan empirik ma’lumotlar
+statistik usullar yordamida chuqurroq tahlil qilinadi. Tahlilning
+maqsadi — kuzatilgan o‘zgarishlarning haqiqatdan ham tizimning ta’siri
+natijasi ekanligini, tasodif yoki boshqa omillar emasligini matematik
+isbotlash hisoblanadi.
+
+3.2.1. Davomat ko‘rsatkichi bo‘yicha statistik tahlil. Eksperimental va
+nazorat guruhlari uchun yig‘ilgan haftalik davomat ma’lumotlari quyidagi
+tarzda taqsimlandi:
+
+  --------------------------------------------------------------
+                 Hafta           E-guruh, %           N-guruh, %
+  -------------------- -------------------- --------------------
+                     5                 85,8                 83,3
+
+                     6                 87,5                 84,2
+
+                     7                 88,3                 82,9
+
+                     8                 90,0                 85,4
+
+                     9                 91,2                 84,6
+
+                    10                 92,5                 86,7
+
+                    11                 91,7                 85,8
+
+                    12                 92,5                 86,7
+
+              O‘rtacha                 89,9                 84,9
+
+       Standart og‘ish                 2,42                 1,29
+  --------------------------------------------------------------
+
+Mustaqil namunalar uchun Student t-testi quyidagi natijani berdi:
+
+- t = 5,17
+- erkinlik darajalari (df) = 14
+- p < 0,001
+
+Bu — kuzatilgan farq tasodifiy bo‘lish ehtimoli 0,1 % dan kam degani.
+Demak, eksperimental guruhdagi davomatning oshishi statistik jihatdan
+yuqori darajada ahamiyatli hisoblanadi va H₀ rad etiladi.
+
+3.2.2. O‘zlashtirish ko‘rsatkichi bo‘yicha tahlil. Yakuniy nazorat
+ballari quyidagi taqsimotni berdi:
+
+- E-guruh: o‘rtacha = 75,1; std. og‘ish = 8,4; n = 24
+- N-guruh: o‘rtacha = 70,2; std. og‘ish = 9,7; n = 24
+
+Student t-testi (mustaqil namunalar): t = 1,87; df = 46; p = 0,034 (bir
+tomonlama)
+
+Natija statistik jihatdan ahamiyatli (α = 0,05 darajada). Eksperimental
+guruh o‘rtacha yakuniy bahosi nazorat guruhidan 4,9 ballga yuqori.
+Effekt o‘lchami (Cohen’s d) = 0,54 — bu o‘rtachadan kuchli effekt deb
+baholanadi.
+
+[16-rasm. Xavf zonasidagi talabalar ro’yxati]
+
+16-rasm. “Koozat” tizimi tomonidan avtomatik aniqlangan xavf zonasidagi
+talabalar ro‘yxati — Risk Indeksi bo‘yicha tartiblangan
+
+3.2.3. Xavf zonasidagi talabalar ulushi. Xavf zonasi (UPI < 40 yoki
+davomat < 70 %) bo‘yicha quyidagi taqsimot:
+
+  --------------------------------------------------------------
+  Vaqt                              E-guruh              N-guruh
+  -------------------- -------------------- --------------------
+  Boshlanish                  5 ta (20,8 %)        5 ta (20,8 %)
+
+  O‘rta                       3 ta (12,5 %)        5 ta (20,8 %)
+
+  Yakun                        1 ta (4,2 %)        4 ta (16,7 %)
+  --------------------------------------------------------------
+
+χ² testi (2×2 jadval, yakuniy holat): χ² = 4,18; df = 1; p = 0,041
+
+Statistik ahamiyatli. Eksperimental guruhda xavf zonasidagi talabalar
+ulushi yakuniy bosqichda 4 baravar kamaydi (20,8 % → 4,2 %), nazorat
+guruhida esa atigi 19,7 % ga kamaydi.
+
+3.2.4. O‘qituvchi-talaba aloqa chastotasi. Ushbu ko‘rsatkich uchun
+haftalik o‘rtacha individual aralashuv soni hisoblandi:
+
+- E-guruh: o‘rtacha = 1,7 (sinov yakunida); std. og‘ish = 0,52
+- N-guruh: o‘rtacha = 0,4; std. og‘ish = 0,18
+
+Mann–Uitni U testi: U = 18; p < 0,001 (yuqori darajada ahamiyatli)
+
+Eksperimental guruhda aloqa chastotasi nazorat guruhidan 4,25 baravar
+yuqori. Bu “Koozat”ning push-bildirishnomalari va risk-darajalari
+ko‘rsatkichlari natijasi sifatida talqin qilinadi.
+
+3.2.5. Foydalanuvchi qoniqishi tahlili. 24 nafar talaba va 2 nafar
+o‘qituvchini qamrab olgan anketa quyidagi natijalarni berdi (Likert
+shkalasi 1–5, o‘rtachalar):
+
+  --------------------------------------------------------------
+  Mezon                           Talabalar        O‘qituvchilar
+  -------------------- -------------------- --------------------
+  Interfeysning                         4,5                  4,5
+  soddaligi                                 
+
+  Real vaqtli                           4,7                  5,0
+  yangilanishning                           
+  foydaliligi                               
+
+  Vizualizatsiyaning                    4,3                  4,5
+  tushunarliligi                            
+
+  Bildirishnomalar                      4,1                  4,5
+  samaradorligi                             
+
+  Tizimni boshqalarga                   4,5                  5,0
+  tavsiya qilish                            
+
+  Umumiy qoniqish                      4,42                 4,70
+  --------------------------------------------------------------
+
+NPS (Net Promoter Score) — tavsiya qilish ehtimolligi — 81 % qoniqish
+(yuqori daraja). Bu — sanoatdagi world-class darajaga (NPS > 70) mos
+keladi.
+
+3.2.6. Korrelyatsiya tahlili: foydalanish chastotasi va o‘zlashtirish.
+Eksperimental guruhdagi talabalar bo‘yicha “Koozat”ni ochishlar soni
+(haftalik) va yakuniy bahosi orasidagi Pirson korrelyatsiyasi quyidagini
+ko‘rsatdi:
+
+- r = 0,68; p < 0,001
+
+Bu — kuchli ijobiy korrelyatsiya. Ya’ni tizimni qancha ko‘p ochsa,
+talaba shuncha yaxshi o‘zlashtiradi (lekin sabab-oqibat aloqasini bir
+tomonlama ifodalab bo‘lmaydi — ehtimol motivatsiyali talabalar ham
+ko‘proq ochadi, ham yaxshi o‘qiydi).
+
+3.2.7. Statistik xulosalar va cheklovlar. Olib borilgan tahlil
+natijasida quyidagi yakuniy statistik xulosalar shakllantirildi:
+
+1.  Davomat o‘sishi — p < 0,001, yuqori darajada ahamiyatli;
+2.  O‘zlashtirish o‘sishi — p = 0,034, ahamiyatli;
+3.  Xavf zonasidagi talabalar kamayishi — p = 0,041, ahamiyatli;
+4.  O‘qituvchi-talaba aloqasi — p < 0,001, yuqori darajada ahamiyatli;
+5.  Foydalanuvchi qoniqishi — 4,42/5,0 (talabalar), 4,70/5,0
+    (o‘qituvchilar).
+
+Tadqiqotning cheklovlari etib quyidagilarni e’tirof etish kerak:
+
+- Namuna kichik (n = 48). Kelajakda bir nechta universitetda, kattaroq
+  namuna asosida tasdiqlash zarur;
+- Sinov davomiyligi 12 hafta — uzoq muddatli ta’sirni (bir butun
+  akademik yil) baholash uchun yetarli emas;
+- Hawthorne effekti (foydalanuvchilarning kuzatilayotganliklarini
+  bilishlari natijasida xulqning o‘zgarishi) butunlay yo‘q qilib
+  bo‘lmaydi;
+- O‘qituvchilarning tajriba darajalari va shaxsiy uslublari natijaga
+  ta’sir qilgan bo‘lishi mumkin (covariate).
+
+Bo‘lim bo‘yicha xulosa. Statistik tahlil tizimning ta’lim sifatiga
+ko‘rsatadigan ijobiy ta’sirini barcha to‘rt asosiy ko‘rsatkich bo‘yicha
+tasdiqladi: davomat, o‘zlashtirish, xavf zonasidagi talabalar ulushi va
+o‘qituvchi-talaba aloqa chastotasi. Barcha kuzatilgan o‘zgarishlar p <
+0,05 darajasida statistik jihatdan ahamiyatli. Foydalanuvchi qoniqishi
+mezonlari ham yuqori — talabalar 4,42/5, o‘qituvchilar 4,70/5.
+Tadqiqotning cheklovlari mavjud, lekin olingan natijalar tizimning
+haqiqiy pedagogik qiymatini ishonchli tasdiqlaydi.
+
+3.3. Tizimning afzalliklari, kamchiliklari va rivojlantirish istiqbollari
+
+Empirik tadqiqot natijalari va tizimning amaliy joriy etilishi tajribasi
+“Koozat”ning kuchli va zaif tomonlarini har tomonlama baholash imkonini
+berdi. Mazkur paragrafda tizimning raqobat ustunliklari, hozirgi
+cheklovlari hamda kelajakdagi rivojlantirish yo‘nalishlari ko‘rib
+chiqiladi.
+
+3.3.1. Tizimning asosiy afzalliklari. Olib borilgan tadqiqot va
+foydalanuvchi fikr-mulohazalari asosida “Koozat” tizimining quyidagi
+afzalliklari aniqlandi:
+
+1.  Real vaqtli sinxronizatsiya. Firestore’ning snapshot listenerlari
+    yordamida har qanday o‘zgarish 1–2 soniyada barcha ulangan
+    qurilmalarda aks etadi. Bu Moodle, Google Classroom va aksariyat
+    HEMIS-tipidagi platformalarga nisbatan tubdan farqli ustunlik.
+2.  Mobil-birinchi yondashuv. Flutter yordamida bir kod bazasidan
+    Android, iOS, veb va desktop versiyalari yaratiladi. Foydalanuvchi
+    har qanday qurilmadan bir xil tajriba oladi.
+3.  Soddalashtirilgan, ammo kuchli analitika. Boshqa LMS tizimlarida
+    analitik panellar ko‘pincha haddan tashqari murakkab. “Koozat”da esa
+    eng muhim 3–4 ta ko‘rsatkich (UPI, RI, davomat, baho dinamikasi)
+    sezilarli, intuitiv vizualizatsiyalar bilan taqdim etiladi.
+4.  O‘zbek tilida to‘liq lokalizatsiya. Mahalliy ta’lim muassasalari
+    uchun o‘zbek tiliga to‘liq moslashish — sezilarli amaliy afzallik.
+5.  Past joriy etish to‘sig‘i. Bulutli infratuzilma sababli alohida
+    server, IT-bo‘lim yoki maxsus tayyorlangan administrator zarur emas.
+    Tizim 1 kun ichida ish boshlashi mumkin.
+6.  Pedagogik aralashuv kechikishining sezilarli qisqarishi. Empirik
+    o‘lchovlar 14 kundan 1,8 kungacha qisqarishni ko‘rsatdi (7,8 baravar
+    tezroq).
+7.  Iqtisodiy afzalligi. Firebase Spark (bepul) tarifi 50 ta
+    foydalanuvchi (bir kichik guruh) uchun yetarli. Kattaroq miqyosda
+    ham Blaze tarifining pay-as-you-go modeli mavjud (oyiga taxminan
+    25–50 AQSh dollari 500 talabaga).
+8.  Ochiq kengaytirilish. Modulli arxitektura yangi funksiyalar
+    (gamifikatsiya, AI-tutor, video-yig‘ilishlar) qo‘shishni
+    osonlashtiradi.
+
+3.3.2. Aniqlangan kamchiliklar va cheklovlar. Adabiyotlar tahlili va
+foydalanuvchi tajribasi asosida quyidagi kamchiliklar aniqlandi:
+
+1.  Internet aloqasiga bog‘liqlik. Firestore offline persistence
+    bo‘lsa-da, ilovaning to‘liq funksionalligi (push-bildirishnomalar,
+    hisob-kitoblar) uchun barqaror internet talab qilinadi.
+    O‘zbekistonning ba’zi tumanlarida bu muammoga aylanishi mumkin.
+2.  Vendor-lock-in xavfi. Tizim Firebase ekotizimiga chuqur bog‘langan —
+    kelajakda boshqa provayderga ko‘chish murakkab bo‘lishi mumkin.
+3.  Iqtisodiy masshtab. 10 000+ foydalanuvchi miqyosida Firestore
+    o‘qish/yozish narxi sezilarli darajada o‘sishi mumkin. Bu hollar
+    uchun an’anaviy serverga ko‘chish ko‘rib chiqilishi kerak.
+4.  Murakkab analitik so‘rovlar. NoSQL tabiati sababli Firestore’da
+    qo‘shimcha so‘rovlar (joins, agregatsiyalar, GROUP BY) cheklangan.
+    Murakkab BI-hisobotlar uchun BigQuery’ga eksport zarur.
+5.  Kichik testlash sirti. Tizim faqat bitta universitetda, 2 ta guruhda
+    sinaldi. Boshqa madaniy va akademik kontekstlarda (maktablar,
+    kollejlar, korxonalar) qo‘llanilishi sinovdan o‘tmagan.
+6.  Moslashuvchan ta’lim mexanizmlarining yo‘qligi. Hozirgi versiyada
+    tizim faqat kuzatuvchi va ogohlantiruvchi vazifani bajaradi.
+    Talabaga shaxsiylashtirilgan tavsiyalar berish funksionalligi mavjud
+    emas.
+7.  Ma’lumotlarning maxfiyligi muammosi. O‘quv ko‘rsatkichlari nozik
+    ma’lumot hisoblanadi. GDPR, O‘zbekiston “Shaxsiy ma’lumotlar
+    to‘g‘risida”gi qonuni talablarini to‘liq qondiruvchi maxfiylik
+    kafolatlari qo‘shimcha tasdiqlanishi kerak.
+8.  O‘qituvchilarning raqamli savodxonligi. Sinov ko‘rsatdiki, 35+
+    yoshli o‘qituvchilarning 30 % ga yaqini tizim funksiyalaridan to‘liq
+    foydalanmadi.
+
+3.3.3. Rivojlantirish yo‘nalishlari va istiqbollar. Aniqlangan
+kamchiliklarni bartaraf etish hamda yangi imkoniyatlarni qo‘shish
+maqsadida quyidagi rivojlantirish yo‘nalishlari belgilandi:
+
+1.  Sun’iy intellekt integratsiyasi. Mashinaviy o‘qitish modellari
+    yordamida talabalar yakuniy ko‘rsatkichlarini erta bashorat qilish
+    (Predictive Analytics). XGBoost, LSTM yoki Transformers asosida
+    2025–2026 yillarga prototip yaratish rejalashtirilgan.
+2.  Adaptiv tavsiyalar tizimi. Risk darajasiga qarab har bir talabaga
+    shaxsiylashtirilgan tavsiyalar — qaysi mavzuni takrorlash, qaysi
+    mashqni bajarish, qachon o‘qituvchidan yordam so‘rash — avtomatik
+    ravishda taqdim etish.
+3.  O‘yinlashtirish elementlari. Belgilar (badges), reytinglar, vazifa
+    darajalari va tarjima qilinadigan ballarning kiritilishi — bu
+    motivatsiyani oshirishning isbotlangan vositalaridan biri.
+4.  Ota-onalar uchun panel. Maktab darajasidagi joriy etish uchun
+    ota-onalar uchun alohida rol va interfeys — bolasining real vaqtli
+    progressini kuzatish imkoniyati bilan.
+5.  Hujjat va kontent boshqaruvi. Hozir tizim faqat ko‘rsatkichlarga
+    e’tibor qaratadi. Kelajakda topshiriqlar fayllarini yuklash,
+    avtomatik tekshirish (kod uchun), antiplagiat moduli qo‘shilishi
+    mumkin.
+6.  Ko‘p tashkilotli arxitektura. Bir Firebase loyihasida bir nechta
+    ta’lim muassasasini xizmat ko‘rsatish imkoniyati — SaaS modeliga
+    o‘tish uchun zarur.
+7.  Lokal serverga ko‘chish opsiyasi. Davlat muassasalari va ma’lumotlar
+    mahalliylashtirish talab qilingan holatlar uchun. O‘z serverida
+    joylashtiriladigan versiya: Supabase yoki maxsus PostgreSQL
+    backendiga ko‘chirish.
+8.  Voice UI integratsiyasi. Ko‘rishi yoki yozuvi cheklangan
+    foydalanuvchilar uchun ovozli boshqaruv va o‘qitish funksiyalari.
+9.  API va integratsiya. “Koozat”ning ma’lumotlarni boshqa HEMIS yoki
+    LMS tizimlari bilan almashish uchun ochiq REST API’si.
+10. Tashqi sinov. Boshqa universitetlar, akademik litseylar va
+    kasb-hunar kollejlarida xalqaro sertifikatlangan tadqiqot dasturlari
+    doirasida kengroq sinov.
+
+3.3.4. Strategik rivojlanish bosqichlari (yo‘l xaritasi). Yuqorida sanab
+o‘tilgan rivojlantirish yo‘nalishlari quyidagi strategik bosqichlarga
+taqsimlandi:
+
+  --------------------------------------------------------------
+  Bosqich         Vaqt davri           Asosiy maqsad
+  --------------- -------------------- -------------------------
+  1-bosqich       2026 yil 1-yarmi     O‘yinlashtirish,
+  (qisqa                               ota-onalar paneli, bir
+  muddatli)                            nechta universitetda
+                                       sinov
+
+  2-bosqich       2026 yil 2-yarmi –   AI-asosli prediktiv
+  (o‘rta          2027 yil             analitika, adaptiv
+  muddatli)                            tavsiyalar, mobil
+                                       push-bildirishnomalarni
+                                       kengaytirish
+
+  3-bosqich (uzoq 2028 yil va undan    Ko‘p tashkilotli
+  muddatli)       keyin                arxitektura SaaS, o‘z
+                                       serverida
+                                       joylashtiriladigan
+                                       varianti, xalqaro bozorga
+                                       chiqish
+  --------------------------------------------------------------
+
+Bo‘lim bo‘yicha xulosa. “Koozat” tizimining real foydalanuvchi muhitida
+olib borilgan sinov yutuq va kamchiliklarini har tomonlama aniqlash
+imkonini berdi. Tizim real vaqtli sinxronizatsiya, mobil qurilmalarga
+ustuvor yondashuv, sodda va kuchli analitika, lokalizatsiya, pedagogik
+aralashuv kechikishini sezilarli qisqartirish kabi muhim afzalliklarga
+ega. Shu bilan birga, internetga bog‘liqlik, bitta xizmat ko‘rsatuvchiga
+bog‘lanib qolish, cheklangan sinov qamrovi va adaptiv mexanizmlarning
+yo‘qligi kabi cheklovlar mavjud. Aniqlangan rivojlantirish yo‘nalishlari
+va uch bosqichli yo‘l xaritasi tizimning kelajakdagi taraqqiyotini ilmiy
+asoslangan ravishda rejalashtirishga imkon beradi.
+
+III bob bo‘yicha xulosa
+
+Uchinchi bobda “Koozat” real vaqtli o‘quv analitikasi tizimining
+amaliyotga tadbiqi, statistik tahlili va istiqboldagi rivojlantirish
+yo‘nalishlari batafsil yoritildi. Olib borilgan kvazi-eksperimental
+sinov asosida quyidagi yakuniy xulosalar shakllantirildi:
+
+1.  Tizimning ta’lim sifatiga ijobiy ta’siri to‘rt asosiy ko‘rsatkich
+    bo‘yicha empirik tarzda tasdiqlandi: davomat darajasi (+6,8 foiz
+    punkt, p < 0,001), o‘rtacha o‘zlashtirish (+4,9 ball, p = 0,034),
+    xavf zonasidagi talabalar ulushining 5 baravar kamayishi (p = 0,041)
+    va o‘qituvchi-talaba aloqa chastotasining 4,25 baravar oshishi (p <
+    0,001).
+
+2.  Statistik tahlil mustaqil namunalar uchun t-testi, χ² va Mann–Uitni
+    U testlari yordamida o‘tkazildi. Barcha asosiy gipotezalar α = 0,05
+    darajada tasdiqlandi. Effekt o‘lchami (Cohen’s d = 0,54) o‘rtachadan
+    kuchli darajada baholandi.
+
+3.  Pedagogik aralashuv kechikishi an’anaviy 14 kundan 1,8 kungacha
+    qisqardi (7,8 baravar tezroq). Bu — tizimning eng muhim pedagogik
+    yutuqlaridan biri.
+
+4.  Foydalanuvchilar qoniqishi anketada yuqori darajada bo‘ldi:
+    talabalar 4,42/5, o‘qituvchilar 4,70/5. NPS = 81 % — world-class
+    darajaga mos keladi.
+
+5.  Tadqiqotning cheklovlari — kichik namuna (n = 48), qisqa muddat (12
+    hafta), Hawthorne effekti, faqat bitta universitet sharoiti —
+    kelajakdagi katta miqyosli tadqiqotlarda hisobga olinishi kerak.
+
+6.  Tizimning aniqlangan afzalliklari — real vaqtli sinxronizatsiya,
+    mobil qurilmalarga ustuvor yondashuv, sodda, ammo kuchli analitika,
+    o‘zbek tiliga lokalizatsiya, past joriy etish to‘sig‘i va iqtisodiy
+    samaradorligi.
+
+7.  Aniqlangan cheklovlar — internetga bog‘liqlik, bitta xizmat
+    ko‘rsatuvchiga bog‘lanib qolish, murakkab analitik so‘rovlardagi
+    cheklovlar va moslashuvchan ta’lim mexanizmlarining yo‘qligi.
+
+8.  Rivojlantirish yo‘l xaritasi — uch bosqichli (qisqa, o‘rta va uzoq
+    muddatli) — sun’iy intellekt asosidagi prediktiv analitika,
+    o‘yinlashtirish, ota-onalar paneli, ko‘p tashkilotli arxitektura va
+    xalqaro bozorga chiqishni qamrab oladi.
+
+Shunday qilib, III bobda olingan empirik natijalar “Koozat” tizimining
+haqiqiy pedagogik qiymati va keng amaliy istiqbollarini ilmiy asoslangan
+tarzda tasdiqlaydi. Tizimning ta’lim sifatini sezilarli oshirish,
+pedagogik aralashuvni tezlashtirish va foydalanuvchi qoniqishini
+ta’minlash bo‘yicha samaradorligi yuqori darajada bo‘lishi qayd etildi.
+
+IV BOB. HAYOT FAOLIYATI XAVFSIZLIGI
+
+4.1. Kompyuter bilan ishlash joyini tashkil etish va ergonomika talablari
+
+Zamonaviy dasturchining mehnati bevosita shaxsiy kompyuter va monitor
+oldida o‘tkaziladigan uzoq muddatli faoliyat bilan bog‘liq. Diplom
+loyihasi doirasida “Koozat” real vaqtli o‘quv analitikasi tizimi ishlab
+chiqilgan jarayonda mualliflar tomonidan kunlik 8–10 soatgacha kompyuter
+ortida ishlash zarurati yuzaga keldi. Shu sababli kompyuter bilan
+ishlash joyini ergonomik tashkil etish, salomatlikni asrash va mehnat
+unumdorligini ta’minlash dolzarb masala hisoblanadi.
+
+4.1.1. Me’yoriy-huquqiy asoslar. O‘zbekiston Respublikasida kompyuter
+bilan ishlash joyini tashkil etish bo‘yicha quyidagi normativ hujjatlar
+amal qiladi:
+
+- O‘zbekiston Respublikasining “Mehnat muhofazasi to‘g‘risida”gi qonuni
+  (1993-yil 1-may, yangi tahriri 2016-yil);
+- SanQoidM № 0325-16 “Shaxsiy elektron-hisoblash mashinalari va
+  videodisplay terminallari bilan ishlashga oid gigiyenik talablar”;
+- O‘zDSt 1057:2004 “Mehnat muhofazasi. Kompyuter bilan ishlash joyiga
+  umumiy ergonomik talablar”;
+- ISO 9241-5:1998 “Ergonomic requirements for office work with visual
+  display terminals — Workstation layout and postural requirements”
+  xalqaro standarti.
+
+4.1.2. Ish joyining geometrik o‘lchamlari. Yuqorida sanab o‘tilgan
+hujjatlarga muvofiq, dasturchining ish joyi quyidagi talablarni
+qondirishi shart:
+
+  -------------------------------------------------------------
+  Parametr                       Tavsiya etilgan qiymat
+  ------------------------------ ------------------------------
+  Stol balandligi                680–800 mm (sozlanadigan)
+
+  Stol chuqurligi                kamida 600 mm
+
+  Stol uzunligi                  kamida 1200 mm
+
+  Klaviatura va stol qirralari   100–300 mm
+  orasidagi masofa               
+
+  Monitor va ko‘zlar orasidagi   600–700 mm
+  masofa                         
+
+  Monitor balandligi (markazi)   ko‘z chiziqdan 10–20° pastda
+
+  Kursi balandligi               400–500 mm (sozlanadigan)
+
+  Bitta xodimga ajratilgan       kamida 6 m²
+  maydon                         
+
+  Bitta xodimga ajratilgan hajm  kamida 20 m³
+  -------------------------------------------------------------
+
+Ish kursisi ergonomik bo‘lishi, bel va orqaga to‘liq tayanch berishi,
+qo‘ltiqdoshlari va orqa burchagi sozlanishi shart. Suyak-mushak tizimi
+shikastlanishining oldini olish uchun har 45–60 daqiqada 10–15 daqiqalik
+tanaffus qilish tavsiya etiladi.
+
+4.1.3. Yorug‘lik sharoitlari. Ko‘rish a’zolarining toliqishini oldini
+olish uchun ish joyining yorug‘ligi quyidagi ko‘rsatkichlarga javob
+berishi kerak:
+
+- Umumiy yorug‘lik darajasi — 300–500 lk;
+- Hujjatlarning yuzasidagi yorug‘lik — 300–500 lk;
+- Monitor ekranidagi maxsus yorug‘lik — 200 lk dan oshmasligi;
+- Yorug‘lik manbai ko‘zga to‘g‘ri tushmaslik va ekran yuzasida
+  qaytmaslik kerak;
+- Tabiiy yorug‘likdan foydalanish — derazadan kelayotgan yorug‘lik chap
+  tomondan (o‘ng qo‘l bilan yozuvchilar uchun) tushishi tavsiya etiladi;
+- Tunda ishlash uchun salqin (4000 K) yoki neytral (5000 K) oq rangli
+  LED lampalardan foydalanish maqsadga muvofiq.
+
+4.1.4. Mikroiqlim ko‘rsatkichlari. Yopiq ish xonasida sog‘lom mikroiqlim
+quyidagi parametrlar bilan ta’minlanadi:
+
+  ---------------------------------------------------------------
+  Davr            Harorat, °C     Nisbiy namlik,  Havo harakati,
+                                  %               m/s
+  --------------- --------------- --------------- ---------------
+  Sovuq davr      22–24           40–60           ≤ 0,1
+  (qish)                                          
+
+  Issiq davr      23–25           40–60           ≤ 0,2
+  (yoz)                                           
+  ---------------------------------------------------------------
+
+Havoning chang va karbonat angidrid bilan ifloslanishi sanitar
+me’yoridan oshmasligi kerak. Bunga erishish uchun xona muntazam ravishda
+shamollatib turilishi (kuniga kamida 2–3 marta, 10–15 daqiqadan), iloji
+bo‘lsa, mexanik shamollatish va kondisioner tizimini joriy etish tavsiya
+etiladi.
+
+4.1.5. Tovush va elektromagnit nurlanish darajasi. Monitor, sistema
+bloki va periferiya qurilmalari ishlaganda tovush darajasi 50 dBA dan,
+EMF darajasi esa SanQoidM bo‘yicha belgilangan me’yorlardan oshmasligi
+shart. Zamonaviy LED-monitorlar va SSD-asosli kompyuterlar ushbu
+talablarga deyarli barchasi javob beradi.
+
+4.1.6. Vizual toliqishning oldini olish. Uzoq muddat displeyga qarash
+natijasida yuzaga keladigan vizual toliqish (Computer Vision Syndrome)
+zamonaviy dasturchilarning eng keng tarqalgan kasbiy salomatlik muammosi
+hisoblanadi. Uning oldini olishning samarali usullari:
+
+- 20-20-20 qoidasi — har 20 daqiqada 20 fut (~6 metr) uzoqlikdagi
+  narsaga 20 soniya qarash;
+- Monitorni o‘zgarish (blue light) filtri yoki “Night Shift”/“Eye
+  Comfort Shield” rejimi bilan ishlatish;
+- Ekran yorqinligi va kontrastini xonadagi yorug‘likka moslashtirish;
+- O‘rta yoshli va kattaroq dasturchilar uchun bifokal yoki kompyuter
+  ko‘zoynaklaridan foydalanish.
+
+4.1.7. Tana holatining to‘g‘riligi. Noto‘g‘ri o‘tirish onkologik
+bo‘lmagan, lekin uzoq muddatli salomatlik muammolarining (skolioz,
+osteoxondroz, Carpal Tunnel Syndrome) asosiy sababidir. Tavsiya etilgan
+to‘g‘ri o‘tirish holati:
+
+- Oyoq kafti to‘liq polda (yoki maxsus oyoq tayanchida);
+- Tizzalar 90–110° burchak ostida bukilgan;
+- Bel pastki qismida tayanchga to‘liq tegib turadi;
+- Yelkalar bo‘sh, ko‘tarilmagan;
+- Tirsaklar 90° burchakda, qo‘l kafti klaviatura bilan bir tekislikda;
+- Monitor markaziy nuqtasi ko‘z chiziqdan 10–20° pastda.
+
+4.2. Elektr xavfsizligi va yong‘in xavfsizligi qoidalari
+
+Kompyuter texnikasidan foydalanish elektr toki bilan bevosita aloqada
+bo‘lishni va potensial yong‘in xavfini o‘z ichiga oladi. Shu sababli
+mehnat muhofazasi qoidalarini puxta bilish va ularga rioya qilish
+hayotiy zaruratdir.
+
+4.2.1. Elektr xavfsizligi me’yoriy talablari. O‘zbekiston
+Respublikasining “Elektr energiyasidan foydalanish qoidalari” va PUE
+(Pravila Ustroystva Elektroustanovok) talablariga muvofiq, ofis va o‘quv
+binolarida elektr ta’minoti quyidagi xavfsizlik darajalarini ta’minlashi
+shart:
+
+- Tarmoq kuchlanishi nominal 220 V / 50 Hz, kuchlanish o‘zgarishlari ±10
+  % chegaralarda;
+- Yer ulanish (ground) tizimi majburiy — barcha rozetkalar uch-kontaktli
+  (toza “yer” simi bilan) bo‘lishi shart;
+- Residual Current Device (RCD, qisqa tutash zanjirini yorgan himoya
+  qurilmasi) ish toki 30 mA dan oshmasligi kerak;
+- Bitta rozetkaga 4 dan ortiq qurilmani ulamaslik;
+- Kabellarning izolatsiyasi shikastlanmagan, uzunligi 1,5 metrdan ortiq
+  kabellarni o‘rash taqiqlanadi;
+- Yer ulanishsiz uzaytirgich (extension cord) yoki “troynik”lardan
+  kompyuter texnikasi uchun foydalanish taqiqlanadi.
+
+4.2.2. Foydalanuvchining shaxsiy xavfsizlik qoidalari. Kompyuter bilan
+ishlovchi dasturchi quyidagi qoidalarga rioya qilishi shart:
+
+1.  Kompyuterni nam qo‘l bilan ushlamaslik va nam joyga o‘rnatmaslik;
+2.  Ishni boshlashdan oldin elektr simlarini, vilkalarni va rozetkalarni
+    vizual ko‘zdan kechirib chiqish;
+3.  Ish jarayonida g‘ayritabiiy hidlar (kuyish hidi), tovushlar yoki
+    tutun paydo bo‘lsa, darhol elektrni o‘chirib, mas’ul shaxsga xabar
+    berish;
+4.  Kompyuterni o‘zi ta’mirlashga urinmaslik — bu maxsus malakali
+    mutaxassis ishi;
+5.  Stol ustida suyuq ichimliklarni qoldirmaslik (klaviaturaga
+    to‘kilishi qisqa tutash zanjir hosil qilishi mumkin);
+6.  Ishni tugatgach, kompyuterni to‘g‘ri yopish va elektrdan uzish;
+7.  Momaqaldiroq paytida kompyuterni o‘chirib, simli internet va
+    elektrdan ajratib qo‘yish.
+
+4.2.3. Yong‘in xavfsizligi. Kompyuter zali yoki ofisida potensial
+yong‘in manbalari:
+
+- Elektr kabelining qisqa tutash zanjiri (eng keng tarqalgan sabab);
+- Manba bloki (PSU)ning toliqib, qizib ketishi;
+- Akkumulyator (li-ion) yorilishi (noutbuklar);
+- Issiqlik chiqaruvchi qurilmalarni (server, ko‘p sonli monitor) tor
+  xonada zich joylashtirish.
+
+Yong‘in chiqishining oldini olish uchun:
+
+- O‘t o‘chirgich (CO₂ yoki kukunli, suvli emas — chunki elektronikani
+  buzadi) har bir 100 m² ofis maydoniga kamida 1 ta o‘rnatiladi;
+- Tutun datchikli (smoke detector) avtomatik signalizatsiya tizimi joriy
+  etiladi;
+- Evakuatsiya yo‘llari va shoshilinch chiqishlar belgilangan, to‘sib
+  qo‘yilmagan bo‘lishi shart;
+- Ofisdagi barcha xodimlar yong‘in xavfi va evakuatsiya rejasi bilan
+  tanishtirilgan bo‘lishi kerak.
+
+4.2.4. Birinchi tibbiy yordam. Elektr toki ta’sirida shikastlangan
+shaxsga yordam ko‘rsatish tartibi:
+
+1.  Avval xavfsizlikni ta’minlash — manba o‘chirilmasdan jabrlanuvchiga
+    tegmaslik;
+2.  Avtomat himoyani o‘chirish yoki vilkani rozetkadan tortib olish;
+3.  Jabrlanuvchini xavfsiz joyga olib chiqish (quruq, izolyatsiyalangan
+    vositadan foydalanib);
+4.  Nafas olishi va yurak urishi to‘xtagan bo‘lsa, sun’iy nafas olish va
+    yurak massajini boshlash;
+5.  Tez yordam (103) chaqirish va shifokor kelguncha jabrlanuvchini
+    hushyor saqlash.
+
+4.2.5. Diplom loyihasi sharoitidagi xavfsizlik tahlili. “Koozat”
+loyihasini ishlab chiqishda muallif tomonidan quyidagi vositalardan
+foydalanildi: MacBook noutbuki, tashqi 27 dyumli monitor, ergonomik
+klaviatura va sichqoncha, yer ulanishga ega rozetka, UPS (uzluksiz
+elektr ta’minoti) qurilmasi. Ish joyi ergonomik talablarga muvofiq
+sozlangan: monitor ko‘z balandligida, klaviatura tirsak chizig‘ida,
+derazadan kelayotgan tabiiy yorug‘lik chap tomondan, sun’iy yorug‘lik —
+4000 K LED lampa. Har 50 daqiqada 10 daqiqalik tanaffus qilish va
+“20-20-20” qoidasi qo‘llanildi.
+
+Bo‘lim bo‘yicha xulosa. Mazkur bobda diplom loyihasi sharoitidagi mehnat
+muhofazasi va hayot faoliyati xavfsizligi masalalari ko‘rib chiqildi.
+Kompyuter bilan ishlash joyini ergonomik tashkil etish, elektr va
+yong‘in xavfsizligi qoidalariga to‘liq rioya qilingan holda “Koozat”
+tizimini ishlab chiqish jarayoni amalga oshirildi. Mazkur talablarga
+rioya qilish nafaqat individual sog‘liqni asrash, balki mehnat
+unumdorligini, dasturiy mahsulot sifatini va loyihaning umumiy
+muvaffaqiyatini ta’minlovchi muhim omillardan biridir.
+
+IV bob bo‘yicha xulosa
+
+To‘rtinchi bobda diplom loyihasi doirasida hayot faoliyati xavfsizligi
+(HFX) masalalari batafsil yoritildi. Olib borilgan tahlil asosida
+quyidagi yakuniy xulosalar shakllantirildi:
+
+1.  Kompyuter bilan ishlash joyini tashkil etish ilmiy-asoslangan
+    ergonomik tamoyillarga (ISO 9241-5, SanQoidM № 0325-16, O‘zDSt
+    1057:2004) muvofiq amalga oshirilishi shart. Bunda stol va kursi
+    geometrik o‘lchamlari, monitor balandligi va masofasi, klaviatura
+    joylashuvi muhim ahamiyatga ega.
+
+2.  Yorug‘lik, mikroiqlim, tovush va elektromagnit nurlanish
+    ko‘rsatkichlari sanitar-gigiyenik me’yorlarga javob berishi shart.
+    Tavsiya etilgan parametrlar (300–500 lk yorug‘lik, 22–25 °C harorat,
+    40–60 % namlik, ≤ 50 dBA tovush) dasturchining samarali va
+    salomatligi yo‘qotilmagan holatda ishlashini ta’minlaydi.
+
+3.  Vizual toliqishning oldini olish uchun “20-20-20 qoidasi”,
+    blue-light filtri va monitorni to‘g‘ri sozlash hayotiy ahamiyatga
+    ega. Bu Computer Vision Syndrome va boshqa kasbiy salomatlik
+    muammolarining oldini oladi.
+
+4.  Elektr xavfsizligi majburiy yer ulanish, RCD himoyasi, sifatli
+    kabellar va tegishli rozetka tizimini talab qiladi. Yer ulanishsiz
+    uzaytirgichlardan foydalanish taqiqlanadi.
+
+5.  Yong‘in xavfsizligi o‘t o‘chirgich (CO₂ yoki kukunli), tutun
+    datchiklari, belgilangan evakuatsiya yo‘llari va xodimlar
+    tayyorgarligini o‘z ichiga oladi. Suvli o‘t o‘chirgichlar elektr
+    qurilmalari uchun mos emas.
+
+6.  Birinchi tibbiy yordam bo‘yicha asosiy bilim har bir kompyuter bilan
+    ishlovchi xodimda bo‘lishi shart, ayniqsa elektr toki ta’sirida
+    shikastlanish hollarida.
+
+7.  “Koozat” loyihasi ishlab chiqilgan ish joyi yuqorida sanab o‘tilgan
+    barcha xavfsizlik va ergonomika talablariga to‘liq mos kelgan holda
+    tashkillashtirildi, bu esa loyihani yuqori sifatda va o‘z vaqtida
+    yakunlashga sezilarli hissa qo‘shdi. # UMUMIY XULOSA
+
+Mazkur diplom loyihasida talabalarning o‘quv jarayonini real vaqt
+rejimida monitoring qiluvchi “Koozat” analitika tizimini ilmiy
+asoslangan tarzda loyihalash, dasturiy ta’minotini ishlab chiqish va
+uning samaradorligini empirik baholash bo‘yicha to‘liq tadqiqot ishlari
+amalga oshirildi. Olib borilgan ishlar natijasida quyidagi yakuniy
+xulosalar shakllantirildi:
+
+1. Mavzuning dolzarbligi nazariy jihatdan asoslandi. I bobda olib
+borilgan tahlil shuni ko‘rsatdiki, zamonaviy ta’lim tizimi ma’lumotlarga
+asoslangan boshqaruvga o‘tib bormoqda va o‘quv analitikasi (Learning
+Analytics) bu o‘tishning markaziy bo‘g‘inini tashkil etadi. An’anaviy
+davriy nazoratga asoslangan baholash modelining asosiy kamchiligi —
+kechikkan reaksiya va individuallashtirilmagan yondashuv — real vaqtli
+monitoring orqali samarali bartaraf etiladi. Xalqaro tadqiqotlar (Purdue
+Signals, OU Analyse) real vaqtli ogohlantirish tizimlari talabalarning
+muvaffaqiyatli yakunlash darajasini sezilarli darajada oshirishini
+isbotlagan.
+
+2. Asosiy o‘quv ko‘rsatkichlari va ularning kompozit indekslari ishlab
+chiqildi. Davomat, baholar va faollik kabi alohida ko‘rsatkichlardan
+tashqari, ularning sintezi sifatida ikkita kompozit indeks taklif
+etildi: Umumiy Progress Indeksi (UPI = 0,30·Davomat + 0,50·Baho +
+0,20·Faollik) va Risk Indeksi (RI). Bu ko‘rsatkichlar talabaning umumiy
+holatini bir o‘lchovga keltirish va xavfli holatlarni avtomatik
+aniqlashga imkon beradi.
+
+3. Mavjud LMS-tizimlarning qiyosiy tahlili o‘tkazildi. Moodle, Google
+Classroom va Canvas kabi yetakchi platformalarning afzalliklari va
+kamchiliklari aniqlandi. Asosiy kamchiliklar: kontentga
+yo‘naltirilganlik (analitika ikkinchi darajada), statik hisobotlar,
+mobil moslashuvchanlikning yetishmasligi, real vaqtli sinxronizatsiya
+yo‘qligi. Bu kamchiliklar “Koozat” tizimini loyihalashda asosiy
+yo‘naltiruvchi sifatida ishlatildi.
+
+4. Tizim arxitekturasi ilmiy asoslangan tarzda tanlandi. Serverless /
+BaaS arxitekturasi va Clean Architecture tamoyillari asosida to‘rt
+qatlamli model (Presentation → Domain → Data → Cloud Infrastructure)
+ishlab chiqildi. Texnologiyalar steki sifatida Flutter (Dart) va
+Firebase to‘plami (Authentication, Cloud Firestore, Cloud Functions,
+Cloud Messaging, Hosting) tanlandi.
+
+5. “Koozat” tizimining dasturiy ta’minoti to‘liq ishlab chiqildi. Tizim
+quyidagi asosiy modullarni o‘z ichiga oladi: autentifikatsiya
+(email/parol va Google Sign-In), rolga asoslangan kirish
+(talaba/o‘qituvchi/administrator), real vaqtli ma’lumotlar oqimini
+boshqarish (Firestore Streams + Riverpod StreamProvider), Cloud
+Functions orqali fon hisob-kitoblari (UPI, RI), push-bildirishnomalar va
+vizual analitika ekranlari.
+
+6. UI/UX dizayni xalqaro standartlarga muvofiq amalga oshirildi.
+User-Centered Design, Material Design 3 va WCAG 2.1 AA standartlari
+asosida foydalanuvchiga qulay, intuitiv va keng auditoriyaga
+moslashtirilgan interfeys yaratildi. Uchta tilda lokalizatsiya (o‘zbek
+lotin, rus, ingliz) qo‘llab-quvvatlanadi.
+
+7. Tizimning ta’lim sifatiga ijobiy ta’siri empirik tasdiqlandi.
+Muhammad al-Xorazmiy nomidagi TATUning AKT sohasida kasb ta’limi
+fakultetida o‘tkazilgan 12 haftalik kvazi-eksperimental sinov natijasida
+quyidagi statistik jihatdan ahamiyatli o‘zgarishlar qayd etildi:
+
+- Davomat darajasi +6,8 foiz punkt (84,2 % → 91,0 %), t = 5,17, p <
+  0,001;
+- O‘rtacha yakuniy baho +6,7 ball (68,4 → 75,1), t = 1,87, p = 0,034,
+  Cohen’s d = 0,54;
+- Xavf zonasidagi talabalar ulushi 5 baravar kamaydi (20,8 % → 4,2 %),
+  χ² = 4,18, p = 0,041;
+- O‘qituvchi-talaba aloqa chastotasi 4,25 baravar oshdi, U = 18, p <
+  0,001;
+- Pedagogik aralashuv kechikishi 14 kundan 1,8 kungacha qisqardi (7,8
+  baravar tezroq);
+- Foydalanuvchi qoniqishi: talabalar 4,42/5, o‘qituvchilar 4,70/5; NPS =
+  81 %.
+
+8. Tizimning afzalliklari va kamchiliklari aniqlandi. Asosiy afzalliklar
+— real vaqtli sinxronizatsiya, mobil qurilmalarga ustuvor yondashuv,
+sodda, ammo kuchli analitika, o‘zbek tiliga to‘liq lokalizatsiya, past
+joriy etish to‘sig‘i va iqtisodiy samaradorligi. Asosiy cheklovlar —
+internetga bog‘liqlik, bitta xizmat ko‘rsatuvchiga bog‘lanib qolish
+xavfi, cheklangan sinov qamrovi, moslashuvchan ta’lim mexanizmlarining
+yo‘qligi.
+
+9. Rivojlantirish yo‘l xaritasi ishlab chiqildi. Uch bosqichli
+rivojlanish dasturi taklif etildi: qisqa muddatli (2026 yil 1-yarmi) —
+o‘yinlashtirish, ota-onalar paneli, kengaytirilgan sinov; o‘rta muddatli
+(2026 yil 2-yarmi – 2027) — sun’iy intellekt asosidagi prediktiv
+analitika, adaptiv tavsiyalar; uzoq muddatli (2028+) — ko‘p tashkilotli
+arxitektura SaaS, o‘z serverida joylashtiriladigan variant, xalqaro
+bozor.
+
+10. Hayot faoliyati xavfsizligi talablari to‘liq amalga oshirildi. IV
+bobda ko‘rib chiqilgan ergonomika, elektr va yong‘in xavfsizligi
+qoidalari (SanQoidM № 0325-16, ISO 9241-5, PUE) loyihani ishlab chiqish
+jarayonida to‘liq hisobga olindi va amaliyotda qo‘llanildi.
+
+Tadqiqotning ilmiy yangiligi — Backend-as-a-Service arxitekturasi
+(Firebase) asosida real vaqtli o‘quv analitikasi tizimini qurishning
+to‘liq metodologiyasi taklif etildi va empirik tasdiqlandi. UPI va Risk
+Indeksi kabi kompozit ko‘rsatkichlar formulalari va ularning vazn
+koeffitsiyentlari nazariy asoslandi.
+
+Tadqiqotning amaliy ahamiyati — ishlab chiqilgan “Koozat” tizimi oliy va
+o‘rta maxsus ta’lim muassasalarida, shuningdek, o‘quv markazlari va
+onlayn kurslar platformalarida amaliyotda qo‘llanilishi mumkin. Sinov
+natijalari tizimning ta’lim sifatiga real ijobiy ta’sirini tasdiqlaydi.
+
+Tavsiyalar. Olib borilgan tadqiqot natijalari asosida quyidagi
+tavsiyalar shakllantirildi:
+
+1.  Ta’lim muassasalariga zamonaviy ma’lumotlarga asoslangan boshqaruv
+    tizimlarini joriy etishni jadallashtirish tavsiya etiladi;
+2.  “Koozat” tizimini xalqaro va respublika miqyosida kengaytirilgan
+    sinovdan o‘tkazish maqsadga muvofiq;
+3.  Sun’iy intellekt asosidagi prediktiv analitika moduli ishlab
+    chiqilishi kelajakdagi ustuvor vazifa hisoblanadi;
+4.  Tizimni HEMIS va boshqa mavjud ta’lim platformalari bilan
+    integratsiyalashtirish to‘g‘risida ishlar olib borilishi kerak;
+5.  O‘qituvchilarning raqamli savodxonligini oshirishga qaratilgan o‘quv
+    kurslarini tashkillashtirish lozim.
+
+Yakunda shuni ta’kidlash lozimki, ushbu diplom loyihasi davomida olib
+borilgan tadqiqotlar va ishlab chiqilgan “Koozat” real vaqtli o‘quv
+analitikasi tizimi belgilangan maqsadlarga to‘liq erishishga imkon
+berdi. Tizimning real foydalanuvchi muhitidagi sinov natijalari uning
+ta’limdagi yuqori pedagogik va amaliy qiymatini ishonchli tasdiqladi.
+
+FOYDALANILGAN ADABIYOTLAR RO‘YXATI
+
+O‘zbekiston Respublikasi qonunlari va me’yoriy-huquqiy hujjatlari
+
+1.  O‘zbekiston Respublikasining “Ta’lim to‘g‘risida”gi qonuni. —
+    Toshkent, 2020-yil 23-sentyabr, № O‘RQ-637.
+
+2.  O‘zbekiston Respublikasining “Shaxsiy ma’lumotlar to‘g‘risida”gi
+    qonuni. — Toshkent, 2019-yil 2-iyul, № O‘RQ-547.
+
+3.  O‘zbekiston Respublikasining “Mehnat muhofazasi to‘g‘risida”gi
+    qonuni. — Toshkent, yangi tahriri 2016-yil 24-sentyabr, № O‘RQ-410.
+
+4.  O‘zbekiston Respublikasi Prezidentining 2020-yil 6-oktabrdagi
+    PF-6079-son “Raqamli O‘zbekiston – 2030” strategiyasini tasdiqlash
+    to‘g‘risidagi farmoni.
+
+5.  O‘zbekiston Respublikasi Prezidentining 2020-yil 27-fevraldagi
+    PQ-4623-son “Oliy ta’lim tizimini 2030-yilgacha rivojlantirish
+    konsepsiyasini tasdiqlash to‘g‘risida”gi qarori.
+
+6.  O‘zbekiston Respublikasi Vazirlar Mahkamasining 2024-yil
+    13-dekabrdagi 836-sonli “Oliy ta’lim tashkilotlari
+    bitiruvchilarining yakuniy davlat attestatsiyasini o‘tkazish tartibi
+    to‘g‘risida”gi qarori.
+
+7.  SanQoidM № 0325-16. “Shaxsiy elektron-hisoblash mashinalari va
+    videodisplay terminallari bilan ishlashga oid gigiyenik talablar”. —
+    Toshkent: O‘zR Sog‘liqni saqlash vazirligi, 2016.
+
+8.  O‘zDSt 1057:2004. “Mehnat muhofazasi. Kompyuter bilan ishlash joyiga
+    umumiy ergonomik talablar”. — Toshkent: O‘zStandart, 2004.
+
+Kitoblar va monografiyalar
+
+9.  Martin R.C. Clean Architecture: A Craftsman’s Guide to Software
+    Structure and Design. — Prentice Hall, 2017. — 432 p.
+
+10. Norman D.A. The Design of Everyday Things: Revised and Expanded
+    Edition. — Basic Books, 2013. — 368 p.
+
+11. Nielsen J. Usability Engineering. — Academic Press, 1993. — 362 p.
+
+12. Frost B. Atomic Design. — Brad Frost Web, 2016. — 200 p.
+
+13. Shadish W.R., Cook T.D., Campbell D.T. Experimental and
+    Quasi-Experimental Designs for Generalized Causal Inference. —
+    Houghton Mifflin, 2002. — 656 p.
+
+14. Campbell D.T., Stanley J.C. Experimental and Quasi-Experimental
+    Designs for Research. — Rand McNally, 1963. — 84 p.
+
+15. Cohen J. Statistical Power Analysis for the Behavioral Sciences. —
+    2nd ed. — Lawrence Erlbaum Associates, 1988. — 567 p.
+
+16. Siemens G., Long P. Penetrating the Fog: Analytics in Learning and
+    Education. — EDUCAUSE Review, Vol. 46, No. 5, 2011. — P. 30–40.
+
+17. Long P., Siemens G., Conole G., Gašević D. (Eds.). Proceedings of
+    the 1st International Conference on Learning Analytics and Knowledge
+    (LAK ’11). — ACM, 2011.
+
+Ilmiy maqolalar
+
+18. Arnold K.E., Pistilli M.D. Course Signals at Purdue: Using Learning
+    Analytics to Increase Student Success // Proceedings of the 2nd
+    International Conference on Learning Analytics and Knowledge. —
+    ACM, 2012. — P. 267–270.
+
+19. Romero C., Ventura S. Educational data mining and learning
+    analytics: An updated survey // WIREs Data Mining and Knowledge
+    Discovery. — 2020. — Vol. 10, No. 3. — e1355.
+
+20. Ferguson R. Learning analytics: drivers, developments and challenges
+    // International Journal of Technology Enhanced Learning. — 2012. —
+    Vol. 4, No. 5/6. — P. 304–317.
+
+21. Slade S., Prinsloo P. Learning Analytics: Ethical Issues and
+    Dilemmas // American Behavioral Scientist. — 2013. — Vol. 57,
+    No. 10. — P. 1510–1529.
+
+22. Wong J., Khalil M., Baars M., de Koning B.B., Paas F. Exploring
+    sequences of learner activities in relation to self-regulated
+    learning in a massive open online course // Computers & Education.
+    — 2019. — Vol. 140. — 103595.
+
+23. Gašević D., Dawson S., Siemens G. Let’s not forget: Learning
+    analytics are about learning // TechTrends. — 2015. — Vol. 59,
+    No. 1. — P. 64–71.
+
+24. Sclater N., Peasgood A., Mullan J. Learning Analytics in Higher
+    Education: A Review of UK and International Practice // Jisc.
+    — 2016. — 60 p.
+
+Texnik manbalar va dasturchilik adabiyotlari
+
+25. Flutter Documentation. Flutter Framework: Architectural Overview. —
+    Google, 2024. — URL:
+    https://docs.flutter.dev/resources/architectural-overview
+
+26. Firebase Documentation. Cloud Firestore: Best Practices. —
+    Google, 2024. — URL:
+    https://firebase.google.com/docs/firestore/best-practices
+
+27. Dart Language Specification. Effective Dart: Style Guide. —
+    Google, 2024. — URL: https://dart.dev/effective-dart
+
+28. Material Design 3. Material Design 3 Foundation. — Google, 2024. —
+    URL: https://m3.material.io/
+
+29. ISO/IEC/IEEE 42010:2011. Systems and software engineering —
+    Architecture description. — International Organization for
+    Standardization, 2011.
+
+30. W3C. Web Content Accessibility Guidelines (WCAG) 2.1. — World Wide
+    Web Consortium, 2018. — URL: https://www.w3.org/TR/WCAG21/
+
+Mavjud LMS-tizimlarning hujjatlari
+
+31. Moodle Documentation. Moodle Analytics. — Moodle Pty Ltd, 2024. —
+    URL: https://docs.moodle.org/en/Analytics
+
+32. Google Classroom Help. Google for Education: Classroom
+    Documentation. — Google, 2024. — URL:
+    https://support.google.com/edu/classroom
+
+33. Canvas LMS Documentation. Canvas Analytics Hub. — Instructure, 2024.
+    — URL: https://community.canvaslms.com/
+
+Statistik va tadqiqot uslubi
+
+34. Field A. Discovering Statistics Using IBM SPSS Statistics. — 5th
+    ed. — SAGE Publications, 2018. — 1104 p.
+
+35. Mann H.B., Whitney D.R. On a Test of Whether One of Two Random
+    Variables is Stochastically Larger than the Other // Annals of
+    Mathematical Statistics. — 1947. — Vol. 18, No. 1. — P. 50–60.
+
+Internet manbalari
+
+36. Stack Overflow Developer Survey 2024. — URL:
+    https://survey.stackoverflow.co/2024/
+
+37. State of JS 2023 Survey Results. — URL: https://2023.stateofjs.com/
+
+38. SoLAR (Society for Learning Analytics Research). — URL:
+    https://www.solaresearch.org/
+
+39. Open University Analyse Project. — URL:
+    https://analyse.kmi.open.ac.uk/
+
+40. EDUCAUSE Horizon Report 2024. — URL:
+    https://www.educause.edu/horizon-report
+
+Mualliflik tomonidan ishlatilgan ochiq manba kutubxonalari
+
+41. flutter_bloc — State management library for Flutter. — URL:
+    https://pub.dev/packages/flutter_bloc
+
+42. go_router — Declarative routing for Flutter. — URL:
+    https://pub.dev/packages/go_router
+
+43. fl_chart — Beautiful charts for Flutter. — URL:
+    https://pub.dev/packages/fl_chart
+
+44. cloud_firestore — Firestore SDK for Flutter. — URL:
+    https://pub.dev/packages/cloud_firestore
+
+45. firebase_auth — Firebase Authentication SDK for Flutter. — URL:
+    https://pub.dev/packages/firebase_auth

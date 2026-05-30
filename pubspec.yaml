@@ -1,0 +1,48 @@
+name: koozat
+description: "Real vaqtda o'quv progressini monitoring qiluvchi analitika tizimi"
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.9.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State management
+  flutter_bloc: ^8.1.6
+  equatable: ^2.0.5
+
+  # Navigation
+  go_router: ^14.6.2
+
+  # Firebase
+  firebase_core: ^3.6.0
+  firebase_auth: ^5.3.1
+  cloud_firestore: ^5.4.4
+
+  # Charts
+  fl_chart: ^0.69.0
+
+  # YouTube video player (web + mobile)
+  youtube_player_iframe: ^5.2.0
+
+  # UI
+  google_fonts: ^6.2.1
+  percent_indicator: ^4.2.3
+
+  # Utils
+  shared_preferences: ^2.3.3
+  intl: ^0.19.0
+  uuid: ^4.5.1
+
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
