@@ -40,9 +40,14 @@ class CourseDetailScreen extends StatelessWidget {
                 actions: user.isTeacher
                     ? [
                         IconButton(
-                          icon: const Icon(Icons.bar_chart_rounded),
+                          icon: const Icon(Icons.assignment_turned_in_outlined),
                           onPressed: () =>
-                              context.push('/analytics/$courseId'),
+                              context.push('/submissions/$courseId'),
+                          tooltip: 'Topshiriqlar',
+                        ),
+                        IconButton(
+                          icon: const Icon(Icons.bar_chart_rounded),
+                          onPressed: () => context.push('/analytics/$courseId'),
                           tooltip: 'Analitika',
                         ),
                         const SizedBox(width: 4),
@@ -52,12 +57,13 @@ class CourseDetailScreen extends StatelessWidget {
               body: lessons.isEmpty
                   ? const _EmptyLessons()
                   : user.isTeacher
-                      ? _TeacherLessonsView(lessons: lessons)
-                      : _StudentLessonsView(
-                          lessons: lessons,
-                          courseId: courseId,
-                          studentId: user.id,
-                        ),
+                  ? _TeacherLessonsView(lessons: lessons)
+                  : _StudentLessonsView(
+                      lessons: lessons,
+                      courseId: courseId,
+                      studentId: user.id,
+                      studentName: user.name,
+                    ),
               floatingActionButton: user.isTeacher
                   ? Container(
                       decoration: BoxDecoration(
@@ -66,11 +72,17 @@ class CourseDetailScreen extends StatelessWidget {
                       ),
                       child: FloatingActionButton.extended(
                         onPressed: () => _showAddLessonSheet(
-                            context, courseService, courseId, lessons.length),
+                          context,
+                          courseService,
+                          courseId,
+                          lessons.length,
+                        ),
                         backgroundColor: AppColors.primary,
                         elevation: 0,
-                        icon:
-                            const Icon(Icons.add_rounded, color: Colors.white),
+                        icon: const Icon(
+                          Icons.add_rounded,
+                          color: Colors.white,
+                        ),
                         label: const Text(
                           'Dars qo\'shish',
                           style: TextStyle(
@@ -166,9 +178,7 @@ class CourseDetailScreen extends StatelessWidget {
                 TextField(
                   controller: contentCtrl,
                   maxLines: selectedType == LessonType.text ? 5 : 3,
-                  decoration: const InputDecoration(
-                    hintText: 'Dars haqida...',
-                  ),
+                  decoration: const InputDecoration(hintText: 'Dars haqida...'),
                 ),
                 const SizedBox(height: 14),
                 const _SheetLabel('Tur'),
@@ -179,8 +189,8 @@ class CourseDetailScreen extends StatelessWidget {
                         label: 'Matn',
                         icon: Icons.article_outlined,
                         isSelected: selectedType == LessonType.text,
-                        onTap: () => setModalState(
-                            () => selectedType = LessonType.text),
+                        onTap: () =>
+                            setModalState(() => selectedType = LessonType.text),
                       ),
                     ),
                     const SizedBox(width: 8),
@@ -190,7 +200,8 @@ class CourseDetailScreen extends StatelessWidget {
                         icon: Icons.play_circle_outline,
                         isSelected: selectedType == LessonType.video,
                         onTap: () => setModalState(
-                            () => selectedType = LessonType.video),
+                          () => selectedType = LessonType.video,
+                        ),
                       ),
                     ),
                     const SizedBox(width: 8),
@@ -199,8 +210,8 @@ class CourseDetailScreen extends StatelessWidget {
                         label: 'Test',
                         icon: Icons.quiz_outlined,
                         isSelected: selectedType == LessonType.quiz,
-                        onTap: () => setModalState(
-                            () => selectedType = LessonType.quiz),
+                        onTap: () =>
+                            setModalState(() => selectedType = LessonType.quiz),
                       ),
                     ),
                   ],
@@ -224,7 +235,9 @@ class CourseDetailScreen extends StatelessWidget {
                     child: Text(
                       'YouTube video havolasini joylashtiring',
                       style: TextStyle(
-                          fontSize: 11, color: AppColors.textMuted),
+                        fontSize: 11,
+                        color: AppColors.textMuted,
+                      ),
                     ),
                   ),
                 ],
@@ -298,8 +311,10 @@ class CourseDetailScreen extends StatelessWidget {
                             .whereType<QuizQuestion>()
                             .toList();
                         if (builtQuestions.isEmpty) {
-                          _toast(ctx,
-                              'Kamida 1 ta to\'liq savol kiriting (savol + 2 variant)');
+                          _toast(
+                            ctx,
+                            'Kamida 1 ta to\'liq savol kiriting (savol + 2 variant)',
+                          );
                           return;
                         }
                       }
@@ -318,10 +333,12 @@ class CourseDetailScreen extends StatelessWidget {
                           questions: builtQuestions,
                         ),
                       );
-                      final courses =
-                          await courseService.watchAllCourses().first;
-                      final course =
-                          courses.where((c) => c.id == courseId).firstOrNull;
+                      final courses = await courseService
+                          .watchAllCourses()
+                          .first;
+                      final course = courses
+                          .where((c) => c.id == courseId)
+                          .firstOrNull;
                       if (course != null) {
                         await courseService.updateCourse(
                           CourseModel(
@@ -363,8 +380,10 @@ class CourseDetailScreen extends StatelessWidget {
 /// Forma ichida bitta test savolini tahrirlash uchun vaqtinchalik holat.
 class _QuestionDraft {
   final TextEditingController question = TextEditingController();
-  final List<TextEditingController> options =
-      List.generate(4, (_) => TextEditingController());
+  final List<TextEditingController> options = List.generate(
+    4,
+    (_) => TextEditingController(),
+  );
   int correctIndex = 0;
 
   /// To'liq savolnigina qaytaradi (savol matni + kamida 2 ta variant).
@@ -419,8 +438,11 @@ class _QuestionEditor extends StatelessWidget {
               const Spacer(),
               InkWell(
                 onTap: onRemove,
-                child: const Icon(Icons.delete_outline_rounded,
-                    size: 20, color: AppColors.error),
+                child: const Icon(
+                  Icons.delete_outline_rounded,
+                  size: 20,
+                  color: AppColors.error,
+                ),
               ),
             ],
           ),
@@ -455,7 +477,9 @@ class _QuestionEditor extends StatelessWidget {
                         isDense: true,
                         hintText: '${i + 1}-variant',
                         contentPadding: const EdgeInsets.symmetric(
-                            horizontal: 12, vertical: 10),
+                          horizontal: 12,
+                          vertical: 10,
+                        ),
                       ),
                     ),
                   ),
@@ -618,10 +642,12 @@ class _StudentLessonsView extends StatefulWidget {
   final List<LessonModel> lessons;
   final String courseId;
   final String studentId;
+  final String studentName;
   const _StudentLessonsView({
     required this.lessons,
     required this.courseId,
     required this.studentId,
+    required this.studentName,
   });
 
   @override
@@ -634,16 +660,18 @@ class _StudentLessonsViewState extends State<_StudentLessonsView> {
   @override
   void initState() {
     super.initState();
-    _progressFuture = context
-        .read<CourseService>()
-        .getProgress(widget.studentId, widget.courseId);
+    _progressFuture = context.read<CourseService>().getProgress(
+      widget.studentId,
+      widget.courseId,
+    );
   }
 
   void _refresh() {
     setState(() {
-      _progressFuture = context
-          .read<CourseService>()
-          .getProgress(widget.studentId, widget.courseId);
+      _progressFuture = context.read<CourseService>().getProgress(
+        widget.studentId,
+        widget.courseId,
+      );
     });
   }
 
@@ -659,8 +687,10 @@ class _StudentLessonsViewState extends State<_StudentLessonsView> {
           separatorBuilder: (_, __) => const SizedBox(height: 10),
           itemBuilder: (context, i) {
             final lesson = widget.lessons[i];
-            final isCompleted = progress?.lessonProgresses
-                    .any((lp) => lp.lessonId == lesson.id && lp.isCompleted) ??
+            final isCompleted =
+                progress?.lessonProgresses.any(
+                  (lp) => lp.lessonId == lesson.id && lp.isCompleted,
+                ) ??
                 false;
             return _LessonTile(
               lesson: lesson,
@@ -675,6 +705,8 @@ class _StudentLessonsViewState extends State<_StudentLessonsView> {
                     isTeacher: false,
                     progressId: progress?.id,
                     isCompleted: isCompleted,
+                    studentId: widget.studentId,
+                    studentName: widget.studentName,
                   ),
                 );
                 if (result == true) _refresh();
@@ -747,8 +779,11 @@ class _LessonTile extends StatelessWidget {
                 ),
                 child: Center(
                   child: isCompleted
-                      ? const Icon(Icons.check_rounded,
-                          color: Colors.white, size: 20)
+                      ? const Icon(
+                          Icons.check_rounded,
+                          color: Colors.white,
+                          size: 20,
+                        )
                       : Text(
                           '$index',
                           style: const TextStyle(
@@ -788,8 +823,11 @@ class _LessonTile extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(width: 10),
-                        const Icon(Icons.access_time_rounded,
-                            size: 12, color: AppColors.textMuted),
+                        const Icon(
+                          Icons.access_time_rounded,
+                          size: 12,
+                          color: AppColors.textMuted,
+                        ),
                         const SizedBox(width: 3),
                         Text(
                           '${lesson.durationMinutes} min',
@@ -804,8 +842,11 @@ class _LessonTile extends StatelessWidget {
                   ],
                 ),
               ),
-              const Icon(Icons.chevron_right_rounded,
-                  color: AppColors.textMuted, size: 22),
+              const Icon(
+                Icons.chevron_right_rounded,
+                color: AppColors.textMuted,
+                size: 22,
+              ),
             ],
           ),
         ),

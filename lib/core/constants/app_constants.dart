@@ -7,6 +7,7 @@ class AppConstants {
   static const lessonsCollection = 'lessons';
   static const progressCollection = 'progress';
   static const enrollmentsCollection = 'enrollments';
+  static const submissionsCollection = 'submissions';
 
   // User roles
   static const roleTeacher = 'teacher';

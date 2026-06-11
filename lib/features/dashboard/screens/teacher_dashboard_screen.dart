@@ -11,6 +11,7 @@ import '../../../features/courses/models/course_model.dart';
 import '../widgets/stat_card.dart';
 import '../widgets/course_progress_card.dart';
 import '../widgets/live_activity_card.dart';
+import '../widgets/low_performers_card.dart';
 
 class TeacherDashboardScreen extends StatefulWidget {
   const TeacherDashboardScreen({super.key});
@@ -92,6 +93,7 @@ class _HomeTab extends StatelessWidget {
             const SizedBox(height: 20),
             _StatsRow(courses: courses),
             const SizedBox(height: 20),
+            LowPerformersCard(courses: courses),
             LiveActivityCard(courses: courses),
             const SizedBox(height: 20),
             Row(
@@ -320,7 +322,6 @@ class _CoursesTab extends StatelessWidget {
     );
   }
 }
-
 class _EmptyCoursesPlaceholder extends StatelessWidget {
   const _EmptyCoursesPlaceholder();
 

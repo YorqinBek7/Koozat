@@ -15,6 +15,7 @@ import '../../features/courses/screens/course_detail_screen.dart';
 import '../../features/courses/screens/create_course_screen.dart';
 import '../../features/courses/screens/lesson_viewer_screen.dart';
 import '../../features/progress/screens/analytics_screen.dart';
+import '../../features/submissions/screens/submissions_screen.dart';
 
 GoRouter createRouter(AuthBloc authBloc) {
   return GoRouter(
@@ -86,6 +87,12 @@ GoRouter createRouter(AuthBloc authBloc) {
         name: 'lesson',
         builder: (_, state) =>
             LessonViewerScreen(args: state.extra as LessonViewerArgs),
+      ),
+      GoRoute(
+        path: '/submissions/:courseId',
+        name: 'submissions',
+        builder: (_, state) =>
+            SubmissionsScreen(courseId: state.pathParameters['courseId']!),
       ),
     ],
   );

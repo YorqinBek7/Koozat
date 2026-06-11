@@ -9,6 +9,8 @@ import 'features/auth/bloc/auth_bloc.dart';
 import 'features/auth/bloc/auth_event.dart';
 import 'shared/services/auth_service.dart';
 import 'shared/services/course_service.dart';
+import 'shared/services/demo_seeder.dart';
+import 'shared/services/submission_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -28,6 +30,8 @@ class KoozatApp extends StatefulWidget {
 class _KoozatAppState extends State<KoozatApp> {
   late final AuthService _authService;
   late final CourseService _courseService;
+  late final DemoSeeder _demoSeeder;
+  late final SubmissionService _submissionService;
   late final AuthBloc _authBloc;
   late final GoRouter _router;
 
@@ -36,6 +40,8 @@ class _KoozatAppState extends State<KoozatApp> {
     super.initState();
     _authService = AuthService();
     _courseService = CourseService();
+    _demoSeeder = DemoSeeder();
+    _submissionService = SubmissionService();
     _authBloc = AuthBloc(_authService)..add(const AuthSubscriptionRequested());
     _router = createRouter(_authBloc);
   }
@@ -52,6 +58,8 @@ class _KoozatAppState extends State<KoozatApp> {
       providers: [
         RepositoryProvider<AuthService>.value(value: _authService),
         RepositoryProvider<CourseService>.value(value: _courseService),
+        RepositoryProvider<DemoSeeder>.value(value: _demoSeeder),
+        RepositoryProvider<SubmissionService>.value(value: _submissionService),
       ],
       child: BlocProvider<AuthBloc>.value(
         value: _authBloc,

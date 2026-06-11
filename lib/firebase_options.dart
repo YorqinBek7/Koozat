@@ -63,7 +63,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '670737723186',
     projectId: 'koozat',
     storageBucket: 'koozat.firebasestorage.app',
-    iosBundleId: 'com.example.koozat',
+    iosBundleId: 'uz.app.koozat',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
@@ -72,7 +72,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '670737723186',
     projectId: 'koozat',
     storageBucket: 'koozat.firebasestorage.app',
-    iosBundleId: 'com.example.koozat',
+    iosBundleId: 'uz.app.koozat',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
@@ -83,5 +83,4 @@ class DefaultFirebaseOptions {
     authDomain: 'koozat.firebaseapp.com',
     storageBucket: 'koozat.firebasestorage.app',
   );
-
 }

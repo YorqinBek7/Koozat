@@ -4,6 +4,8 @@ import 'package:go_router/go_router.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../shared/services/course_service.dart';
+import '../../../shared/services/submission_service.dart';
+import '../../submissions/models/submission_model.dart';
 import '../models/lesson_model.dart';
 
 class LessonViewerArgs {
@@ -11,12 +13,16 @@ class LessonViewerArgs {
   final bool isTeacher;
   final String? progressId;
   final bool isCompleted;
+  final String? studentId;
+  final String? studentName;
 
   const LessonViewerArgs({
     required this.lesson,
     required this.isTeacher,
     this.progressId,
     this.isCompleted = false,
+    this.studentId,
+    this.studentName,
   });
 }
 
@@ -99,20 +105,297 @@ class _CompleteButtonState extends State<_CompleteButton> {
   Future<void> _complete() async {
     setState(() => _saving = true);
     await context.read<CourseService>().completeLesson(
-          progressId: widget.args.progressId!,
-          lessonId: widget.args.lesson.id,
-          score: widget.score,
-        );
+      progressId: widget.args.progressId!,
+      lessonId: widget.args.lesson.id,
+      score: widget.score,
+    );
     if (!mounted) return;
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(
-        content: Text('Dars bajarildi! 🎉',
-            style: TextStyle(fontWeight: FontWeight.w600)),
+        content: Text(
+          'Dars bajarildi! 🎉',
+          style: TextStyle(fontWeight: FontWeight.w600),
+        ),
         backgroundColor: AppColors.secondary,
         behavior: SnackBarBehavior.floating,
       ),
     );
     context.pop(true);
+  }
+}
+
+// ─── Topshiriq paneli (matn javob → ustoz baholaydi) ──────────────────────
+
+class _SubmissionPanel extends StatefulWidget {
+  final LessonViewerArgs args;
+  const _SubmissionPanel({required this.args});
+
+  @override
+  State<_SubmissionPanel> createState() => _SubmissionPanelState();
+}
+
+class _SubmissionPanelState extends State<_SubmissionPanel> {
+  final _ctrl = TextEditingController();
+  bool _saving = false;
+  bool _editing = false;
+
+  @override
+  void dispose() {
+    _ctrl.dispose();
+    super.dispose();
+  }
+
+  Future<void> _submit() async {
+    final args = widget.args;
+    final text = _ctrl.text.trim();
+    if (text.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Avval javobingizni yozing')),
+      );
+      return;
+    }
+    setState(() => _saving = true);
+    try {
+      await context.read<SubmissionService>().submitAnswer(
+        studentId: args.studentId!,
+        studentName: args.studentName ?? '',
+        courseId: args.lesson.courseId,
+        lessonId: args.lesson.id,
+        lessonTitle: args.lesson.title,
+        progressId: args.progressId,
+        answer: text,
+      );
+      if (!mounted) return;
+      setState(() => _editing = false);
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text(
+            'Topshirildi! Ustoz baholaydi ⏳',
+            style: TextStyle(fontWeight: FontWeight.w600),
+          ),
+          backgroundColor: AppColors.secondary,
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
+    } finally {
+      if (mounted) setState(() => _saving = false);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final args = widget.args;
+    if (args.isTeacher) return const SizedBox.shrink();
+    if (args.progressId == null || args.studentId == null) {
+      return const Padding(
+        padding: EdgeInsets.all(16),
+        child: Text(
+          'Bu darsni topshirish uchun avval kursga yozilishingiz kerak.',
+          style: TextStyle(color: AppColors.textSecondary, fontSize: 13),
+          textAlign: TextAlign.center,
+        ),
+      );
+    }
+
+    return StreamBuilder<SubmissionModel?>(
+      stream: context.read<SubmissionService>().watchForLesson(
+        args.studentId!,
+        args.lesson.id,
+      ),
+      builder: (context, snap) {
+        final sub = snap.data;
+
+        // Baholangan → natija + bajarilgan
+        if (sub != null && sub.isGraded) {
+          return _GradedResult(submission: sub);
+        }
+
+        // Topshirilgan, lekin baholanmagan → "Tekshirilmoqda"
+        if (sub != null && sub.isPending && !_editing) {
+          return _PendingResult(
+            submission: sub,
+            onEdit: () {
+              _ctrl.text = sub.answer;
+              setState(() => _editing = true);
+            },
+          );
+        }
+
+        // Hali topshirilmagan yoki tahrirlanyapti → forma
+        return Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                'Javobingiz / natijangiz',
+                style: TextStyle(
+                  fontSize: 13,
+                  fontWeight: FontWeight.w700,
+                  color: AppColors.textPrimary,
+                ),
+              ),
+              const SizedBox(height: 8),
+              TextField(
+                controller: _ctrl,
+                maxLines: 5,
+                minLines: 3,
+                decoration: const InputDecoration(
+                  hintText: 'Topshiriq javobini shu yerga yozing...',
+                ),
+              ),
+              const SizedBox(height: 12),
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton.icon(
+                  onPressed: _saving ? null : _submit,
+                  icon: _saving
+                      ? const SizedBox(
+                          width: 16,
+                          height: 16,
+                          child: CircularProgressIndicator(strokeWidth: 2),
+                        )
+                      : const Icon(Icons.send_rounded, size: 18),
+                  label: Text(_editing ? 'Qayta topshirish' : 'Topshirish'),
+                ),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+}
+
+class _PendingResult extends StatelessWidget {
+  final SubmissionModel submission;
+  final VoidCallback onEdit;
+  const _PendingResult({required this.submission, required this.onEdit});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      margin: const EdgeInsets.all(16),
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: AppColors.accentSoft.withValues(alpha: 0.5),
+        borderRadius: BorderRadius.circular(AppRadius.md),
+        border: Border.all(color: AppColors.accent.withValues(alpha: 0.4)),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              const Icon(
+                Icons.hourglass_top_rounded,
+                color: AppColors.accent,
+                size: 20,
+              ),
+              const SizedBox(width: 8),
+              const Expanded(
+                child: Text(
+                  'Tekshirilmoqda',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w800,
+                    color: AppColors.textPrimary,
+                    fontSize: 15,
+                  ),
+                ),
+              ),
+              TextButton(
+                onPressed: onEdit,
+                style: TextButton.styleFrom(
+                  minimumSize: Size.zero,
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 8,
+                    vertical: 4,
+                  ),
+                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                ),
+                child: const Text('Tahrirlash'),
+              ),
+            ],
+          ),
+          const SizedBox(height: 8),
+          Text(
+            submission.answer,
+            style: const TextStyle(
+              fontSize: 13,
+              height: 1.5,
+              color: AppColors.textSecondary,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _GradedResult extends StatelessWidget {
+  final SubmissionModel submission;
+  const _GradedResult({required this.submission});
+
+  @override
+  Widget build(BuildContext context) {
+    final passed = (submission.score ?? 0) >= 60;
+    final color = passed ? AppColors.secondary : AppColors.error;
+    return Container(
+      width: double.infinity,
+      margin: const EdgeInsets.all(16),
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: color.withValues(alpha: 0.12),
+        borderRadius: BorderRadius.circular(AppRadius.md),
+        border: Border.all(color: color.withValues(alpha: 0.4)),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Icon(
+                passed
+                    ? Icons.check_circle_rounded
+                    : Icons.error_outline_rounded,
+                color: color,
+                size: 22,
+              ),
+              const SizedBox(width: 8),
+              Text(
+                'Baholandi: ${submission.score}%',
+                style: TextStyle(
+                  fontWeight: FontWeight.w800,
+                  color: color,
+                  fontSize: 16,
+                ),
+              ),
+            ],
+          ),
+          if (submission.feedback?.isNotEmpty ?? false) ...[
+            const SizedBox(height: 10),
+            const Text(
+              'Ustoz izohi:',
+              style: TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.w700,
+                color: AppColors.textSecondary,
+              ),
+            ),
+            const SizedBox(height: 2),
+            Text(
+              submission.feedback!,
+              style: const TextStyle(
+                fontSize: 13,
+                height: 1.5,
+                color: AppColors.textPrimary,
+              ),
+            ),
+          ],
+        ],
+      ),
+    );
   }
 }
 
@@ -195,10 +478,7 @@ class _VideoLessonState extends State<_VideoLesson> {
             ],
           ),
         ),
-        if (widget.args.isCompleted)
-          const _CompletedBanner()
-        else
-          _CompleteButton(args: widget.args),
+        _SubmissionPanel(args: widget.args),
       ],
     );
   }
@@ -241,10 +521,7 @@ class _TextLesson extends StatelessWidget {
             ],
           ),
         ),
-        if (args.isCompleted)
-          const _CompletedBanner()
-        else
-          _CompleteButton(args: args),
+        _SubmissionPanel(args: args),
       ],
     );
   }
@@ -295,8 +572,12 @@ class _QuizLessonState extends State<_QuizLesson> {
           child: ListView(
             padding: const EdgeInsets.all(16),
             children: [
-              if (_submitted) _ScoreCard(percent: _scorePercent,
-                  correct: _correctCount, total: qs.length),
+              if (_submitted)
+                _ScoreCard(
+                  percent: _scorePercent,
+                  correct: _correctCount,
+                  total: qs.length,
+                ),
               ...qs.asMap().entries.map((e) {
                 final i = e.key;
                 final q = e.value;
@@ -327,9 +608,11 @@ class _QuizLessonState extends State<_QuizLesson> {
                     ? null
                     : () => setState(() => _submitted = true),
                 icon: const Icon(Icons.fact_check_outlined, size: 18),
-                label: Text(_answers.contains(null)
-                    ? 'Barcha savollarga javob bering'
-                    : 'Testni yakunlash'),
+                label: Text(
+                  _answers.contains(null)
+                      ? 'Barcha savollarga javob bering'
+                      : 'Testni yakunlash',
+                ),
               ),
             ),
           )
@@ -417,7 +700,9 @@ class _QuestionCard extends StatelessWidget {
                 borderRadius: BorderRadius.circular(AppRadius.sm),
                 child: Container(
                   padding: const EdgeInsets.symmetric(
-                      horizontal: 12, vertical: 12),
+                    horizontal: 12,
+                    vertical: 12,
+                  ),
                   decoration: BoxDecoration(
                     color: bg,
                     borderRadius: BorderRadius.circular(AppRadius.sm),
@@ -519,8 +804,11 @@ class _CompletedBanner extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Icon(Icons.check_circle_rounded,
-              color: AppColors.secondary, size: 20),
+          const Icon(
+            Icons.check_circle_rounded,
+            color: AppColors.secondary,
+            size: 20,
+          ),
           const SizedBox(width: 8),
           Text(
             label,

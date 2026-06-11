@@ -1,4 +1,4 @@
-package com.example.koozat
+package uz.app.koozat
 
 import io.flutter.embedding.android.FlutterActivity
 
